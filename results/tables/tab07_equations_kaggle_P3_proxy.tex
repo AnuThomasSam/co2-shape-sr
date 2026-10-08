@@ -1,0 +1,10 @@
+\begin{tabular}{lp{9cm}rr}
+\toprule
+Method & Equation g(x) & Nodes & Val. RMSE \\
+\midrule
+DCSR-F & $- cylinders - \frac{cylinders}{\sqrt{\left(gears_{f} + tt_{AV} - 2.7338\right)^{2} + 1}} - 2 engine_{size} tt_{AM} - 2 engine_{size} - \frac{engine_{size}}{\sqrt{\left(gears_{f} + tt_{AV} - 2.7338\right)^{2} + 1}} + 8.2222 tt_{AM} + 6.6887 tt_{AV} - 4.8155$ & 44 & 30.83 \\
+DCSR-S & $\frac{engine_{size} \left(tt_{AV} - 1.5773\right)}{\sqrt{\left(engine_{size} - 4.1081\right)^{2} + 1} \sqrt{\left(gears_{f} - 3.2656\right)^{2} + 1}} + 0.5317 gears_{f} - \frac{cylinders + engine_{size}}{tt_{AV}^{2} + 1} - \frac{\left(engine_{size} - 3.6927\right) \left(tt_{AM} + 1.245\right)}{\sqrt{tt_{M}^{2} + 1}}$ & 54 & 31.31 \\
+DCSR-T & $cylinders + engine_{size} + \frac{engine_{size}}{\sqrt{\left(gears_{f} - 2.6705\right)^{2} + 1}} + \frac{engine_{size}}{\sqrt{\left(0.2778 gears_{f} - tt_{AM}\right)^{2} + 1}} - 4.5308 tt_{AV} - 0.3683 + \frac{0.9168}{\sqrt{\left(gears_{f} - 2.6705\right)^{2} + 1}}$ & 44 & 31.31 \\
+Standard GP & $\frac{gears_{f} \left(engine_{size} + tt_{M}\right) \left(tt_{AV} - 0.9501\right) \sqrt{\left(gears_{f} - 0.5297\right)^{2} + 1} + \left(cylinders + 2.8536\right) \left(tt_{AM} + 2.7704\right) \left(tt_{AV} + 1.906\right) \sqrt{tt_{M}^{2} + 1} \sqrt{\left(tt_{AS} - 3.1655\right)^{2} + 1} \left(- engine_{size} + 2 tt_{AV} + 1.3149\right)}{\sqrt{tt_{M}^{2} + 1} \sqrt{\left(gears_{f} - 0.5297\right)^{2} + 1} \sqrt{\left(tt_{AS} - 3.1655\right)^{2} + 1}}$ & 78 & 31.46 \\
+\bottomrule
+\end{tabular}

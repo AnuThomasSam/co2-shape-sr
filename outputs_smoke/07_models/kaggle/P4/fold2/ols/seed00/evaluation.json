@@ -1,0 +1,21 @@
+{
+  "dataset": "kaggle",
+  "protocol": "P4",
+  "block": "fold2",
+  "method": "ols",
+  "seed": 0,
+  "status": "ok",
+  "fit_time_s": 0.027004899999155896,
+  "domain_violation_rate": 0.0,
+  "domain_min_slope": 23.79949375406244,
+  "domain_mean_slope": 23.799493754062443,
+  "domain_share_zero_slope": 0.0,
+  "uses_engine_size": 1,
+  "domain_mean_slope_D": 23.799493754062436,
+  "domain_mean_slope_E": 23.799493754062443,
+  "domain_mean_slope_X": 23.799493754062436,
+  "domain_mean_slope_Z": 23.799493754062443,
+  "n_parameters": 12,
+  "equation": "144.2 + 23.8*engine_size + 9.272*cylinders + -2.141*gears_f + -24.16*gears_missing + -9.524*tt_AM + -3.213*tt_AS + -36.21*tt_AV + -10.08*tt_M + 4.503*fuel_Z + 4.308*fuel_D + -11.68*fuel_E",
+  "eval_hash": "a1000137e0d2"
+}

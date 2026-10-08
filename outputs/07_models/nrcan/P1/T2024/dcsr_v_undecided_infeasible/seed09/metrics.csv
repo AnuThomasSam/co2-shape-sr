@@ -1,0 +1,4 @@
+dataset,protocol,block,method,seed,set,n,rmse,mae,r2,n_nonfinite,points_violation_rate,points_min_slope
+nrcan,P1,T2024,dcsr_v_undecided_infeasible,9,all,789,34.32931860412769,25.737805437845036,0.7161214870069676,0,0.0,15.04716760218721
+nrcan,P1,T2024,dcsr_v_undecided_infeasible,9,new_config,139,36.634501351618816,27.25829013641027,0.6765397487770674,0,0.0,15.04716760218721
+nrcan,P1,T2024,dcsr_v_undecided_infeasible,9,val,919,32.55260402691796,24.13210394047592,0.7314830824852402,0,0.0,15.04716760218721

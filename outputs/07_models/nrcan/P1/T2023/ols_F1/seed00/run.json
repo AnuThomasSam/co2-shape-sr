@@ -1,0 +1,30 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P1",
+  "block": "T2023",
+  "method": "ols_F1",
+  "seed": 0,
+  "run_hash": "222f4dafbb1f48f1",
+  "spec": {
+    "type": "ols",
+    "feature_set": "F1",
+    "name": "ols_F1",
+    "stochastic": false
+  },
+  "started": "2026-10-03 22:25:30",
+  "status": "ok",
+  "fit_time_s": 0.0022926000019651838,
+  "predict_time_s": 0.003107999997155275,
+  "n_fit": 1945,
+  "n_val": 976,
+  "description": {
+    "equation": "111.9 + 17.34*engine_size + 15.97*cylinders",
+    "n_parameters": 3,
+    "params": {},
+    "columns": [
+      "engine_size",
+      "cylinders"
+    ]
+  },
+  "finished": "2026-10-03 22:25:30"
+}

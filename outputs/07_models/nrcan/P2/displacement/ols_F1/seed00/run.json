@@ -1,0 +1,30 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P2",
+  "block": "displacement",
+  "method": "ols_F1",
+  "seed": 0,
+  "run_hash": "49c6924134bceb83",
+  "spec": {
+    "type": "ols",
+    "feature_set": "F1",
+    "name": "ols_F1",
+    "stochastic": false
+  },
+  "started": "2026-10-04 06:10:51",
+  "status": "ok",
+  "fit_time_s": 0.0024105000047711655,
+  "predict_time_s": 0.003255799994803965,
+  "n_fit": 7093,
+  "n_val": 1241,
+  "description": {
+    "equation": "120.3 + 15.93*engine_size + 15.2*cylinders",
+    "n_parameters": 3,
+    "params": {},
+    "columns": [
+      "engine_size",
+      "cylinders"
+    ]
+  },
+  "finished": "2026-10-04 06:10:51"
+}

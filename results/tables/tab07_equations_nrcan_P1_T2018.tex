@@ -1,0 +1,13 @@
+\begin{tabular}{lp{9cm}rr}
+\toprule
+Method & Equation g(x) & Nodes & Val. RMSE \\
+\midrule
+Dynamic penalty & $\frac{cylinders}{\sqrt{tt_{AV}^{2} + 1}} + engine_{size} + \frac{engine_{size}}{\sqrt{\left(gears_{f} - 3.7877\right)^{2} + 1}} + \frac{engine_{size}}{\sqrt{tt_{AM}^{2} + 1} \sqrt{tt_{M}^{2} + 1} \sqrt{\left(cylinders - 4.3292\right)^{2} + 1}} - \frac{tt_{AV}}{\sqrt{tt_{AV}^{2} + 1}}$ & 57 & 27.15 \\
+DCSR-F & $\frac{cylinders}{\sqrt{tt_{AV}^{2} + 1}} + engine_{size} - \frac{- 2 engine_{size} + tt_{AM} + tt_{M} + 1.8504}{\sqrt{\left(cylinders - 4.466\right)^{2} + 1} \sqrt{\left(gears_{f} - 4.8408\right)^{2} + 1}}$ & 38 & 27.06 \\
+DCSR-IA & $\frac{- 4.2702 engine_{size} + tt_{AM} - tt_{AV} + \left(- 0.5732 cylinders + tt_{AV}\right) \sqrt{cylinders^{2} + 1}}{\sqrt{cylinders^{2} + 1}}$ & 29 & 27.32 \\
+DCSR-S & $- \frac{cylinders}{\sqrt{tt_{AV}^{2} + 1}} - engine_{size} - \frac{engine_{size} - tt_{AM}}{\sqrt{\left(engine_{size} - 2.1375\right)^{2} + 1}} + \frac{- engine_{size} + tt_{AV} + tt_{M}}{\sqrt{\left(gears_{f} - 4.43\right)^{2} + 1}}$ & 46 & 27.08 \\
+DCSR-T & $\frac{cylinders}{\sqrt{tt_{AV}^{2} + 1}} + \frac{engine_{size}^{2}}{\sqrt{cylinders^{2} + 1} \sqrt{\left(cylinders - 4.2558\right)^{2} + 1}} + \frac{engine_{size}}{\sqrt{cylinders^{2} + 1}} + \frac{engine_{size} - tt_{M}}{\sqrt{\left(gears_{f} - 3.0984\right)^{2} + 1}}$ & 54 & 27.25 \\
+DCSR-V & $- cylinders - \frac{1.9374 engine_{size}}{\sqrt{\left(gears_{f} - 2.3125\right)^{2} + 1}} + gears_{missing} - \frac{2.0694 cylinders + 5.6380803 engine_{size} - 2.0694 tt_{AM} - 2.0694 tt_{M}}{\sqrt{cylinders^{2} + 1} \sqrt{tt_{AV}^{2} + 1}}$ & 44 & 27.11 \\
+Standard GP & $\frac{engine_{size} - 1.6911 \sqrt{tt_{AV}^{2} + 1}}{\sqrt{\frac{cylinders^{2} + \left(2.5831 engine_{size} + gears_{f} - 5.4443\right)^{2} + 1}{cylinders^{2} + 1}} \sqrt{tt_{AV}^{2} + 1}}$ & 42 & 27.23 \\
+\bottomrule
+\end{tabular}

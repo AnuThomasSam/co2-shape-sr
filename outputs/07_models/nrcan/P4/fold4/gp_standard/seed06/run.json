@@ -1,0 +1,126 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P4",
+  "block": "fold4",
+  "method": "gp_standard",
+  "seed": 6,
+  "run_hash": "cc96ee46d0195e3c",
+  "spec": {
+    "population_size": 500,
+    "generations": 80,
+    "tournament_size": 7,
+    "init_depth": [
+      2,
+      4
+    ],
+    "max_depth": 8,
+    "max_size": 40,
+    "const_range": [
+      -5.0,
+      5.0
+    ],
+    "p_var_terminal": 0.6,
+    "p_crossover": 0.7,
+    "p_subtree_mutation": 0.15,
+    "p_point_mutation": 0.1,
+    "p_constant_mutation": 0.05,
+    "hall_of_fame": 50,
+    "function_set": "basic",
+    "linear_scaling": true,
+    "fuel_mode": "scaling",
+    "min_group_rows": 10,
+    "constraint": "none",
+    "constraints": [
+      [
+        0,
+        1
+      ]
+    ],
+    "lam_schedule": "constant",
+    "lam_start": 0.001,
+    "verify_max_boxes": 4000,
+    "verify_max_depth": 10,
+    "verify_probe": true,
+    "undecided_policy": "between",
+    "counterexample_feedback": true,
+    "counterexample_archive": 1000,
+    "prefilter_training": true,
+    "require_engine_size": true,
+    "sign_consistent_scaling": true,
+    "parsimony": 0.0002,
+    "selection_tolerance": 0.01,
+    "lam": 0.0,
+    "feasibility_tol": 1e-09,
+    "type": "gp",
+    "feature_set": "F2",
+    "name": "gp_standard",
+    "stochastic": true
+  },
+  "started": "2026-10-04 12:53:22",
+  "status": "ok",
+  "fit_time_s": 37.86211080000794,
+  "predict_time_s": 0.01302689999283757,
+  "n_fit": 6745,
+  "n_val": 1302,
+  "description": {
+    "equation": "(((aq((cylinders * (tt_AV + -1.11752)), aq(-2.3621, (engine_size * engine_size))) + (tt_AM * 2.97028)) - aq(gears_f, cylinders)) - ((tt_AM + 1.94439) * engine_size))",
+    "scaling": {
+      "X": {
+        "a": 114.0176435218929,
+        "b": -10.67502749282641
+      },
+      "Z": {
+        "a": 128.318722044858,
+        "b": -9.787232185016485
+      },
+      "D": {
+        "a": 85.66498527013815,
+        "b": -13.390530098347025
+      },
+      "E": {
+        "a": 111.78218585237408,
+        "b": -10.068312867577
+      }
+    },
+    "scaling_pooled": {
+      "a": 120.35112433413315,
+      "b": -10.222147067034095
+    },
+    "n_nodes": 25,
+    "depth": 7,
+    "n_constants": 4,
+    "variables_used": [
+      "cylinders",
+      "engine_size",
+      "gears_f",
+      "tt_AM",
+      "tt_AV"
+    ],
+    "n_parameters": 12,
+    "params": {
+      "train_nmse": 0.22324992858509177,
+      "val_nmse": 0.2345227630073575,
+      "train_violation": 0.0,
+      "feasible_on_constraint_set": true,
+      "hof_size": 50,
+      "n_feasible_in_hof": 50,
+      "uses_engine_size": true,
+      "final_verdict": "",
+      "selected_by": "validation",
+      "scaling_refit": true,
+      "train_time_s": 37.84478160001163,
+      "n_fitness_evaluations": 36100
+    },
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M"
+    ]
+  },
+  "finished": "2026-10-04 12:54:00"
+}

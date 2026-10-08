@@ -1,0 +1,16 @@
+Measure,Value
+"adversarial AUC, with defining variables",0.998
+"adversarial AUC, without defining variables",0.730
+"Spearman rho, technology score vs model year",-0.224
+"AUC, proxy 'newer' label predicting model year > median",0.551
+"AUC, -technology score predicting model year > median",0.617
+"mean model year, older group",2018.782
+"mean model year, newer group",2019.495
+"engine size range, newer",0.9-3.8
+"cylinder range, newer",3-6
+"mean gears, newer",7.454
+"mean CO2, newer",224.029
+"engine size range, older",2.5-8.4
+"cylinder range, older",6-16
+"mean gears, older",7.208
+"mean CO2, older",307.838

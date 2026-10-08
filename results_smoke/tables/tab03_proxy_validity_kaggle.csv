@@ -1,0 +1,11 @@
+Measure,Value
+"adversarial AUC, with defining variables",1.000
+"adversarial AUC, without defining variables",0.729
+"engine size range, newer",0.9-4.7
+"cylinder range, newer",3-6
+"mean gears, newer",6.979
+"mean CO2, newer",220.039
+"engine size range, older",2.5-8.4
+"cylinder range, older",6-16
+"mean gears, older",6.693
+"mean CO2, older",308.362

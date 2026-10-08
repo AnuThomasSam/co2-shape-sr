@@ -1,0 +1,13 @@
+Metric,Value
+Number_of_Clusters,8
+Older_Clusters,"[5, 6, 2, 4]"
+Newer_Clusters,"[3, 1, 7, 0]"
+S_old_Size,1983
+S_new_Size,4002
+AUC_CV_Mean,0.9796
+AUC_CV_Std,0.0027
+AUC_Out_of_Fold,0.9794
+Drift_Threshold,0.6
+Drift_Verdict,Measurable distribution shift detected.
+Proceed,True
+Training_Time_Seconds,0.7462

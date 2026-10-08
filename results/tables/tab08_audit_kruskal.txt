@@ -1,0 +1,1 @@
+Kruskal-Wallis H = 1337.600, p = 1.08e-257, groups = 37, N = 6726

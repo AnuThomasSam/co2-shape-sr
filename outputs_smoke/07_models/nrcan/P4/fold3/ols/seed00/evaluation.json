@@ -1,0 +1,21 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P4",
+  "block": "fold3",
+  "method": "ols",
+  "seed": 0,
+  "status": "ok",
+  "fit_time_s": 0.01729449999766075,
+  "domain_violation_rate": 0.0,
+  "domain_min_slope": 19.561674918396985,
+  "domain_mean_slope": 19.561674918396985,
+  "domain_share_zero_slope": 0.0,
+  "uses_engine_size": 1,
+  "domain_mean_slope_D": 19.56167491839699,
+  "domain_mean_slope_E": 19.561674918396985,
+  "domain_mean_slope_X": 19.561674918396985,
+  "domain_mean_slope_Z": 19.561674918396985,
+  "n_parameters": 12,
+  "equation": "124.1 + 19.56*engine_size + 11.67*cylinders + 1.034*gears_f + -4.693*gears_missing + -7.268*tt_AM + -4.816*tt_AS + -35.73*tt_AV + -7.468*tt_M + 6.293*fuel_Z + 3.925*fuel_D + -13.47*fuel_E",
+  "eval_hash": "97e90c7ba886"
+}

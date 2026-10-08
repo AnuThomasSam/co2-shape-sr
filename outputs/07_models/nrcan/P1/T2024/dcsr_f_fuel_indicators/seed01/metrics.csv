@@ -1,0 +1,4 @@
+dataset,protocol,block,method,seed,set,n,rmse,mae,r2,n_nonfinite,points_violation_rate,points_min_slope
+nrcan,P1,T2024,dcsr_f_fuel_indicators,1,all,789,33.691316996983176,25.32390432211552,0.7265750565695386,0,0.0,0.0
+nrcan,P1,T2024,dcsr_f_fuel_indicators,1,new_config,139,35.809352625165054,27.350596852341784,0.6909467678344392,0,0.0,0.0
+nrcan,P1,T2024,dcsr_f_fuel_indicators,1,val,919,31.95640964679384,23.957743107024857,0.7412286797835682,0,0.0,0.0

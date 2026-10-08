@@ -1,0 +1,26 @@
+{
+  "step": "09_statistics",
+  "finished": "2026-10-04 15:16:35",
+  "config_hash": "05a7f5b37d4b",
+  "inputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\08_evaluation\\run_metrics.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\08_evaluation\\run_summary.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\05_splits\\information_ceiling.csv"
+  ],
+  "inputs_fingerprint": "d6580d2f917c837d",
+  "outputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\summary_by_block.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\summary_by_protocol.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\degradation_vs_P4.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\pairwise_tests.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\friedman_summary.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\friedman_average_ranks.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\constraint_validity.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\interval_vs_branch_and_bound.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\verification_cost.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\stability.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\engine_size_effect_by_fuel.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\lambda_ablation.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\proxy_vs_temporal_ranking.csv"
+  ]
+}

@@ -1,0 +1,60 @@
+# Small budgets to check that the whole pipeline runs end to end (minutes, not hours).
+# Results from this configuration are NOT research results.
+inherits: default.yaml
+
+project:
+  outputs_dir: outputs_smoke
+  results_dir: results_smoke
+  n_jobs: 4
+
+domain:
+  sample_size: 500
+  grid_points_per_context: 8
+  max_grid_contexts: 800
+  max_interval_contexts_train: 150
+  interval_segments_eval: 6
+  verify_eval_max_boxes: 20000
+
+gp_defaults:
+  population_size: 120
+  generations: 12
+
+methods:
+  xgb:      {type: xgb, feature_set: F2, monotone: false, n_trials: 5}
+  xgb_mono: {type: xgb, feature_set: F2, monotone: true, n_trials: 5}
+  pysr:     {type: pysr, feature_set: F2, niterations: 5, maxsize: 20, timeout_s: 60}
+
+experiments:
+  main:
+    dataset: nrcan
+    protocols: [P1, P2, P4]
+    methods: [ols, loglinear, gam_mono, xgb, xgb_mono, pysr, gp_standard, dcsr_t, dcsr_s, dcsr_f, dcsr_ia, dcsr_v, dcsr_dyn]
+    seeds: 3
+    blocks: null
+  proxy:
+    dataset: nrcan
+    protocols: [P3]
+    methods: [ols, loglinear, gam_mono, xgb, xgb_mono, gp_standard, dcsr_s]
+    seeds: 3
+    blocks: null
+  ablations:
+    dataset: nrcan
+    protocols: [P2]
+    methods: [gp_standard, dcsr_s, dcsr_s_lam0.01, dcsr_s_lam1, dcsr_s_lam1e4, dcsr_s_lam1e9, gp_F1, gp_F3,
+              gp_fuel_indicators, gp_no_scaling, gp_extended_ops]
+    seeds: 2
+    blocks: null
+  legacy_kaggle:
+    dataset: kaggle
+    protocols: [P3, P4]
+    methods: [ols, xgb, gp_standard, dcsr_s]
+    seeds: 2
+    blocks: null
+
+benchmark:
+  problems: [I.6.20a, I.39.22, I.48.20]
+  seeds: 2
+  eval_max_boxes: 20000
+  gp_overrides:
+    population_size: 80
+    generations: 10

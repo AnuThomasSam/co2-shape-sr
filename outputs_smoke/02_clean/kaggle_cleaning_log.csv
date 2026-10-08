@@ -1,0 +1,8 @@
+dataset,rule,rows_removed,rows_before,rows_flagged
+kaggle,rows after ingest,0,7385,
+kaggle,"missing or non-positive engine size, cylinders or CO2",0,7385,
+kaggle,unrecognised transmission code,0,7385,
+kaggle,"fuel type with < 30 rows or not in ['X', 'Z', 'D', 'E']",1,7385,
+kaggle,exact duplicate within model year,1402,7384,
+kaggle,"outside the declared domain (flagged, kept)",0,5982,0.0
+kaggle,rows after cleaning,0,5982,

@@ -1,0 +1,50 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P4",
+  "block": "fold5",
+  "method": "xgb_mono",
+  "seed": 0,
+  "run_hash": "ef2e728cdd905a08",
+  "spec": {
+    "type": "xgb",
+    "feature_set": "F2",
+    "monotone": true,
+    "n_trials": 5,
+    "name": "xgb_mono",
+    "stochastic": false
+  },
+  "started": "2026-10-02 20:21:41",
+  "status": "ok",
+  "fit_time_s": 4.401245900000504,
+  "predict_time_s": 0.17686309999771765,
+  "n_fit": 6857,
+  "n_val": 1191,
+  "description": {
+    "equation": null,
+    "n_parameters": null,
+    "params": {
+      "n_estimators": 484,
+      "max_depth": 7,
+      "learning_rate": 0.07768811685516967,
+      "subsample": 0.8179532731987588,
+      "colsample_bytree": 0.7694619197355619,
+      "min_child_weight": 6.813047017599905,
+      "reg_lambda": 0.0562793204741517,
+      "inner_val_rmse": 26.831626769516042
+    },
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M",
+      "fuel_Z",
+      "fuel_D",
+      "fuel_E"
+    ]
+  },
+  "finished": "2026-10-02 20:21:45"
+}

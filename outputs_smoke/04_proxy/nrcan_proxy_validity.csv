@@ -1,0 +1,16 @@
+measure,value,p_value
+"adversarial AUC, with defining variables",0.9980290122620419,
+"adversarial AUC, without defining variables",0.7304198036676901,
+"Spearman rho, technology score vs model year",-0.22389369277284635,1.729165473700255e-114
+"AUC, proxy 'newer' label predicting model year > median",0.5509521405408374,
+"AUC, -technology score predicting model year > median",0.6173606859151628,
+"mean model year, older group",2018.7819253438115,
+"mean model year, newer group",2019.494919950739,
+"engine size range, newer",0.9-3.8,
+"cylinder range, newer",3-6,
+"mean gears, newer",7.454425581012032,
+"mean CO2, newer",224.0294027093596,
+"engine size range, older",2.5-8.4,
+"cylinder range, older",6-16,
+"mean gears, older",7.2079708111142295,
+"mean CO2, older",307.83833847881,

@@ -1,0 +1,23 @@
+{
+  "step": "05_splits",
+  "finished": "2026-10-02 19:58:05",
+  "config_hash": "1b8258372d9a",
+  "inputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\nrcan_clean.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\nrcan_proxy_assignments.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\kaggle_clean.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\kaggle_proxy_assignments.csv"
+  ],
+  "inputs_fingerprint": "bd0478887f56e728",
+  "outputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\nrcan_P1_splits.json",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\nrcan_P2_splits.json",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\nrcan_P3_splits.json",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\nrcan_P4_splits.json",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\kaggle_P2_splits.json",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\kaggle_P3_splits.json",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\kaggle_P4_splits.json",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\split_summary.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\05_splits\\information_ceiling.csv"
+  ]
+}

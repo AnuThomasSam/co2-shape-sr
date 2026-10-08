@@ -1,0 +1,5 @@
+match_keys,group,pairs,violation_share,tie_share,median_slope_g_per_km_per_litre,q1_slope,q3_slope
+make+model+body_group+transmission_type+gears+fuel_type,all,480,0.15,0.008333333333333333,20.187500000000007,9.84375,32.5
+make+model+body_group+transmission_type+gears+fuel_type,fuel_type=E,23,0.08695652173913043,0.0,24.61538461538462,5.166666666666657,34.1666666666666
+make+model+body_group+transmission_type+gears+fuel_type,fuel_type=X,342,0.13742690058479531,0.005847953216374269,20.22222222222221,10.000000000000002,33.70833333333334
+make+model+body_group+transmission_type+gears+fuel_type,fuel_type=Z,115,0.2,0.017391304347826087,19.166666666666647,6.437500000000001,29.00058275058275

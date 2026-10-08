@@ -1,0 +1,22 @@
+{
+  "step": "02_clean",
+  "finished": "2026-10-02 19:57:38",
+  "config_hash": "c7ff2a9e2dc4",
+  "inputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\01_ingest\\nrcan_harmonised.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\01_ingest\\kaggle_harmonised.csv"
+  ],
+  "inputs_fingerprint": "2b194b4daf2de8e7",
+  "outputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\nrcan_clean.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\nrcan_cleaning_log.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\nrcan_card_rows_by_year_fuel.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\nrcan_card_rows_by_year_body.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\nrcan_card_feature_ranges.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\nrcan_card_category_levels.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\kaggle_clean.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\kaggle_cleaning_log.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\kaggle_card_feature_ranges.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\kaggle_card_category_levels.csv"
+  ]
+}

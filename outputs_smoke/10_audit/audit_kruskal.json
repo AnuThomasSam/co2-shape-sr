@@ -1,0 +1,12 @@
+{
+  "H": 1381.0445183062354,
+  "p_value": 6.85101334477488e-267,
+  "n_groups": 37,
+  "N": 6726,
+  "dataset": "nrcan",
+  "protocol": "P1",
+  "method": "dcsr_s",
+  "min_rows_per_make": 30,
+  "bootstrap": 2000,
+  "makes_excluded": 3
+}

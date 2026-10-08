@@ -1,0 +1,2 @@
+file,header_row,n_raw_rows,kept_columns,dropped_columns,n_footer_or_invalid_rows
+my2015-2024-fuel-consumption-ratings.csv,0,10060,model_year<-Model year;make<-Make;model<-Model;vehicle_class<-Vehicle class;engine_size<-Engine size (L);cylinders<-Cylinders;transmission<-Transmission;fuel_code<-Fuel type;co2<-CO2 emissions (g/km),City (L/100 km);Highway (L/100 km);Combined (L/100 km);Combined (mpg);CO2 rating;Smog rating,0

@@ -1,0 +1,3 @@
+dataset,protocol,block,method,seed,set,n,rmse,mae,r2,n_nonfinite,points_violation_rate,points_min_slope
+nrcan,P3,proxy,dcsr_f,4,newer,6496,41.343307344185064,33.08889691509057,0.061403201587354794,0,0.0,1.9711749921242696
+nrcan,P3,proxy,dcsr_f,4,val,578,33.509845371734556,26.315663667863024,0.5135495977733328,0,0.0,6.943936338850934

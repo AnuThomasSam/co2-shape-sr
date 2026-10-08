@@ -1,0 +1,22 @@
+{
+  "step": "04_proxy",
+  "finished": "2026-10-02 19:58:03",
+  "config_hash": "a2b2b4f42d8e",
+  "inputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\nrcan_clean.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\02_clean\\kaggle_clean.csv"
+  ],
+  "inputs_fingerprint": "7a281db307fca2c9",
+  "outputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\nrcan_proxy_k_selection.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\nrcan_proxy_cluster_profile.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\nrcan_proxy_assignments.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\nrcan_proxy_validity.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\nrcan_proxy_info.json",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\kaggle_proxy_k_selection.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\kaggle_proxy_cluster_profile.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\kaggle_proxy_assignments.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\kaggle_proxy_validity.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\04_proxy\\kaggle_proxy_info.json"
+  ]
+}

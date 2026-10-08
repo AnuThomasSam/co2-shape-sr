@@ -1,0 +1,15 @@
+match_keys,group,pairs,violation_share,tie_share,median_slope_g_per_km_per_litre,q1_slope,q3_slope
+model_year+make+model+body_group+transmission_type+gears+fuel_type,all,812,0.0960591133004926,0.012315270935960592,20.0,11.153846153846155,30.964285714285715
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2015,111,0.13513513513513514,0.009009009009009009,20.0,11.125,32.25
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2016,110,0.15454545454545454,0.00909090909090909,22.361111111111107,10.0,33.89285714285714
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2017,90,0.06666666666666667,0.022222222222222223,24.20833333333333,13.0,32.49999999999999
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2018,91,0.08791208791208792,0.0,22.499999999999993,13.0,30.0
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2019,79,0.08860759493670886,0.012658227848101266,18.0,11.53846153846154,27.59090909090909
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2020,80,0.0875,0.025,17.207792207792206,9.807692307692308,26.0625
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2021,80,0.0625,0.0125,18.0625,9.903846153846153,29.999999999999996
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2022,72,0.08333333333333333,0.0,19.375,11.923076923076925,27.365384615384617
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2023,58,0.08620689655172414,0.017241379310344827,17.941176470588232,11.882440476190476,29.05982905982906
+model_year+make+model+body_group+transmission_type+gears+fuel_type,model_year=2024,41,0.04878048780487805,0.024390243902439025,20.625,10.0,30.952380952380953
+model_year+make+model+body_group+transmission_type+gears+fuel_type,fuel_type=E,26,0.23076923076923078,0.07692307692307693,13.0,0.0,25.602941176470587
+model_year+make+model+body_group+transmission_type+gears+fuel_type,fuel_type=X,673,0.10401188707280833,0.01188707280832095,18.57142857142857,10.0,30.000000000000004
+model_year+make+model+body_group+transmission_type+gears+fuel_type,fuel_type=Z,113,0.017699115044247787,0.0,25.714285714285708,18.0,37.0

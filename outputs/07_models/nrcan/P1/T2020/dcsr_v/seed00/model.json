@@ -1,0 +1,186 @@
+{
+  "names": [
+    "engine_size",
+    "cylinders",
+    "gears_f",
+    "gears_missing",
+    "tt_AM",
+    "tt_AS",
+    "tt_AV",
+    "tt_M"
+  ],
+  "fuel_scaling": true,
+  "fuel_levels": [
+    "X",
+    "Z",
+    "D",
+    "E"
+  ],
+  "tree": {
+    "op": "aq",
+    "children": [
+      {
+        "op": "add",
+        "children": [
+          {
+            "op": "add",
+            "children": [
+              {
+                "op": "var",
+                "value": 1
+              },
+              {
+                "op": "const",
+                "value": 6.294902239932964
+              }
+            ]
+          },
+          {
+            "op": "sub",
+            "children": [
+              {
+                "op": "var",
+                "value": 0
+              },
+              {
+                "op": "mul",
+                "children": [
+                  {
+                    "op": "add",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 4
+                      },
+                      {
+                        "op": "aq",
+                        "children": [
+                          {
+                            "op": "const",
+                            "value": 2.7892948440633534
+                          },
+                          {
+                            "op": "var",
+                            "value": 0
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "op": "sub",
+                    "children": [
+                      {
+                        "op": "const",
+                        "value": 3.808447755330334
+                      },
+                      {
+                        "op": "var",
+                        "value": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "var",
+        "value": 6
+      }
+    ]
+  },
+  "scaling": {
+    "a": [
+      99.31148126181273,
+      119.2510274563125,
+      55.639986072454406,
+      113.63410621133303
+    ],
+    "b": [
+      11.1033656244038,
+      9.923721295236852,
+      15.573382706228902,
+      9.39920303014088
+    ],
+    "a0": 108.33835859905821,
+    "b0": 10.490330388659029
+  },
+  "n_groups": 4,
+  "spec": {
+    "population_size": 500,
+    "generations": 80,
+    "tournament_size": 7,
+    "init_depth": [
+      2,
+      4
+    ],
+    "max_depth": 8,
+    "max_size": 40,
+    "const_range": [
+      -5.0,
+      5.0
+    ],
+    "p_var_terminal": 0.6,
+    "p_crossover": 0.7,
+    "p_subtree_mutation": 0.15,
+    "p_point_mutation": 0.1,
+    "p_constant_mutation": 0.05,
+    "hall_of_fame": 50,
+    "function_set": "basic",
+    "linear_scaling": true,
+    "fuel_mode": "scaling",
+    "min_group_rows": 10,
+    "constraint": "verified",
+    "constraints": [
+      [
+        0,
+        1
+      ]
+    ],
+    "lam_schedule": "constant",
+    "lam_start": 0.001,
+    "verify_max_boxes": 4000,
+    "verify_max_depth": 10,
+    "verify_probe": true,
+    "undecided_policy": "between",
+    "counterexample_feedback": true,
+    "counterexample_archive": 1000,
+    "prefilter_training": true,
+    "require_engine_size": true,
+    "sign_consistent_scaling": true,
+    "parsimony": 0.0002,
+    "selection_tolerance": 0.01,
+    "lam": 0.0,
+    "feasibility_tol": 1e-09,
+    "type": "gp",
+    "feature_set": "F2",
+    "name": "dcsr_v",
+    "stochastic": true
+  },
+  "seed": 0,
+  "info": {
+    "train_nmse": 0.21202073548118575,
+    "val_nmse": 0.215362438066037,
+    "train_violation": 0.0,
+    "feasible_on_constraint_set": true,
+    "hof_size": 50,
+    "n_feasible_in_hof": 50,
+    "uses_engine_size": true,
+    "final_verdict": "certified",
+    "selected_by": "validation",
+    "scaling_refit": true,
+    "train_time_s": 189.27431520000027,
+    "n_fitness_evaluations": 34222,
+    "verify_prefilter_refuted": 4163,
+    "verify_bb_certified": 29117,
+    "verify_bb_refuted": 13,
+    "verify_bb_undecided": 930,
+    "verify_bb_boxes": 35190904,
+    "verify_bb_calls": 30060,
+    "verify_cx_added": 62
+  },
+  "equation": "aq(((cylinders + 6.2949) + (engine_size - ((tt_AM + aq(2.78929, engine_size)) * (3.80845 - engine_size)))), tt_AV)"
+}

@@ -1,0 +1,2 @@
+Model,Train_R2,Train_MSE,Train_RMSE,Train_MAE,Temporal_Test_R2,Temporal_Test_MSE,Temporal_Test_RMSE,Temporal_Test_MAE,CV_R2_Mean,CV_R2_Std,CV_RMSE_Mean,CV_RMSE_Std,CV_MAE_Mean,CV_MAE_Std,Equation_Length,Equation_Depth,Training_Time_Seconds,Prediction_Time_Seconds,Invalid_Train_Predictions,Invalid_Test_Predictions,PCVR_Percent
+Standard GP,0.5526,1018.9526,31.921,24.6585,0.5217,810.3509,28.4667,21.6313,0.5351,0.0576,32.425,2.3895,25.0009,1.4281,108,14,1014.0425,0.0051,0,0,9.984871406959153

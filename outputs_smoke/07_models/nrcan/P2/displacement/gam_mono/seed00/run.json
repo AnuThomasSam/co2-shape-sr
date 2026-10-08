@@ -1,0 +1,58 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P2",
+  "block": "displacement",
+  "method": "gam_mono",
+  "seed": 0,
+  "run_hash": "0520ac59b0099cc2",
+  "spec": {
+    "type": "gam",
+    "feature_set": "F2",
+    "n_splines": 12,
+    "lam_grid": [
+      0.01,
+      0.1,
+      1,
+      10,
+      100,
+      1000
+    ],
+    "name": "gam_mono",
+    "stochastic": false
+  },
+  "started": "2026-10-02 20:14:01",
+  "status": "ok",
+  "fit_time_s": 0.8205521000018052,
+  "predict_time_s": 0.06769839999833493,
+  "n_fit": 7093,
+  "n_val": 1241,
+  "description": {
+    "equation": null,
+    "n_parameters": 16,
+    "params": {
+      "lam": 1,
+      "val_rmse_by_lam": {
+        "0.01": 28.117602699578924,
+        "0.1": 28.116795304924644,
+        "1": 28.11359748503043,
+        "10": 28.119945900679365,
+        "100": 28.36012473270052,
+        "1000": 29.29914915442571
+      }
+    },
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M",
+      "fuel_Z",
+      "fuel_D",
+      "fuel_E"
+    ]
+  },
+  "finished": "2026-10-02 20:14:02"
+}

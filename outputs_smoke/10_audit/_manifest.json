@@ -1,0 +1,15 @@
+{
+  "step": "10_audit",
+  "finished": "2026-10-02 20:24:18",
+  "config_hash": "b629d79fac47",
+  "inputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\08_evaluation\\run_metrics.csv"
+  ],
+  "inputs_fingerprint": "b66d6f18c193153e",
+  "outputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\10_audit\\audit_residuals.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\10_audit\\audit_by_make.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\10_audit\\audit_dunn_pairwise.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\10_audit\\audit_kruskal.json"
+  ]
+}

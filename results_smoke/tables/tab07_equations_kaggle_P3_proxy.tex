@@ -1,0 +1,8 @@
+\begin{tabular}{lp{9cm}rr}
+\toprule
+Method & Equation g(x) & Nodes & Val. RMSE \\
+\midrule
+DCSR-S & $- \frac{cylinders}{\sqrt{gears_{missing}^{2} + 1}} + engine_{size} tt_{AV} - engine_{size} + \frac{gears_{f}}{\sqrt{engine_{size}^{2} + 1}} + \frac{tt_{AV}}{\sqrt{engine_{size}^{2} + 1}}$ & 35 & 31.80 \\
+Standard GP & $\frac{cylinders \left(engine_{size} + tt_{AM}\right)}{\sqrt{5.8178 tt_{AV}^{2} + 1}}$ & 14 & 31.65 \\
+\bottomrule
+\end{tabular}

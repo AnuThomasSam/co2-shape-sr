@@ -1,0 +1,7 @@
+2026-10-02 23:15:13,111 INFO    step02: started
+2026-10-02 23:15:13,488 INFO    step02: nrcan: 10059 rows after cleaning
+2026-10-02 23:15:13,726 INFO    step02: kaggle: 5982 rows after cleaning
+2026-10-02 23:15:13,730 INFO    step02: finished in 0.6 s
+2026-10-02 23:56:47,585 INFO    step02: up to date, skipped (use --force to re-run)
+2026-10-03 09:41:10,882 INFO    step02: up to date, skipped (use --force to re-run)
+2026-10-03 18:06:34,956 INFO    step02: up to date, skipped (use --force to re-run)

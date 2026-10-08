@@ -1,0 +1,215 @@
+{
+  "names": [
+    "engine_size",
+    "cylinders",
+    "gears_f",
+    "gears_missing",
+    "tt_AM",
+    "tt_AS",
+    "tt_AV",
+    "tt_M"
+  ],
+  "fuel_scaling": true,
+  "fuel_levels": [
+    "X",
+    "Z",
+    "D",
+    "E"
+  ],
+  "tree": {
+    "op": "add",
+    "children": [
+      {
+        "op": "sub",
+        "children": [
+          {
+            "op": "var",
+            "value": 4
+          },
+          {
+            "op": "add",
+            "children": [
+              {
+                "op": "sub",
+                "children": [
+                  {
+                    "op": "sub",
+                    "children": [
+                      {
+                        "op": "mul",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 1
+                          },
+                          {
+                            "op": "var",
+                            "value": 6
+                          }
+                        ]
+                      },
+                      {
+                        "op": "var",
+                        "value": 6
+                      }
+                    ]
+                  },
+                  {
+                    "op": "add",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 0
+                      },
+                      {
+                        "op": "var",
+                        "value": 1
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "const",
+                    "value": -7.2039127679865125
+                  },
+                  {
+                    "op": "aq",
+                    "children": [
+                      {
+                        "op": "mul",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 4
+                          },
+                          {
+                            "op": "const",
+                            "value": 1.426902765981215
+                          }
+                        ]
+                      },
+                      {
+                        "op": "sub",
+                        "children": [
+                          {
+                            "op": "const",
+                            "value": 1.056429168503416
+                          },
+                          {
+                            "op": "var",
+                            "value": 0
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "aq",
+        "children": [
+          {
+            "op": "const",
+            "value": -8.537708347346234
+          },
+          {
+            "op": "var",
+            "value": 0
+          }
+        ]
+      }
+    ]
+  },
+  "scaling": {
+    "a": [
+      97.44423159365661,
+      115.02639924420976,
+      95.26831267633247,
+      104.5665603447483
+    ],
+    "b": [
+      12.276013736350802,
+      11.169433619495285,
+      13.081080636130787,
+      10.762678207847257
+    ],
+    "a0": 105.75799879073134,
+    "b0": 11.674379767969294
+  },
+  "n_groups": 4,
+  "spec": {
+    "population_size": 500,
+    "generations": 80,
+    "tournament_size": 7,
+    "init_depth": [
+      2,
+      4
+    ],
+    "max_depth": 8,
+    "max_size": 40,
+    "const_range": [
+      -5.0,
+      5.0
+    ],
+    "p_var_terminal": 0.6,
+    "p_crossover": 0.7,
+    "p_subtree_mutation": 0.15,
+    "p_point_mutation": 0.1,
+    "p_constant_mutation": 0.05,
+    "hall_of_fame": 50,
+    "function_set": "basic",
+    "linear_scaling": true,
+    "fuel_mode": "scaling",
+    "min_group_rows": 10,
+    "constraint": "none",
+    "constraints": [
+      [
+        0,
+        1
+      ]
+    ],
+    "lam_schedule": "constant",
+    "lam_start": 0.001,
+    "verify_max_boxes": 4000,
+    "verify_max_depth": 10,
+    "verify_probe": true,
+    "undecided_policy": "between",
+    "counterexample_feedback": true,
+    "counterexample_archive": 1000,
+    "prefilter_training": true,
+    "require_engine_size": true,
+    "sign_consistent_scaling": true,
+    "parsimony": 0.0002,
+    "selection_tolerance": 0.01,
+    "lam": 0.0,
+    "feasibility_tol": 1e-09,
+    "type": "gp",
+    "feature_set": "F2",
+    "name": "gp_standard",
+    "stochastic": true
+  },
+  "seed": 4,
+  "info": {
+    "train_nmse": 0.23823290126111926,
+    "val_nmse": 0.27722892936531135,
+    "train_violation": 0.0,
+    "feasible_on_constraint_set": true,
+    "hof_size": 50,
+    "n_feasible_in_hof": 50,
+    "uses_engine_size": true,
+    "final_verdict": "",
+    "selected_by": "validation",
+    "scaling_refit": true,
+    "train_time_s": 37.409721500007436,
+    "n_fitness_evaluations": 34492
+  },
+  "equation": "((tt_AM - ((((cylinders * tt_AV) - tt_AV) - (engine_size + cylinders)) + aq(-7.20391, aq((tt_AM * 1.4269), (1.05643 - engine_size))))) + aq(-8.53771, engine_size))"
+}

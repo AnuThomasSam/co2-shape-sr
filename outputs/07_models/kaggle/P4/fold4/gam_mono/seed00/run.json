@@ -1,0 +1,58 @@
+{
+  "dataset": "kaggle",
+  "protocol": "P4",
+  "block": "fold4",
+  "method": "gam_mono",
+  "seed": 0,
+  "run_hash": "1e0e48ab42a4318a",
+  "spec": {
+    "type": "gam",
+    "feature_set": "F2",
+    "n_splines": 12,
+    "lam_grid": [
+      0.01,
+      0.1,
+      1,
+      10,
+      100,
+      1000
+    ],
+    "name": "gam_mono",
+    "stochastic": false
+  },
+  "started": "2026-10-03 00:31:55",
+  "status": "ok",
+  "fit_time_s": 0.8651729999983218,
+  "predict_time_s": 0.06531800000084331,
+  "n_fit": 4143,
+  "n_val": 643,
+  "description": {
+    "equation": null,
+    "n_parameters": 16,
+    "params": {
+      "lam": 10,
+      "val_rmse_by_lam": {
+        "0.01": 28.946768635747322,
+        "0.1": 28.945217520806864,
+        "1": 28.93152972078151,
+        "10": 28.90233893516393,
+        "100": 28.948141331494828,
+        "1000": 29.34874401720793
+      }
+    },
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M",
+      "fuel_Z",
+      "fuel_D",
+      "fuel_E"
+    ]
+  },
+  "finished": "2026-10-03 00:31:56"
+}

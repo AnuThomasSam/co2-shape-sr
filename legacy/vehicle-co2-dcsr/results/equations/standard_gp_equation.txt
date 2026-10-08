@@ -1,0 +1,24 @@
+STANDARD GENETIC PROGRAMMING
+Vehicle CO2 Emission Prediction
+============================================================
+
+Equation:
+mul(mul(sqrt(div(mul(X0, 7.683), sqrt(X0))), add(add(add(mul(-4.630, -6.691), X1), add(X0, X1)), add(log(sub(log(sub(sub(3.442, X0), add(sub(-6.215, -1.281), sub(log(sub(sub(3.442, X0), add(sub(-6.215, -1.281), log(X1)))), add(add(sub(-6.215, -1.281), -0.276), log(sub(mul(1.557, -0.276), sub(3.442, X0)))))))), add(add(sub(-6.215, -1.281), -0.276), log(sub(add(-5.668, X1), sub(3.442, X0)))))), add(-5.668, X1)))), log(sub(sqrt(log(sub(sqrt(log(sub(sqrt(-5.668), add(sqrt(X0), sub(mul(1.557, -0.276), sub(3.442, X0)))))), add(add(sub(-6.215, -1.281), -0.276), log(X1))))), add(sub(-6.215, -1.281), log(X1)))))
+
+Equation length: 108 nodes
+Equation depth: 14
+
+Training metrics — S_old
+R2:   0.5526
+RMSE: 31.9210
+MAE:  24.6585
+
+Temporal test metrics — S_new
+R2:   0.5217
+RMSE: 28.4667
+MAE:  21.6313
+
+5-fold CV
+R2: 0.5351 +/- 0.0576
+RMSE: 32.4250 +/- 2.3895
+MAE: 25.0009 +/- 1.4281

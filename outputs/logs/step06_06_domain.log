@@ -1,0 +1,12 @@
+2026-10-02 23:15:44,754 INFO    step06: started
+2026-10-02 23:15:46,408 INFO    step06: nrcan P1: domain files written
+2026-10-02 23:15:47,020 INFO    step06: nrcan P2: domain files written
+2026-10-02 23:15:47,210 INFO    step06: nrcan P3: domain files written
+2026-10-02 23:15:48,588 INFO    step06: nrcan P4: domain files written
+2026-10-02 23:15:49,350 INFO    step06: kaggle P2: domain files written
+2026-10-02 23:15:49,584 INFO    step06: kaggle P3: domain files written
+2026-10-02 23:15:51,356 INFO    step06: kaggle P4: domain files written
+2026-10-02 23:15:51,361 INFO    step06: finished in 6.6 s
+2026-10-02 23:56:49,536 INFO    step06: up to date, skipped (use --force to re-run)
+2026-10-03 09:41:47,933 INFO    step06: up to date, skipped (use --force to re-run)
+2026-10-03 18:07:09,066 INFO    step06: up to date, skipped (use --force to re-run)

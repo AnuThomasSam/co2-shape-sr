@@ -1,0 +1,13 @@
+\begin{tabular}{lp{9cm}rr}
+\toprule
+Method & Equation g(x) & Nodes & Val. RMSE \\
+\midrule
+Dynamic penalty & $\frac{- engine_{size} + \left(3.2176 - 0.5124 cylinders\right) \sqrt{tt_{AV}^{2} + 1} \sqrt{\left(- 0.5425 cylinders + 2 gears_{missing} + 1.6965\right)^{2} + 1}}{\left(tt_{AV}^{2} + 1\right) \sqrt{\left(- 0.5425 cylinders + 2 gears_{missing} + 1.6965\right)^{2} + 1}}$ & 53 & 27.03 \\
+DCSR-F & $\frac{engine_{size} \sqrt{\frac{tt_{AM}^{2} + 52.1824}{tt_{AM}^{2} + 1}} + \sqrt{cylinders^{2} + 1} \left(cylinders - gears_{missing} + tt_{AV} - 6.3655 \sqrt{tt_{AV}^{2} + 1}\right)}{\sqrt{\frac{tt_{AM}^{2} + 52.1824}{tt_{AM}^{2} + 1}} \sqrt{cylinders^{2} + 1} \sqrt{tt_{AV}^{2} + 1}}$ & 71 & 27.15 \\
+DCSR-IA & $\frac{cylinders}{\sqrt{tt_{AV}^{2} + 1}} + \frac{engine_{size}}{\sqrt{\left(cylinders - 3.8977\right)^{2} + 1}} + \frac{engine_{size}}{\sqrt{4 tt_{AV}^{2} + 1}} - gears_{missing} - \frac{tt_{AM}}{\sqrt{\left(cylinders - 3.8384\right)^{2} + 1}} + 1.5482 - \frac{5.5647}{\sqrt{engine_{size}^{2} + 1}}$ & 57 & 27.14 \\
+DCSR-S & $- \frac{cylinders}{\sqrt{\left(tt_{AV} + 2.2511\right)^{2} + 1}} + \frac{0.105 cylinders}{\sqrt{tt_{AM}^{2} + 1}} - \frac{2 engine_{size}}{\sqrt{0.6739 cylinders^{2} + 1}} + \frac{gears_{missing}}{\sqrt{0.6739 cylinders^{2} + 1}} + \frac{tt_{AM}}{\sqrt{0.6739 cylinders^{2} + 1}}$ & 57 & 27.05 \\
+DCSR-T & $cylinders - gears_{missing} - 0.2789 tt_{M} + \frac{\frac{6.0957 engine_{size}}{tt_{AV}^{2} + 1} + \frac{\frac{5.56 engine_{size}}{\sqrt{tt_{AS}^{2} + 1}} - 8.6462 tt_{AM}}{\sqrt{engine_{size}^{2} + 1}}}{\sqrt{cylinders^{2} + 1}}$ & 49 & 27.01 \\
+DCSR-V & $cylinders + \frac{engine_{size}}{tt_{AV}^{2} + 1} - tt_{AV} + \frac{\frac{engine_{size}}{\sqrt{gears_{missing}^{2} + 1} \sqrt{\left(cylinders - 3.8541\right)^{2} + 1}} - \frac{4.025}{\sqrt{\left(engine_{size} - tt_{AM}\right)^{2} + 1}}}{\sqrt{\left(cylinders - 4.2405\right)^{2} + 1}}$ & 56 & 27.13 \\
+Standard GP & $- cylinders + engine_{size} \left(tt_{AV} - 1.3943\right) + engine_{size} + \frac{cylinders + gears_{missing} + \frac{2 tt_{AM} + tt_{AS} + tt_{M}}{\sqrt{\left(engine_{size} - 1.0152\right)^{2} + 1}}}{\sqrt{\left(engine_{size} - 1.2\right)^{2} + 1}}$ & 39 & 27.26 \\
+\bottomrule
+\end{tabular}

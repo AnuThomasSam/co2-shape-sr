@@ -1,0 +1,20 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P4",
+  "block": "fold5",
+  "method": "pysr",
+  "seed": 0,
+  "run_hash": "598b43de0d59bc81",
+  "spec": {
+    "type": "pysr",
+    "feature_set": "F2",
+    "niterations": 40,
+    "maxsize": 30,
+    "timeout_s": 600,
+    "name": "pysr",
+    "stochastic": true
+  },
+  "started": "2026-10-04 14:23:03",
+  "status": "skipped",
+  "reason": "PySR not available: CalledProcessError: Command '['C:\\\\College\\\\3rd Semester\\\\...Final-Project_Assignment2\\\\Revised_Project_Plan\\\\co2-shape-sr\\\\co2-shape-sr\\\\.venv\\\\julia_env\\\\pyjuliapkg\\\\install\\\\bin\\\\julia.exe', '--project=C:\\\\College\\\\3rd Semester\\\\...Final-Project_Assignment2\\\\Revised_Project_Plan\\\\co2-shape-sr\\\\co2-shape-sr\\\\.venv\\\\julia_env', '--startup-file=no', '-e', 'import Pkg\\nPkg.Registry.update()\\nPkg.add([\\n  Pkg.PackageSpec(name=\"PythonCall\", uuid=\"6099a3de-0909-46bc-b1f4-468b9a2dfc0d\"),\\n  Pkg.PackageSpec(name=\"OpenSSL_jll\", uuid=\"458c3c95-2e84-50aa-8efc-19380b2a3a95\"),\\n  Pkg.PackageSpec(name=\"SymbolicRegression\", uuid=\"8254be44-1295-4e6a-a16d-46603ac705cb\"),\\n  Pkg.PackageSpec(name=\"Serialization\", uuid=\"9e88b42a-f829-5b0c-bbe9-9e923198166b\"),\\n])\\nPkg.resolve()\\nPkg.precompile()']' returned non-zero exit status 1."
+}

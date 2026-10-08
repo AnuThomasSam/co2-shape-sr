@@ -1,0 +1,17 @@
+dataset,protocol,method,val_rmse_median,domain_violation_rate_median,share_runs_domain_valid
+kaggle,P3,dcsr_s,31.914350636519718,0.0,1.0
+kaggle,P3,gp_standard,31.66017621430614,0.0,1.0
+kaggle,P4,dcsr_s,27.75437605092415,0.0,1.0
+kaggle,P4,gp_standard,27.481005214199016,0.0,1.0
+nrcan,P1,dcsr_s,29.31159160291073,0.0,0.9523809523809523
+nrcan,P1,gp_standard,29.245369385157684,0.0,0.9047619047619048
+nrcan,P2,dcsr_s,28.561392921482366,0.0,1.0
+nrcan,P2,dcsr_s_lam0.01,28.543375174850993,0.0,1.0
+nrcan,P2,dcsr_s_lam1,28.62197763440813,0.0,1.0
+nrcan,P2,dcsr_s_lam1e4,28.815438793899872,0.0,1.0
+nrcan,P2,dcsr_s_lam1e9,28.805076871403088,0.0,1.0
+nrcan,P2,gp_standard,28.622086715598215,0.0,1.0
+nrcan,P3,dcsr_s,33.56042150301374,0.0,1.0
+nrcan,P3,gp_standard,33.54383447623687,0.0,1.0
+nrcan,P4,dcsr_s,30.94427524676498,0.0,1.0
+nrcan,P4,gp_standard,30.916117269974496,0.0,0.9333333333333333

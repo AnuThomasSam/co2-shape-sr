@@ -1,0 +1,50 @@
+{
+  "dataset": "kaggle",
+  "protocol": "P4",
+  "block": "fold4",
+  "method": "xgb_mono",
+  "seed": 0,
+  "run_hash": "a2c4bae18ccbb593",
+  "spec": {
+    "type": "xgb",
+    "feature_set": "F2",
+    "monotone": true,
+    "n_trials": 40,
+    "name": "xgb_mono",
+    "stochastic": false
+  },
+  "started": "2026-10-03 00:34:12",
+  "status": "ok",
+  "fit_time_s": 33.89531780000107,
+  "predict_time_s": 0.22577980000642128,
+  "n_fit": 4143,
+  "n_val": 643,
+  "description": {
+    "equation": null,
+    "n_parameters": null,
+    "params": {
+      "n_estimators": 566,
+      "max_depth": 8,
+      "learning_rate": 0.09705221193879118,
+      "subsample": 0.9866445468054107,
+      "colsample_bytree": 0.8138909513836677,
+      "min_child_weight": 3.2989017951643858,
+      "reg_lambda": 0.0626384928088946,
+      "inner_val_rmse": 24.4923494363577
+    },
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M",
+      "fuel_Z",
+      "fuel_D",
+      "fuel_E"
+    ]
+  },
+  "finished": "2026-10-03 00:34:46"
+}

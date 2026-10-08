@@ -1,0 +1,16 @@
+{
+  "step": "01_ingest",
+  "finished": "2026-10-02 19:57:37",
+  "config_hash": "830209bf8497",
+  "inputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\data\\raw\\nrcan\\my2015-2024-fuel-consumption-ratings.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\data\\raw\\kaggle\\CO2 Emissions_Canada.csv"
+  ],
+  "inputs_fingerprint": "9460b3659d876a0e",
+  "outputs": [
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\01_ingest\\nrcan_harmonised.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\01_ingest\\nrcan_ingest_report.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\01_ingest\\kaggle_harmonised.csv",
+    "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs_smoke\\01_ingest\\kaggle_ingest_report.csv"
+  ]
+}

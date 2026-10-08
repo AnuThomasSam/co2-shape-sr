@@ -1,0 +1,8 @@
+Rule,Rows before,Rows removed
+rows after ingest,7385,0
+"missing or non-positive engine size, cylinders or CO2",7385,0
+unrecognised transmission code,7385,0
+"fuel type with < 30 rows or not in ['X', 'Z', 'D', 'E']",7385,1
+exact duplicate within model year,7384,1402
+"outside the declared domain (flagged, kept)",5982,0
+rows after cleaning,5982,0

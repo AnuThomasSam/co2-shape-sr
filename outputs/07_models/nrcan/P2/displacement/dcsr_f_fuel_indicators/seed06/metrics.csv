@@ -1,0 +1,4 @@
+dataset,protocol,block,method,seed,set,n,rmse,mae,r2,n_nonfinite,points_violation_rate,points_min_slope
+nrcan,P2,displacement,dcsr_f_fuel_indicators,6,high_tail,789,44.64170312590202,31.43360389547181,0.3225375864044534,0,0.0,8.126986897066185
+nrcan,P2,displacement,dcsr_f_fuel_indicators,6,low_tail,936,32.30756483181425,24.265439545492228,-0.6482395301403456,0,0.0,11.87787986093236
+nrcan,P2,displacement,dcsr_f_fuel_indicators,6,val,1241,28.730224446882506,22.76429252185438,0.6835030328832086,0,0.0,5.383243384541501

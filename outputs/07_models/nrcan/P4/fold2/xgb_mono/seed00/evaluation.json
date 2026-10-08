@@ -1,0 +1,21 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P4",
+  "block": "fold2",
+  "method": "xgb_mono",
+  "seed": 0,
+  "status": "ok",
+  "fit_time_s": 39.29436300000816,
+  "domain_violation_rate": 0.0,
+  "domain_min_slope": 0.0,
+  "domain_mean_slope": 32.6926943518378,
+  "domain_share_zero_slope": 0.4783033033033033,
+  "uses_engine_size": 1,
+  "domain_mean_slope_D": 33.975881038567955,
+  "domain_mean_slope_E": 31.331253988701,
+  "domain_mean_slope_X": 33.05553209940592,
+  "domain_mean_slope_Z": 32.3838685792068,
+  "n_parameters": null,
+  "equation": null,
+  "eval_hash": "818f2e7aaec7"
+}

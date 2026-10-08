@@ -1,0 +1,4 @@
+2026-10-02 19:58:08,596 INFO    step07: started
+2026-10-02 19:58:08,634 INFO    step07: 489 run(s) planned, n_jobs=4
+2026-10-02 20:22:58,435 INFO    step07: run outcomes: {'ok': 447, 'skipped': 42}
+2026-10-02 20:22:58,437 INFO    step07: finished in 1489.8 s

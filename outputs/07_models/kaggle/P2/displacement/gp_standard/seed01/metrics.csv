@@ -1,0 +1,4 @@
+dataset,protocol,block,method,seed,set,n,rmse,mae,r2,n_nonfinite,points_violation_rate,points_min_slope
+kaggle,P2,displacement,gp_standard,1,high_tail,510,41.62441519736548,31.815427948621824,0.2083154109209049,0,0.0,15.18866879704424
+kaggle,P2,displacement,gp_standard,1,low_tail,372,22.576144983775173,17.870182072313682,-0.04008928652362753,0,0.0,32.1306001980037
+kaggle,P2,displacement,gp_standard,1,val,783,26.959635893611647,20.89056844499076,0.6825958073083508,0,0.0,12.345999977273232

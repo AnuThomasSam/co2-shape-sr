@@ -1,0 +1,13 @@
+\begin{tabular}{lp{9cm}rr}
+\toprule
+Method & Equation g(x) & Nodes & Val. RMSE \\
+\midrule
+Dynamic penalty & $\frac{- engine_{size}^{2} \left(\sqrt{tt_{AM}^{2} + 1} - 1\right) + \left(tt_{AM}^{2} + 1\right) \left(- cylinders + engine_{size} tt_{AV} - 1.3683 engine_{size} + 3 tt_{AM} + tt_{AV} + 1.8403\right)}{tt_{AM}^{2} + 1}$ & 44 & 32.56 \\
+DCSR-F & $cylinders + \frac{engine_{size}^{2} \left(\frac{engine_{size} tt_{AM}}{\sqrt{gears_{missing}^{2} + 1}} + 2.1265\right)}{gears_{f}^{2} + 1} + engine_{size} - 5.3569 tt_{AV} + \frac{3.3041}{\sqrt{\left(- cylinders + engine_{size} tt_{AM} - tt_{AV} + 3.9473 + \frac{3.5564}{\sqrt{tt_{M}^{2} + 1}}\right)^{2} + 1}}$ & 57 & 32.30 \\
+DCSR-IA & $- cylinders - engine_{size} - \frac{3 engine_{size}}{\sqrt{\frac{\left(gears_{f} + 3.4035\right)^{2}}{\left(engine_{size} tt_{AM} - 1.7628\right)^{2} + 1} + 1}} + 4.6716 tt_{AV}$ & 34 & 32.67 \\
+DCSR-S & $- 0.6144 cylinders - engine_{size} - 0.1793 tt_{AM} \left(engine_{size} - 3.0446\right) \left(engine_{size} + 1.3629\right) + tt_{AM} + 3.2096 tt_{AV}$ & 20 & 32.63 \\
+DCSR-T & $\frac{cylinders}{\sqrt{tt_{AV}^{2} + 1} \sqrt{\left(tt_{AV} + 1.2692\right)^{2} + 1}} + engine_{size} tt_{AM} + \frac{engine_{size} tt_{AM}}{\sqrt{\left(engine_{size} - 7.3518\right)^{2} + 1}} + \frac{1.753 engine_{size}}{\sqrt{\left(tt_{AV} + 1.2692\right)^{2} + 1}} - 3.9901 tt_{AM} - \frac{3.9901 tt_{AM}}{\sqrt{\left(engine_{size} - 7.3518\right)^{2} + 1}}$ & 61 & 32.65 \\
+DCSR-V & $- cylinders \left(tt_{AV} - 0.7505\right) + engine_{size} tt_{AM} + engine_{size} - 3.3832 tt_{AM} + 3.3832 tt_{AV}$ & 17 & 32.68 \\
+Standard GP & $\frac{cylinders}{\sqrt{tt_{AV}^{2} + 1}} + engine_{size}^{2} tt_{AM} - engine_{size}^{2} tt_{AV} - 6.7275 engine_{size} tt_{AM} + 6.7275 engine_{size} tt_{AV} + 3 engine_{size} + \frac{engine_{size}}{\sqrt{tt_{AM}^{2} + 1} \sqrt{\frac{cylinders^{2} \left(engine_{size} - 4.0294\right)^{2}}{tt_{AV}^{2} + 1} + \frac{tt_{AV}^{2}}{tt_{AV}^{2} + 1} + \frac{1}{tt_{AV}^{2} + 1}}} + 11.2961 tt_{AM} - 17.6213 tt_{AV}$ & 84 & 32.65 \\
+\bottomrule
+\end{tabular}

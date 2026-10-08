@@ -1,0 +1,39 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P4",
+  "block": "fold3",
+  "method": "ols",
+  "seed": 0,
+  "run_hash": "82c1b8a3d4ac45e3",
+  "spec": {
+    "type": "ols",
+    "feature_set": "F2",
+    "name": "ols",
+    "stochastic": false
+  },
+  "started": "2026-10-02 20:18:11",
+  "status": "ok",
+  "fit_time_s": 0.01729449999766075,
+  "predict_time_s": 0.007622400000400376,
+  "n_fit": 6944,
+  "n_val": 1103,
+  "description": {
+    "equation": "124.1 + 19.56*engine_size + 11.67*cylinders + 1.034*gears_f + -4.693*gears_missing + -7.268*tt_AM + -4.816*tt_AS + -35.73*tt_AV + -7.468*tt_M + 6.293*fuel_Z + 3.925*fuel_D + -13.47*fuel_E",
+    "n_parameters": 12,
+    "params": {},
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M",
+      "fuel_Z",
+      "fuel_D",
+      "fuel_E"
+    ]
+  },
+  "finished": "2026-10-02 20:18:11"
+}

@@ -1,0 +1,4 @@
+2026-10-02 19:57:37,679 INFO    step02: started
+2026-10-02 19:57:38,017 INFO    step02: nrcan: 10059 rows after cleaning
+2026-10-02 19:57:38,218 INFO    step02: kaggle: 5982 rows after cleaning
+2026-10-02 19:57:38,234 INFO    step02: finished in 0.6 s

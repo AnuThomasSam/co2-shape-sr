@@ -1,0 +1,39 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P2",
+  "block": "displacement",
+  "method": "ols",
+  "seed": 0,
+  "run_hash": "2ddd356bc8dc9a2f",
+  "spec": {
+    "type": "ols",
+    "feature_set": "F2",
+    "name": "ols",
+    "stochastic": false
+  },
+  "started": "2026-10-04 06:10:51",
+  "status": "ok",
+  "fit_time_s": 0.017626999993808568,
+  "predict_time_s": 0.009853900002781302,
+  "n_fit": 7093,
+  "n_val": 1241,
+  "description": {
+    "equation": "130.2 + 20.35*engine_size + 10.12*cylinders + 1.558*gears_f + -5.304*gears_missing + -8.175*tt_AM + -6.781*tt_AS + -43.01*tt_AV + -2.922*tt_M + 4.067*fuel_Z + 4.097*fuel_D + -16.65*fuel_E",
+    "n_parameters": 12,
+    "params": {},
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M",
+      "fuel_Z",
+      "fuel_D",
+      "fuel_E"
+    ]
+  },
+  "finished": "2026-10-04 06:10:51"
+}

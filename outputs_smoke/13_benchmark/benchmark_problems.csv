@@ -1,0 +1,4 @@
+problem,constraints,variables,expression
+I.6.20a,"[[0, -1.0]]",theta,exp(-theta**2/2)/sqrt(2*pi)
+I.39.22,"[[0, 1.0], [1, 1.0], [2, -1.0]]",n;T;V,n*T/V
+I.48.20,"[[0, 1.0], [1, 1.0], [2, 1.0]]",m;v;c,m*c**2/sqrt(1 - v**2/c**2)

@@ -1,0 +1,4 @@
+2026-10-02 19:57:47,093 INFO    step04: started
+2026-10-02 19:57:55,940 INFO    step04: nrcan: K=15, 171 distinct points, older=3563 newer=6496
+2026-10-02 19:58:03,902 INFO    step04: kaggle: K=15, 171 distinct points, older=2093 newer=3889
+2026-10-02 19:58:03,902 INFO    step04: finished in 16.8 s

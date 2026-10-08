@@ -1,0 +1,39 @@
+{
+  "dataset": "kaggle",
+  "protocol": "P4",
+  "block": "fold2",
+  "method": "ols",
+  "seed": 0,
+  "run_hash": "4e0d73a7d0e8c35a",
+  "spec": {
+    "type": "ols",
+    "feature_set": "F2",
+    "name": "ols",
+    "stochastic": false
+  },
+  "started": "2026-10-03 00:05:50",
+  "status": "ok",
+  "fit_time_s": 0.03697679999459069,
+  "predict_time_s": 0.008200999996915925,
+  "n_fit": 4060,
+  "n_val": 725,
+  "description": {
+    "equation": "144.2 + 23.8*engine_size + 9.272*cylinders + -2.141*gears_f + -24.16*gears_missing + -9.524*tt_AM + -3.213*tt_AS + -36.21*tt_AV + -10.08*tt_M + 4.503*fuel_Z + 4.308*fuel_D + -11.68*fuel_E",
+    "n_parameters": 12,
+    "params": {},
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M",
+      "fuel_Z",
+      "fuel_D",
+      "fuel_E"
+    ]
+  },
+  "finished": "2026-10-03 00:05:50"
+}

@@ -1,0 +1,14 @@
+2026-10-02 23:15:51,424 INFO    step07: started
+2026-10-02 23:15:51,552 INFO    step07: 6016 run(s) planned, n_jobs=4
+2026-10-02 23:56:49,570 INFO    step07: started
+2026-10-02 23:56:49,653 INFO    step07: 6016 run(s) planned, n_jobs=4
+2026-10-03 09:41:48,008 INFO    step07: started
+2026-10-03 09:41:48,123 INFO    step07: 6016 run(s) planned, n_jobs=4
+2026-10-03 18:07:09,140 INFO    step07: started
+2026-10-03 18:07:09,269 INFO    step07: 6016 run(s) planned, n_jobs=4
+2026-10-04 14:36:50,556 INFO    step07: run outcomes: {'ok': 3501, 'cached': 2155, 'skipped': 360}
+2026-10-04 14:36:50,556 INFO    step07: finished in 73781.4 s
+2026-10-04 22:17:27,664 INFO    step07: started
+2026-10-04 22:17:27,690 INFO    step07: 140 run(s) planned, n_jobs=8
+2026-10-04 22:17:31,608 INFO    step07: run outcomes: {'cached': 140}
+2026-10-04 22:17:31,608 INFO    step07: finished in 3.9 s

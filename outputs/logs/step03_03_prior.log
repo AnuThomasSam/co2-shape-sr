@@ -1,0 +1,7 @@
+2026-10-02 23:15:13,730 INFO    step03: started
+2026-10-02 23:15:19,560 INFO    step03: nrcan: 812 matched pairs, larger engine lower CO2 in 9.6%
+2026-10-02 23:15:21,656 INFO    step03: kaggle: 480 matched pairs, larger engine lower CO2 in 15.0%
+2026-10-02 23:15:21,662 INFO    step03: finished in 7.9 s
+2026-10-02 23:56:47,596 INFO    step03: up to date, skipped (use --force to re-run)
+2026-10-03 09:41:10,905 INFO    step03: up to date, skipped (use --force to re-run)
+2026-10-03 18:06:34,976 INFO    step03: up to date, skipped (use --force to re-run)

@@ -1,0 +1,9 @@
+dataset,rule,rows_removed,rows_before,rows_flagged
+nrcan,rows after ingest,0,10060,
+nrcan,"missing or non-positive engine size, cylinders or CO2",0,10060,
+nrcan,"model year outside [2015, None]",0,10060,
+nrcan,unrecognised transmission code,0,10060,
+nrcan,"fuel type with < 30 rows or not in ['X', 'Z', 'D', 'E']",1,10060,
+nrcan,exact duplicate within model year,0,10059,
+nrcan,"outside the declared domain (flagged, kept)",0,10059,0.0
+nrcan,rows after cleaning,0,10059,

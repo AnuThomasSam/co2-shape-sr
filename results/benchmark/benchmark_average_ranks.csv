@@ -1,0 +1,9 @@
+method,average_rank
+dcsr_s,3.7142857142857144
+gp_standard,3.857142857142857
+dcsr_f,3.9285714285714284
+dcsr_v,4.5
+dcsr_v_no_feedback,4.571428571428571
+dcsr_dyn,4.857142857142857
+dcsr_ia,5.285714285714286
+dcsr_v_no_bisection,5.285714285714286

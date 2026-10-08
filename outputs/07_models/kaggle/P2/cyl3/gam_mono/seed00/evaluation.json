@@ -1,0 +1,21 @@
+{
+  "dataset": "kaggle",
+  "protocol": "P2",
+  "block": "cyl3",
+  "method": "gam_mono",
+  "seed": 0,
+  "status": "ok",
+  "fit_time_s": 0.9380574000024353,
+  "domain_violation_rate": 0.0,
+  "domain_min_slope": 12.769968715579125,
+  "domain_mean_slope": 28.61125604124794,
+  "domain_share_zero_slope": 0.0,
+  "uses_engine_size": 1,
+  "domain_mean_slope_D": 28.611256041247934,
+  "domain_mean_slope_E": 28.61125604124795,
+  "domain_mean_slope_X": 28.61125604124794,
+  "domain_mean_slope_Z": 28.611256041247938,
+  "n_parameters": 16,
+  "equation": null,
+  "eval_hash": "2219d267f9d8"
+}

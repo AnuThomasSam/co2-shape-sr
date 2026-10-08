@@ -1,0 +1,21 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P1",
+  "block": "T2020",
+  "method": "loglinear",
+  "seed": 0,
+  "status": "ok",
+  "fit_time_s": 0.014272700002038619,
+  "domain_violation_rate": 0.0,
+  "domain_min_slope": 13.097643375747328,
+  "domain_mean_slope": 30.911482836027172,
+  "domain_share_zero_slope": 0.0,
+  "uses_engine_size": 1,
+  "domain_mean_slope_D": 32.56001535198212,
+  "domain_mean_slope_E": 30.080235754449127,
+  "domain_mean_slope_X": 30.567213240663722,
+  "domain_mean_slope_Z": 31.435575089008655,
+  "n_parameters": 13,
+  "equation": "1.006 * exp(5.077 + 0.3473*log(engine_size) + 0.02068*cylinders + -0.00631*gears_f + -0.0946*gears_missing + -0.06876*tt_AM + -0.009344*tt_AS + -0.1691*tt_AV + -0.03198*tt_M + 0.03955*fuel_Z + 0.0365*fuel_D + -0.04346*fuel_E)",
+  "eval_hash": "1353bcf0bca2"
+}

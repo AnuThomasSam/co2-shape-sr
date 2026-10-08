@@ -1,0 +1,2 @@
+model_year,rows,engine_size_min,engine_size_mean,engine_size_max,cylinders_min,cylinders_max,gears_mean,cvt_share,co2_min,co2_mean,co2_max,outside_domain
+all,5982,0.9,3.16,8.4,3,16,6.876,0.038,96,250.942,522,0

@@ -1,0 +1,8 @@
+Method,Equation g(x),Nodes,Val. RMSE
+Dynamic penalty,$\frac{- cylinders - 3.1598 engine_{size}}{\sqrt{tt_{AV}^{2} + 1}}$,15,28.11
+DCSR-F,$- cylinders - 2 engine_{size} + 2 tt_{AV} + 1.9178 + \frac{4.7827}{\sqrt{engine_{size}^{2} + 1}}$,20,27.97
+DCSR-IA,$cylinders + \frac{engine_{size}}{\sqrt{tt_{AV}^{2} + 1}} + \frac{engine_{size}}{\sqrt{gears_{missing}^{2} + 1} \sqrt{tt_{AV}^{2} + 1}} - tt_{AM} - tt_{AV} + 2.6225$,34,28.03
+DCSR-S,$\frac{cylinders + 3.6821 engine_{size} - tt_{AV}}{\sqrt{tt_{AV}^{2} + 1}}$,16,28.12
+DCSR-T,$cylinders + \frac{engine_{size}}{\sqrt{gears_{missing}^{2} + 1} \sqrt{tt_{AV}^{2} + 1}} - tt_{AV} - \frac{3.9503}{\sqrt{0.079 engine_{size}^{2} + 1} \sqrt{engine_{size}^{2} + 1}}$,39,27.94
+DCSR-V,$\frac{cylinders + 4.619 engine_{size} - tt_{AV}}{\sqrt{tt_{AV}^{2} + 1}}$,16,28.14
+Standard GP,$\frac{- cylinders - 3.1598 engine_{size}}{\sqrt{tt_{AV}^{2} + 1}}$,15,28.11

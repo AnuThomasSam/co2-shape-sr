@@ -1,0 +1,3 @@
+dataset,protocol,block,method,seed,set,n,rmse,mae,r2,n_nonfinite,points_violation_rate,points_min_slope
+nrcan,P4,fold2,gp_standard,8,all,2012,29.257381237425207,21.62623810681828,0.7609638179254372,0,0.0,12.187662876605504
+nrcan,P4,fold2,gp_standard,8,val,1207,29.83564208001469,23.11846184192022,0.7309311217658039,0,0.0,11.680915454238257

@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Method & Runs & Certified & Refuted & Undecided & IA false rejection & Runs violating & Time (s) & Nodes \\
+\midrule
+Standard GP & 210 & 0.938 & 0.048 & 0.014 & 0.071 & 0.029 & 8.230 & 8.000 \\
+DCSR-S & 210 & 0.938 & 0.038 & 0.024 & 0.067 & 0.000 & 24.849 & 7.000 \\
+DCSR-F & 210 & 0.957 & 0.029 & 0.014 & 0.081 & 0.000 & 26.099 & 7.000 \\
+Dynamic penalty & 210 & 0.943 & 0.033 & 0.024 & 0.071 & 0.005 & 23.614 & 8.000 \\
+DCSR-IA & 210 & 1.000 & 0.000 & 0.000 & 0.000 & 0.000 & 46.339 & 7.000 \\
+DCSR-V & 210 & 1.000 & 0.000 & 0.000 & 0.005 & 0.000 & 84.125 & 7.000 \\
+DCSR-V (no bisection) & 210 & 1.000 & 0.000 & 0.000 & 0.000 & 0.000 & 47.152 & 7.000 \\
+DCSR-V (no feedback) & 210 & 1.000 & 0.000 & 0.000 & 0.005 & 0.000 & 82.453 & 7.000 \\
+\bottomrule
+\end{tabular}

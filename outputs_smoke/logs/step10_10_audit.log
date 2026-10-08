@@ -1,0 +1,3 @@
+2026-10-02 20:24:18,095 INFO    step10: started
+2026-10-02 20:24:18,889 INFO    step10: Kruskal-Wallis H=1381.04 p=6.85e-267 over 37 makes
+2026-10-02 20:24:18,906 INFO    step10: finished in 0.8 s

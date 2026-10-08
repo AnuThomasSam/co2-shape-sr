@@ -1,0 +1,3 @@
+Method,Equation g(x),Nodes,Val. RMSE
+DCSR-S,$\frac{engine_{size} \left(cylinders + 4.4851\right)}{\sqrt{tt_{AV}^{2} + 1} \sqrt{\left(engine_{size} + 3.3971\right)^{2} + 1}}$,21,33.41
+Standard GP,$- cylinders - engine_{size} + 2 tt_{AV}$,10,33.52

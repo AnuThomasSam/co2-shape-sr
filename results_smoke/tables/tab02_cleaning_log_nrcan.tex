@@ -1,0 +1,14 @@
+\begin{tabular}{lrr}
+\toprule
+Rule & Rows before & Rows removed \\
+\midrule
+rows after ingest & 10060 & 0 \\
+missing or non-positive engine size, cylinders or CO2 & 10060 & 0 \\
+model year outside [2015, None] & 10060 & 0 \\
+unrecognised transmission code & 10060 & 0 \\
+fuel type with < 30 rows or not in ['X', 'Z', 'D', 'E'] & 10060 & 1 \\
+exact duplicate within model year & 10059 & 0 \\
+outside the declared domain (flagged, kept) & 10059 & 0 \\
+rows after cleaning & 10059 & 0 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,14 @@
+\begin{tabular}{lrrrrrrr}
+\toprule
+Method & Blocks & RMSE & MAE & R2 & Mean rank & Domain-valid runs & Uses engine size \\
+\midrule
+Standard GP & 1 & 31.914 & 24.949 & 0.323 & 1.000 & 1.000 & 1.000 \\
+DCSR-S & 1 & 32.053 & 25.251 & 0.318 & 2.000 & 1.000 & 1.000 \\
+OLS & 1 & 32.307 & 25.457 & 0.307 & 3.000 & 1.000 & 1.000 \\
+DCSR-F & 1 & 32.452 & 25.156 & 0.300 & 4.000 & 1.000 & 1.000 \\
+DCSR-T & 1 & 33.739 & 26.551 & 0.243 & 5.000 & 0.900 & 1.000 \\
+Monotone GAM & 1 & 36.784 & 28.888 & 0.101 & 6.000 & 1.000 & 1.000 \\
+XGBoost & 1 & 50.739 & 39.784 & -0.710 & 7.000 & 0.000 & 1.000 \\
+Monotone XGBoost & 1 & 51.743 & 41.048 & -0.778 & 8.000 & 1.000 & 1.000 \\
+\bottomrule
+\end{tabular}

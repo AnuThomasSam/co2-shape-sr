@@ -1,0 +1,1 @@
+(log(exp(exp(cylinders))) * log(((engine_size * cylinders) * ((cylinders + (engine_size + -7.5157)) + (engine_size - -5.8584)))))

@@ -1,0 +1,335 @@
+# ---------------------------------------------------------------------------
+# Default configuration for the IT9115 project
+# Shape-constrained symbolic regression for vehicle CO2 prediction
+#
+# Every step reads this file. A step re-runs only when the part of the
+# configuration it depends on, or one of its input files, has changed.
+# ---------------------------------------------------------------------------
+
+project:
+  name: co2-shape-sr
+  outputs_dir: outputs          # intermediate files of every step
+  results_dir: results          # final figures and tables (generated from outputs)
+  random_seed: 42
+  n_jobs: 4                     # parallel processes for step 07 training
+
+# ---------------------------------------------------------------------------
+# Datasets
+#   nrcan  : NRCan Fuel Consumption Ratings, one or more CSV files placed in
+#            data/raw/nrcan/ (official per-year or multi-year files).
+#   kaggle : the Kaggle compilation "CO2 Emissions_Canada.csv" (no model year)
+# ---------------------------------------------------------------------------
+datasets:
+  nrcan:
+    enabled: true
+    raw_glob: data/raw/nrcan/*.csv
+    has_model_year: true
+    year_min: 2015               # 5-cycle testing from model year 2015
+    year_max: null               # null = latest year present
+  kaggle:
+    enabled: true
+    raw_glob: data/raw/kaggle/*.csv
+    has_model_year: false
+
+cleaning:
+  min_rows_per_fuel: 30          # fuel types with fewer rows are removed (e.g. N)
+  allowed_fuels: [X, Z, D, E]    # X regular, Z premium, D diesel, E E85
+  transmission_types: [A, AM, AS, AV, M]
+  cvt_codes_without_gears: [AV, AV1]   # AV and AV1 have no fixed gear count
+  drop_outside_domain: false     # keep rows outside the declared domain, but flag them
+
+# Declared physical input domain D (a priori, never derived from test data)
+domain:
+  engine_size_min: 0.6
+  engine_size_max: 8.5
+  cylinders: [3, 4, 5, 6, 8, 10, 12, 16]
+  litres_per_cylinder_min: 0.2
+  litres_per_cylinder_max: 0.9
+  sample_size: 2000              # Q_D used by DCSR-S and DCSR-F during training
+  grid_points_per_context: 15    # evaluation grid along engine size
+  max_grid_contexts: 4000        # cap on contexts in the evaluation grid
+  interval_segments_train: 4     # engine-size segments per context for DCSR-IA
+  interval_segments_eval: 16     # finer partition for certification in step 08
+  max_interval_contexts_train: 600
+  verify_root_segments: 1        # DCSR-V root boxes: every training context, whole engine-size range
+  verify_eval_max_boxes: 200000  # budget of the branch-and-bound verdict in step 08 (all GP methods)
+  verify_eval_max_depth: 16
+  sample_seed: 101
+  grid_seed: 202
+
+# ---------------------------------------------------------------------------
+# Feature sets. Engine size is always the first SR variable.
+# Encodings differ by method; the information does not.
+# ---------------------------------------------------------------------------
+features:
+  sets:
+    F1: [engine_size, cylinders]
+    F2: [engine_size, cylinders, transmission, fuel]
+    F3: [engine_size, cylinders, transmission, fuel, body_group]
+  body_groups: [car, suv, pickup, van, special]   # first = reference level
+  fuel_reference: X
+
+# ---------------------------------------------------------------------------
+# Evaluation protocols (step 05)
+# ---------------------------------------------------------------------------
+protocols:
+  P1:                            # rolling-origin temporal
+    window_years: 3              # fit years + 1 validation year
+    min_fit_rows: 500
+  P2:                            # displacement extrapolation
+    lower_quantile: 0.10
+    upper_quantile: 0.90
+    unseen_cylinders: 3          # second block: train without, test on 3-cylinder engines
+    validation_fraction: 0.15
+  P3:                            # K-Means technology proxy split
+    validation_fraction: 0.15
+  P4:                            # grouped in-distribution cross-validation
+    n_folds: 5
+    validation_fraction: 0.15
+
+proxy:
+  features: [engine_size, cylinders, gears]
+  cvt_gears: median              # replicate the original procedure
+  k_min: 2
+  k_max: 15
+  n_init: 20
+  split_rule: clusters           # clusters (original: half the clusters) or rows
+  adversarial_folds: 5
+
+prior:
+  match_keys_with_year: [model_year, make, model, body_group, transmission_type, gears, fuel_type]
+  match_keys_without_year: [make, model, body_group, transmission_type, gears, fuel_type]
+
+# ---------------------------------------------------------------------------
+# GP engine defaults (shared by Standard GP and every DCSR variant)
+# ---------------------------------------------------------------------------
+gp_defaults:
+  population_size: 500
+  generations: 80
+  tournament_size: 7
+  init_depth: [2, 4]
+  max_depth: 8
+  max_size: 40
+  const_range: [-5.0, 5.0]
+  p_var_terminal: 0.6
+  p_crossover: 0.70
+  p_subtree_mutation: 0.15
+  p_point_mutation: 0.10
+  p_constant_mutation: 0.05
+  hall_of_fame: 50
+  function_set: basic            # basic = {add, sub, mul, aq}; extended adds {exp, log, sqrt}
+  linear_scaling: true
+  fuel_mode: scaling             # scaling | indicators | none
+  min_group_rows: 10             # fuel groups smaller than this use pooled scaling
+  constraint: none               # none | train | sample | feasibility | interval | verified
+  constraints: [[0, 1]]          # (variable index, sign): sign * df/dx_j >= 0; column 0 = engine size
+  lam_schedule: constant         # constant | geometric (dynamic penalty from lam_start to lam)
+  lam_start: 0.001
+  # DCSR-V (constraint: verified)
+  verify_max_boxes: 4000         # interval evaluations per candidate
+  verify_max_depth: 10           # bisections per root box
+  verify_probe: true             # probe midpoint and corners of open boxes for counterexamples
+  undecided_policy: between      # between | infeasible | feasible
+  counterexample_feedback: true  # add refuting points to an archive that screens later candidates
+  counterexample_archive: 1000
+  prefilter_training: true       # screen candidates on training points before branch-and-bound
+  require_engine_size: true      # equations without engine size rank below all others (no trivial monotonicity)
+  sign_consistent_scaling: true  # fuel groups rescale g(x) in the same direction as the pooled fit
+  parsimony: 0.0002              # NMSE added per node during evolution (bloat control)
+  selection_tolerance: 0.01      # final model: smallest equation within 1% of the best validation NMSE
+  lam: 0.0
+  feasibility_tol: 1.0e-9
+
+# ---------------------------------------------------------------------------
+# Methods. "type" selects the implementation; other keys override defaults.
+# stochastic methods are run for every seed, deterministic ones once.
+# ---------------------------------------------------------------------------
+methods:
+  ols:        {type: ols, feature_set: F2}
+  loglinear:  {type: loglinear, feature_set: F2}
+  gam_mono:   {type: gam, feature_set: F2, n_splines: 12, lam_grid: [0.01, 0.1, 1, 10, 100, 1000]}
+  xgb:        {type: xgb, feature_set: F2, monotone: false, n_trials: 40}
+  xgb_mono:   {type: xgb, feature_set: F2, monotone: true, n_trials: 40}
+  pysr:       {type: pysr, feature_set: F2, niterations: 40, maxsize: 30, timeout_s: 600}
+  gp_standard: {type: gp, feature_set: F2, constraint: none}
+  dcsr_t:     {type: gp, feature_set: F2, constraint: train, lam: 1.0e+9}
+  dcsr_s:     {type: gp, feature_set: F2, constraint: sample, lam: 100.0}
+  dcsr_f:     {type: gp, feature_set: F2, constraint: feasibility}
+  dcsr_ia:    {type: gp, feature_set: F2, constraint: interval}
+  dcsr_v:     {type: gp, feature_set: F2, constraint: verified}
+  dcsr_dyn:   {type: gp, feature_set: F2, constraint: sample, lam: 1.0e+4, lam_schedule: geometric, lam_start: 0.01}
+  # --- ablations ---
+  dcsr_s_lam0.01: {type: gp, feature_set: F2, constraint: sample, lam: 0.01}
+  dcsr_s_lam1:    {type: gp, feature_set: F2, constraint: sample, lam: 1.0}
+  dcsr_s_lam1e4:  {type: gp, feature_set: F2, constraint: sample, lam: 1.0e+4}
+  dcsr_s_lam1e9:  {type: gp, feature_set: F2, constraint: sample, lam: 1.0e+9}
+  gp_fuel_indicators:   {type: gp, feature_set: F2, constraint: none, fuel_mode: indicators}
+  dcsr_f_fuel_indicators: {type: gp, feature_set: F2, constraint: feasibility, fuel_mode: indicators}
+  gp_no_fuel:     {type: gp, feature_set: F2, constraint: none, fuel_mode: none}
+  gp_F1:          {type: gp, feature_set: F1, constraint: none}
+  dcsr_f_F1:      {type: gp, feature_set: F1, constraint: feasibility}
+  gp_F3:          {type: gp, feature_set: F3, constraint: none}
+  dcsr_f_F3:      {type: gp, feature_set: F3, constraint: feasibility}
+  gp_extended_ops:   {type: gp, feature_set: F2, constraint: none, function_set: extended}
+  dcsr_f_extended_ops: {type: gp, feature_set: F2, constraint: feasibility, function_set: extended}
+  gp_no_scaling:  {type: gp, feature_set: F2, constraint: none, linear_scaling: false, fuel_mode: indicators}
+  gp_no_parsimony: {type: gp, feature_set: F2, constraint: none, parsimony: 0.0, selection_tolerance: 0.0}
+  dcsr_f_engine_optional: {type: gp, feature_set: F2, constraint: feasibility, require_engine_size: false}
+  dcsr_f_free_sign_scaling: {type: gp, feature_set: F2, constraint: feasibility, sign_consistent_scaling: false}
+  ols_F1:         {type: ols, feature_set: F1}
+  # --- DCSR-V ablations (A10-A13) ---
+  dcsr_v_no_bisection:  {type: gp, feature_set: F2, constraint: verified, verify_max_depth: 0}
+  dcsr_v_no_feedback:   {type: gp, feature_set: F2, constraint: verified, counterexample_feedback: false}
+  dcsr_v_undecided_infeasible: {type: gp, feature_set: F2, constraint: verified, undecided_policy: infeasible}
+  dcsr_v_undecided_feasible:   {type: gp, feature_set: F2, constraint: verified, undecided_policy: feasible}
+  dcsr_v_budget_small:  {type: gp, feature_set: F2, constraint: verified, verify_max_boxes: 500}
+
+stochastic_types: [gp, pysr]
+
+# ---------------------------------------------------------------------------
+# Experiments run by step 07. blocks: null = all blocks of the protocol.
+# ---------------------------------------------------------------------------
+experiments:
+  main:
+    dataset: nrcan
+    protocols: [P1, P2, P4]
+    methods: [ols, loglinear, gam_mono, xgb, xgb_mono, pysr, gp_standard, dcsr_t, dcsr_s, dcsr_f, dcsr_ia, dcsr_v, dcsr_dyn]
+    seeds: 30
+    blocks: null
+  proxy:
+    dataset: nrcan
+    protocols: [P3]
+    methods: [ols, loglinear, gam_mono, xgb, xgb_mono, pysr, gp_standard, dcsr_t, dcsr_s, dcsr_f, dcsr_ia, dcsr_v, dcsr_dyn]
+    seeds: 30
+    blocks: null
+  ablations:
+    dataset: nrcan
+    protocols: [P1, P2]
+    methods: [gp_standard, dcsr_s, dcsr_f, dcsr_s_lam0.01, dcsr_s_lam1, dcsr_s_lam1e4, dcsr_s_lam1e9,
+              gp_fuel_indicators, dcsr_f_fuel_indicators, gp_no_fuel, gp_F1, dcsr_f_F1, gp_F3, dcsr_f_F3,
+              gp_extended_ops, dcsr_f_extended_ops, gp_no_scaling, ols_F1,
+              gp_no_parsimony, dcsr_f_engine_optional, dcsr_f_free_sign_scaling,
+              dcsr_ia, dcsr_v, dcsr_v_no_bisection, dcsr_v_no_feedback, dcsr_v_undecided_infeasible,
+              dcsr_v_undecided_feasible, dcsr_v_budget_small]
+    seeds: 10
+    blocks: null
+  legacy_kaggle:
+    dataset: kaggle
+    protocols: [P2, P3, P4]
+    methods: [ols, gam_mono, xgb, xgb_mono, gp_standard, dcsr_t, dcsr_s, dcsr_f]
+    seeds: 10
+    blocks: null
+
+# ---------------------------------------------------------------------------
+# Synthetic shape-constrained benchmark (steps 13-14), independent of the CO2 data.
+# Constraints are derived from the true expressions (co2sr/benchmark/problems.py).
+# ---------------------------------------------------------------------------
+benchmark:
+  enabled: true
+  problems: [I.6.20a, I.12.2, I.15.3x, I.18.4, I.30.5, I.39.22, I.48.20]
+  methods: [gp_standard, dcsr_s, dcsr_f, dcsr_dyn, dcsr_ia, dcsr_v, dcsr_v_no_bisection, dcsr_v_no_feedback]
+  seeds: 30
+  n_train: 200
+  n_test: 2000
+  noise: 0.05                    # Gaussian noise, std = 0.05 * std(f) on the training points
+  train_fraction: 0.7            # training inputs in the lower 70% of every range
+  validation_fraction: 0.2
+  domain_sample_size: 2000       # Q_D for DCSR-S, DCSR-F and the dynamic penalty
+  domain_sample_seed: 303
+  ia_boxes: 256                  # DCSR-IA fixed partition: k^d <= 256 boxes
+  eval_max_boxes: 200000         # branch-and-bound verdict of every final model
+  eval_max_depth: 24
+  gp_overrides:
+    population_size: 300
+    generations: 60
+    function_set: extended
+
+# ---------------------------------------------------------------------------
+# Evaluation, statistics and reporting
+# ---------------------------------------------------------------------------
+evaluation:
+  slope_tol: 1.0e-6              # slope below -tol counts as a violation
+  finite_difference_h: 0.05      # litres, for models without exact derivatives
+  simplify_equations: true
+  response_curve_points: 40
+
+statistics:
+  alpha: 0.05
+  metric: rmse
+  main_methods: [ols, loglinear, gam_mono, xgb, xgb_mono, pysr, gp_standard, dcsr_s, dcsr_v]
+  friedman_groups:
+    temporal: [P1]
+    shift: [P1, P2]
+  comparisons:                   # (a, b): A12 > 0.5 means a has lower error than b
+    - [dcsr_t, gp_standard]
+    - [dcsr_s, gp_standard]
+    - [dcsr_f, gp_standard]
+    - [dcsr_ia, gp_standard]
+    - [dcsr_s, dcsr_t]
+    - [dcsr_f, dcsr_t]
+    - [dcsr_ia, dcsr_t]
+    - [dcsr_s, xgb_mono]
+    - [dcsr_s, gam_mono]
+    - [dcsr_v, gp_standard]
+    - [dcsr_v, dcsr_ia]
+    - [dcsr_v, dcsr_f]
+    - [dcsr_v, dcsr_s]
+    - [dcsr_v, dcsr_dyn]
+    - [dcsr_v, xgb_mono]
+    - [dcsr_v, gam_mono]
+  lambda_ablation: [gp_standard, dcsr_s_lam0.01, dcsr_s_lam1, dcsr_s, dcsr_s_lam1e4, dcsr_s_lam1e9]
+
+audit:
+  dataset: nrcan
+  protocol: P1
+  method: dcsr_s
+  min_rows_per_make: 30
+  bootstrap: 2000
+
+plotting:
+  style: seaborn-v0_8-whitegrid
+  dpi: 300
+  formats: [png, pdf]
+  # Colour follows the method, never its rank. DCSR variants share one hue family
+  # (light to dark) and are also told apart by marker.
+  colors:
+    ols: "#2a78d6"
+    ols_F1: "#2a78d6"
+    loglinear: "#4a3aa7"
+    gam_mono: "#1baf7a"
+    xgb: "#eda100"
+    xgb_mono: "#eb6834"
+    pysr: "#e87ba4"
+    gp_standard: "#008300"
+    dcsr: "#e34948"              # any other DCSR configuration (ablations)
+    dcsr_t: "#f08a89"            # DCSR variants: one red family, ordered light to dark
+    dcsr_s: "#e34948"
+    dcsr_f: "#b83230"
+    dcsr_ia: "#7d1f1e"
+    dcsr_v: "#7b2cbf"            # proposed method: distinct hue
+    dcsr_v_no_bisection: "#c3a6e0"
+    dcsr_v_no_feedback: "#9d6fd0"
+    dcsr_v_undecided_infeasible: "#5a1f91"
+    dcsr_v_undecided_feasible: "#a77fd6"
+    dcsr_v_budget_small: "#8e55c8"
+    dcsr_dyn: "#c9a227"
+  labels:
+    ols: OLS
+    ols_F1: OLS (F1)
+    loglinear: Log-linear
+    gam_mono: Monotone GAM
+    xgb: XGBoost
+    xgb_mono: Monotone XGBoost
+    pysr: PySR
+    gp_standard: Standard GP
+    dcsr_t: DCSR-T
+    dcsr_s: DCSR-S
+    dcsr_f: DCSR-F
+    dcsr_ia: DCSR-IA
+    dcsr_v: DCSR-V
+    dcsr_dyn: Dynamic penalty
+    dcsr_v_no_bisection: DCSR-V (no bisection)
+    dcsr_v_no_feedback: DCSR-V (no feedback)
+    dcsr_v_undecided_infeasible: DCSR-V (undecided infeasible)
+    dcsr_v_undecided_feasible: DCSR-V (undecided feasible)
+    dcsr_v_budget_small: DCSR-V (500 boxes)

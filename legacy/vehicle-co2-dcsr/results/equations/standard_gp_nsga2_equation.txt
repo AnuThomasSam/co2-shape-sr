@@ -1,0 +1,31 @@
+STANDARD GENETIC PROGRAMMING USING NSGA-II
+======================================================================
+
+Feature mapping:
+
+X0 = engine_size
+X1 = cylinders
+
+Selected equation:
+mul(8.076005376713159, mul(8.076005376713159, X0))
+
+Equation length: 5
+Equation depth: 2
+Number of Pareto solutions: 500
+
+Train R2: -0.1434
+Train RMSE: 51.0291
+Train MAE: 42.4367
+
+Temporal Test R2: -2.1383
+Temporal Test RMSE: 72.9166
+Temporal Test MAE: 66.0230
+
+5-Fold CV Mean R2: -0.9381
+5-Fold CV Std R2: 1.1073
+5-Fold CV Mean RMSE: 64.3850
+5-Fold CV Std RMSE: 19.8372
+5-Fold CV Mean MAE: 51.2665
+5-Fold CV Std MAE: 14.8278
+
+Training time: 2440.75 seconds

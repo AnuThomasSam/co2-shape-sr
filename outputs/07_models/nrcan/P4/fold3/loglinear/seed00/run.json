@@ -1,0 +1,41 @@
+{
+  "dataset": "nrcan",
+  "protocol": "P4",
+  "block": "fold3",
+  "method": "loglinear",
+  "seed": 0,
+  "run_hash": "9748837292f1617a",
+  "spec": {
+    "type": "loglinear",
+    "feature_set": "F2",
+    "name": "loglinear",
+    "stochastic": false
+  },
+  "started": "2026-10-04 11:40:54",
+  "status": "ok",
+  "fit_time_s": 0.025563000002875924,
+  "predict_time_s": 0.013253900004201569,
+  "n_fit": 6944,
+  "n_val": 1103,
+  "description": {
+    "equation": "1.007 * exp(4.998 + 0.3073*log(engine_size) + 0.02918*cylinders + 0.006038*gears_f + -0.03037*gears_missing + -0.05098*tt_AM + -0.02485*tt_AS + -0.1739*tt_AV + -0.03025*tt_M + 0.03606*fuel_Z + 0.0132*fuel_D + -0.04658*fuel_E)",
+    "n_parameters": 13,
+    "params": {
+      "beta_log_engine": 0.307322896371242
+    },
+    "columns": [
+      "engine_size",
+      "cylinders",
+      "gears_f",
+      "gears_missing",
+      "tt_AM",
+      "tt_AS",
+      "tt_AV",
+      "tt_M",
+      "fuel_Z",
+      "fuel_D",
+      "fuel_E"
+    ]
+  },
+  "finished": "2026-10-04 11:40:54"
+}

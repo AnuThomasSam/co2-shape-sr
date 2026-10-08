@@ -1,0 +1,3 @@
+dataset,protocol,block,method,seed,set,n,rmse,mae,r2,n_nonfinite,points_violation_rate,points_min_slope
+kaggle,P4,fold3,dcsr_f,0,all,1196,27.28191723606549,20.241269399486566,0.8009637797202653,0,0.0,9.192674224605828
+kaggle,P4,fold3,dcsr_f,0,val,718,27.024719715247862,20.454561046043562,0.789094679227218,0,0.0,9.192674224605828

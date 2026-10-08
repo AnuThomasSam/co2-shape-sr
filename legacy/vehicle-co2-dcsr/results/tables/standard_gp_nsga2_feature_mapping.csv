@@ -1,0 +1,46 @@
+Feature_Index,Feature_Name
+0,engine_size
+1,cylinders
+2,engine_per_cylinder
+3,engine_x_cylinders
+4,engine_size_sq
+5,cylinders_sq
+6,vehicle_class_COMPACT
+7,vehicle_class_FULL-SIZE
+8,vehicle_class_MID-SIZE
+9,vehicle_class_MINICOMPACT
+10,vehicle_class_MINIVAN
+11,vehicle_class_PICKUP TRUCK - SMALL
+12,vehicle_class_PICKUP TRUCK - STANDARD
+13,vehicle_class_SPECIAL PURPOSE VEHICLE
+14,vehicle_class_STATION WAGON - MID-SIZE
+15,vehicle_class_STATION WAGON - SMALL
+16,vehicle_class_SUBCOMPACT
+17,vehicle_class_SUV - SMALL
+18,vehicle_class_SUV - STANDARD
+19,vehicle_class_TWO-SEATER
+20,vehicle_class_VAN - CARGO
+21,vehicle_class_VAN - PASSENGER
+22,transmission_A4
+23,transmission_A5
+24,transmission_A6
+25,transmission_A7
+26,transmission_A8
+27,transmission_A9
+28,transmission_AM6
+29,transmission_AM7
+30,transmission_AM8
+31,transmission_AS5
+32,transmission_AS6
+33,transmission_AS7
+34,transmission_AS8
+35,transmission_AS9
+36,transmission_AV
+37,transmission_AV6
+38,transmission_AV8
+39,transmission_M6
+40,transmission_M7
+41,fuel_type_E
+42,fuel_type_N
+43,fuel_type_X
+44,fuel_type_Z
