@@ -17,55 +17,69 @@
     "E"
   ],
   "tree": {
-    "op": "sub",
+    "op": "add",
     "children": [
       {
         "op": "add",
         "children": [
           {
-            "op": "add",
-            "children": [
-              {
-                "op": "var",
-                "value": 1
-              },
-              {
-                "op": "var",
-                "value": 1
-              }
-            ]
-          },
-          {
             "op": "aq",
             "children": [
               {
-                "op": "mul",
+                "op": "sub",
                 "children": [
                   {
                     "op": "sub",
                     "children": [
                       {
-                        "op": "var",
-                        "value": 6
+                        "op": "mul",
+                        "children": [
+                          {
+                            "op": "sub",
+                            "children": [
+                              {
+                                "op": "var",
+                                "value": 6
+                              },
+                              {
+                                "op": "var",
+                                "value": 0
+                              }
+                            ]
+                          },
+                          {
+                            "op": "mul",
+                            "children": [
+                              {
+                                "op": "const",
+                                "value": 2.945650475404727
+                              },
+                              {
+                                "op": "const",
+                                "value": -4.608100531078834
+                              }
+                            ]
+                          }
+                        ]
                       },
                       {
-                        "op": "var",
-                        "value": 0
+                        "op": "mul",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 4
+                          },
+                          {
+                            "op": "const",
+                            "value": 6.278517499821971
+                          }
+                        ]
                       }
                     ]
                   },
                   {
-                    "op": "mul",
-                    "children": [
-                      {
-                        "op": "const",
-                        "value": 4.072506992709453
-                      },
-                      {
-                        "op": "const",
-                        "value": -3.318971260601517
-                      }
-                    ]
+                    "op": "var",
+                    "value": 7
                   }
                 ]
               },
@@ -74,30 +88,34 @@
                 "value": 1
               }
             ]
+          },
+          {
+            "op": "var",
+            "value": 1
           }
         ]
       },
       {
         "op": "var",
-        "value": 4
+        "value": 1
       }
     ]
   },
   "scaling": {
     "a": [
-      44.12976606983679,
-      73.60971379865717,
-      -23.87774966109589,
-      67.02608955472934
+      46.28145381705235,
+      76.16228378789563,
+      -22.277790604942425,
+      67.70329342075428
     ],
     "b": [
-      11.385506725957779,
-      9.945450820986983,
-      15.668812893285741,
-      9.582407691211262
+      11.27868681853855,
+      9.822247229891493,
+      15.554932433746277,
+      9.538196128647296
     ],
-    "a0": 57.77703842662493,
-    "b0": 10.632423086801436
+    "a0": 60.04859793600619,
+    "b0": 10.51937820907605
   },
   "n_groups": 4,
   "spec": {
@@ -133,7 +151,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -153,8 +171,8 @@
   },
   "seed": 2,
   "info": {
-    "train_nmse": 0.22364294446080796,
-    "val_nmse": 0.2153608792043981,
+    "train_nmse": 0.22127712478596417,
+    "val_nmse": 0.21272640805372703,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -163,15 +181,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 70.12389650000114,
-    "n_fitness_evaluations": 34411,
-    "verify_prefilter_refuted": 4264,
-    "verify_bb_certified": 29972,
-    "verify_bb_refuted": 10,
-    "verify_bb_undecided": 166,
-    "verify_bb_boxes": 20741824,
-    "verify_bb_calls": 30148,
-    "verify_cx_added": 47
+    "train_time_s": 62.10787409998011,
+    "n_fitness_evaluations": 32330,
+    "verify_prefilter_refuted": 3036,
+    "verify_bb_certified": 29136,
+    "verify_bb_refuted": 8,
+    "verify_bb_undecided": 151,
+    "verify_bb_boxes": 20228940,
+    "verify_bb_calls": 29295,
+    "verify_cx_added": 39
   },
-  "equation": "(((cylinders + cylinders) + aq(((tt_AV - engine_size) * (4.07251 * -3.31897)), cylinders)) - tt_AM)"
+  "equation": "((aq(((((tt_AV - engine_size) * (2.94565 * -4.6081)) - (tt_AM * 6.27852)) - tt_M), cylinders) + cylinders) + cylinders)"
 }

@@ -39,8 +39,8 @@
   "verify_bb_boxes": 15399770,
   "verify_bb_calls": 32653,
   "verify_cx_added": 54,
-  "equation_simplified": "(-1.1671*tt_AV + sqrt(tt_M**2 + 1)*(tt_AM - tt_AV + 2.2724))*(cylinders*engine_size + 3*engine_size - 9.281*tt_AM)/sqrt(tt_M**2 + 1)",
-  "n_nodes_simplified": 36,
-  "n_ops_simplified": 20,
-  "eval_hash": "2d923680f001"
+  "equation_simplified": "(cylinders*engine_size + 3*engine_size - 9.281*tt_AM)*(tt_AM - tt_AV - 1.1671*aq(tt_AV, tt_M) + 2.2724)",
+  "n_nodes_simplified": 24,
+  "n_ops_simplified": 11,
+  "eval_hash": "da0c9d4a9b2c"
 }

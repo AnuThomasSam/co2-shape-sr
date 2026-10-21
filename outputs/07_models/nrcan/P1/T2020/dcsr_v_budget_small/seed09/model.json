@@ -17,78 +17,132 @@
     "E"
   ],
   "tree": {
-    "op": "aq",
+    "op": "sub",
     "children": [
       {
-        "op": "add",
+        "op": "aq",
         "children": [
           {
-            "op": "add",
+            "op": "aq",
             "children": [
-              {
-                "op": "var",
-                "value": 1
-              },
               {
                 "op": "aq",
                 "children": [
                   {
-                    "op": "mul",
+                    "op": "add",
                     "children": [
                       {
                         "op": "var",
                         "value": 0
                       },
                       {
-                        "op": "const",
-                        "value": 6.797354008475368
+                        "op": "add",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 0
+                          },
+                          {
+                            "op": "var",
+                            "value": 1
+                          }
+                        ]
                       }
                     ]
                   },
                   {
-                    "op": "add",
-                    "children": [
-                      {
-                        "op": "var",
-                        "value": 1
-                      },
-                      {
-                        "op": "var",
-                        "value": 4
-                      }
-                    ]
+                    "op": "var",
+                    "value": 6
+                  }
+                ]
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "const",
+                    "value": 1.0021045436385716
+                  },
+                  {
+                    "op": "var",
+                    "value": 4
                   }
                 ]
               }
             ]
           },
           {
-            "op": "const",
-            "value": -2.8035949186423994
+            "op": "mul",
+            "children": [
+              {
+                "op": "const",
+                "value": 1.6087863773486908
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "aq",
+                    "children": [
+                      {
+                        "op": "add",
+                        "children": [
+                          {
+                            "op": "const",
+                            "value": 1.8540980734654826
+                          },
+                          {
+                            "op": "var",
+                            "value": 4
+                          }
+                        ]
+                      },
+                      {
+                        "op": "var",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  {
+                    "op": "var",
+                    "value": 0
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
-        "op": "var",
-        "value": 6
+        "op": "add",
+        "children": [
+          {
+            "op": "var",
+            "value": 4
+          },
+          {
+            "op": "var",
+            "value": 6
+          }
+        ]
       }
     ]
   },
   "scaling": {
     "a": [
-      104.99736024318892,
-      129.8689685607877,
-      49.524745589787955,
-      124.16767936787045
+      140.97525141163425,
+      157.79308769712708,
+      104.50730657423361,
+      154.65386354415097
     ],
     "b": [
-      23.103659065946374,
-      20.026211789293317,
-      35.40875179718987,
-      18.80667629046081
+      14.339799341162607,
+      12.637577098090471,
+      21.955558035656743,
+      11.576203491927124
     ],
-    "a0": 116.27201522401694,
-    "b0": 21.519420679887524
+    "a0": 148.52468171014138,
+    "b0": 13.429828548396246
   },
   "n_groups": 4,
   "spec": {
@@ -124,7 +178,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -144,8 +198,8 @@
   },
   "seed": 9,
   "info": {
-    "train_nmse": 0.21565801080159722,
-    "val_nmse": 0.22208089786561763,
+    "train_nmse": 0.2145338084989673,
+    "val_nmse": 0.21625927334450512,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -154,15 +208,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 151.1391756999983,
-    "n_fitness_evaluations": 34218,
-    "verify_prefilter_refuted": 1169,
-    "verify_bb_certified": 31570,
-    "verify_bb_refuted": 12,
-    "verify_bb_undecided": 1468,
-    "verify_bb_boxes": 23796000,
-    "verify_bb_calls": 33050,
-    "verify_cx_added": 59
+    "train_time_s": 160.58518469997216,
+    "n_fitness_evaluations": 34136,
+    "verify_prefilter_refuted": 4002,
+    "verify_bb_certified": 27457,
+    "verify_bb_refuted": 15,
+    "verify_bb_undecided": 2663,
+    "verify_bb_boxes": 22726956,
+    "verify_bb_calls": 30135,
+    "verify_cx_added": 74
   },
-  "equation": "aq(((cylinders + aq((engine_size * 6.79735), (cylinders + tt_AM))) + -2.80359), tt_AV)"
+  "equation": "(aq(aq(aq((engine_size + (engine_size + cylinders)), tt_AV), aq(1.0021, tt_AM)), (1.60879 * aq(aq((1.8541 + tt_AM), engine_size), engine_size))) - (tt_AM + tt_AV))"
 }

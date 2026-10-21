@@ -17,132 +17,96 @@
     "E"
   ],
   "tree": {
-    "op": "aq",
+    "op": "add",
     "children": [
       {
-        "op": "add",
+        "op": "mul",
         "children": [
           {
-            "op": "add",
+            "op": "sub",
             "children": [
               {
-                "op": "add",
+                "op": "sub",
                 "children": [
                   {
                     "op": "sub",
                     "children": [
                       {
-                        "op": "sub",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 6
-                          },
-                          {
-                            "op": "var",
-                            "value": 0
-                          }
-                        ]
+                        "op": "var",
+                        "value": 6
                       },
                       {
-                        "op": "aq",
-                        "children": [
-                          {
-                            "op": "const",
-                            "value": -4.486248875892724
-                          },
-                          {
-                            "op": "var",
-                            "value": 0
-                          }
-                        ]
+                        "op": "var",
+                        "value": 0
                       }
                     ]
                   },
                   {
-                    "op": "add",
+                    "op": "aq",
                     "children": [
                       {
-                        "op": "mul",
-                        "children": [
-                          {
-                            "op": "aq",
-                            "children": [
-                              {
-                                "op": "var",
-                                "value": 4
-                              },
-                              {
-                                "op": "var",
-                                "value": 7
-                              }
-                            ]
-                          },
-                          {
-                            "op": "sub",
-                            "children": [
-                              {
-                                "op": "const",
-                                "value": 2.8832902929721076
-                              },
-                              {
-                                "op": "var",
-                                "value": 0
-                              }
-                            ]
-                          }
-                        ]
+                        "op": "const",
+                        "value": -5.564699520343596
                       },
                       {
-                        "op": "mul",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 1
-                          },
-                          {
-                            "op": "const",
-                            "value": -0.503772005787575
-                          }
-                        ]
+                        "op": "var",
+                        "value": 0
                       }
                     ]
                   }
                 ]
               },
               {
-                "op": "var",
-                "value": 3
+                "op": "sub",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 1
+                  },
+                  {
+                    "op": "var",
+                    "value": 3
+                  }
+                ]
               }
             ]
           },
           {
-            "op": "const",
-            "value": -1.8403504171103222
+            "op": "aq",
+            "children": [
+              {
+                "op": "const",
+                "value": 2.6413248476748956
+              },
+              {
+                "op": "var",
+                "value": 6
+              }
+            ]
           }
         ]
       },
       {
         "op": "var",
-        "value": 6
+        "value": 1
       }
     ]
   },
   "scaling": {
     "a": [
-      144.04133598068822,
-      159.66808987255092,
-      166.31101346958417,
-      160.90385069823571
+      176.9906123768216,
+      186.4021692168156,
+      202.73316756512907,
+      190.12506762068142
     ],
     "b": [
-      -17.644877132160026,
-      -16.187529616025376,
-      -16.36517634765129,
-      -14.449579082697207
+      -6.147571402924206,
+      -6.001756052257421,
+      -5.247321734790865,
+      -4.9167906761144184
     ],
-    "a0": 150.8175521824174,
-    "b0": -16.992714702569153
+    "a0": 180.87925019280453,
+    "b0": -6.13027013146213
   },
   "n_groups": 4,
   "spec": {
@@ -178,7 +142,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -198,8 +162,8 @@
   },
   "seed": 5,
   "info": {
-    "train_nmse": 0.20844291173814128,
-    "val_nmse": 0.2598164659225312,
+    "train_nmse": 0.22508529632861027,
+    "val_nmse": 0.2913719836016165,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -208,15 +172,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 79.5235859999957,
-    "n_fitness_evaluations": 34084,
-    "verify_prefilter_refuted": 3023,
-    "verify_bb_certified": 30069,
-    "verify_bb_refuted": 10,
-    "verify_bb_undecided": 983,
-    "verify_bb_boxes": 22364640,
-    "verify_bb_calls": 31062,
-    "verify_cx_added": 48
+    "train_time_s": 129.48996380000608,
+    "n_fitness_evaluations": 35557,
+    "verify_prefilter_refuted": 4281,
+    "verify_bb_certified": 30311,
+    "verify_bb_refuted": 13,
+    "verify_bb_undecided": 953,
+    "verify_bb_boxes": 22894136,
+    "verify_bb_calls": 31277,
+    "verify_cx_added": 63
   },
-  "equation": "aq((((((tt_AV - engine_size) - aq(-4.48625, engine_size)) + ((aq(tt_AM, tt_M) * (2.88329 - engine_size)) + (cylinders * -0.503772))) + gears_missing) + -1.84035), tt_AV)"
+  "equation": "(((((tt_AV - engine_size) - aq(-5.5647, engine_size)) - (cylinders - gears_missing)) * aq(2.64132, tt_AV)) + cylinders)"
 }

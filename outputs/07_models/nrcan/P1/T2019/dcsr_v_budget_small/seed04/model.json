@@ -20,6 +20,55 @@
     "op": "sub",
     "children": [
       {
+        "op": "add",
+        "children": [
+          {
+            "op": "sub",
+            "children": [
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 1
+                  },
+                  {
+                    "op": "var",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 1
+                  },
+                  {
+                    "op": "var",
+                    "value": 6
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "aq",
+            "children": [
+              {
+                "op": "var",
+                "value": 1
+              },
+              {
+                "op": "var",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
         "op": "aq",
         "children": [
           {
@@ -29,45 +78,18 @@
                 "op": "sub",
                 "children": [
                   {
-                    "op": "mul",
-                    "children": [
-                      {
-                        "op": "const",
-                        "value": -5.712435009589029
-                      },
-                      {
-                        "op": "var",
-                        "value": 0
-                      }
-                    ]
+                    "op": "var",
+                    "value": 0
                   },
                   {
-                    "op": "mul",
-                    "children": [
-                      {
-                        "op": "sub",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 1
-                          },
-                          {
-                            "op": "var",
-                            "value": 2
-                          }
-                        ]
-                      },
-                      {
-                        "op": "var",
-                        "value": 4
-                      }
-                    ]
+                    "op": "var",
+                    "value": 4
                   }
                 ]
               },
               {
                 "op": "var",
-                "value": 0
+                "value": 4
               }
             ]
           },
@@ -76,37 +98,24 @@
             "value": 1
           }
         ]
-      },
-      {
-        "op": "aq",
-        "children": [
-          {
-            "op": "var",
-            "value": 1
-          },
-          {
-            "op": "var",
-            "value": 6
-          }
-        ]
       }
     ]
   },
   "scaling": {
     "a": [
-      36.79318773741326,
-      74.68987957883934,
-      -23.18017857438832,
-      67.36286007950551
+      187.76782516191037,
+      199.49378178696594,
+      176.68431004353556,
+      189.31785988982048
     ],
     "b": [
-      -23.5896079649931,
-      -19.736931303924127,
-      -31.342891206258063,
-      -19.1837239048549
+      -24.89937098046039,
+      -21.431144039326625,
+      -33.88607766364268,
+      -20.440406923887934
     ],
-    "a0": 55.68909745659059,
-    "b0": -21.454731976361582
+    "a0": 192.2698104266089,
+    "b0": -23.004894350666156
   },
   "n_groups": 4,
   "spec": {
@@ -142,7 +151,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -162,8 +171,8 @@
   },
   "seed": 4,
   "info": {
-    "train_nmse": 0.2184269561702523,
-    "val_nmse": 0.21016246302582983,
+    "train_nmse": 0.2214359524926237,
+    "val_nmse": 0.21176235547371622,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -172,15 +181,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 82.13476740000624,
-    "n_fitness_evaluations": 34282,
-    "verify_prefilter_refuted": 2277,
-    "verify_bb_certified": 31569,
-    "verify_bb_refuted": 12,
-    "verify_bb_undecided": 425,
-    "verify_bb_boxes": 22020128,
-    "verify_bb_calls": 32006,
-    "verify_cx_added": 55
+    "train_time_s": 142.42866070003947,
+    "n_fitness_evaluations": 35363,
+    "verify_prefilter_refuted": 3864,
+    "verify_bb_certified": 27725,
+    "verify_bb_refuted": 31,
+    "verify_bb_undecided": 3744,
+    "verify_bb_boxes": 22920018,
+    "verify_bb_calls": 31500,
+    "verify_cx_added": 129
   },
-  "equation": "(aq((((-5.71244 * engine_size) - ((cylinders - gears_f) * tt_AM)) - engine_size), cylinders) - aq(cylinders, tt_AV))"
+  "equation": "(((aq(cylinders, engine_size) - aq(cylinders, tt_AV)) + aq(cylinders, engine_size)) - aq(((engine_size - tt_AM) - tt_AM), cylinders))"
 }

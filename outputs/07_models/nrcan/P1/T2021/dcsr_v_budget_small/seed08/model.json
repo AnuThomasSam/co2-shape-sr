@@ -17,18 +17,40 @@
     "E"
   ],
   "tree": {
-    "op": "sub",
+    "op": "mul",
     "children": [
       {
-        "op": "var",
-        "value": 1
+        "op": "sub",
+        "children": [
+          {
+            "op": "var",
+            "value": 4
+          },
+          {
+            "op": "const",
+            "value": -4.0679006426819315
+          }
+        ]
       },
       {
         "op": "add",
         "children": [
           {
-            "op": "add",
+            "op": "aq",
             "children": [
+              {
+                "op": "sub",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 4
+                  },
+                  {
+                    "op": "const",
+                    "value": -6.895646417907841
+                  }
+                ]
+              },
               {
                 "op": "aq",
                 "children": [
@@ -38,69 +60,65 @@
                   },
                   {
                     "op": "var",
-                    "value": 4
+                    "value": 3
                   }
                 ]
-              },
-              {
-                "op": "var",
-                "value": 0
               }
             ]
           },
           {
-            "op": "add",
+            "op": "sub",
             "children": [
               {
-                "op": "var",
-                "value": 6
-              },
-              {
-                "op": "add",
+                "op": "aq",
                 "children": [
                   {
-                    "op": "mul",
+                    "op": "aq",
                     "children": [
                       {
-                        "op": "add",
+                        "op": "sub",
                         "children": [
                           {
-                            "op": "aq",
-                            "children": [
-                              {
-                                "op": "const",
-                                "value": -2.7118416141701887
-                              },
-                              {
-                                "op": "var",
-                                "value": 0
-                              }
-                            ]
+                            "op": "var",
+                            "value": 1
                           },
                           {
-                            "op": "sub",
-                            "children": [
-                              {
-                                "op": "var",
-                                "value": 0
-                              },
-                              {
-                                "op": "var",
-                                "value": 6
-                              }
-                            ]
+                            "op": "const",
+                            "value": 2.5075021607030994
                           }
                         ]
                       },
                       {
-                        "op": "const",
-                        "value": -3.620919179303873
+                        "op": "aq",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 0
+                          },
+                          {
+                            "op": "var",
+                            "value": 2
+                          }
+                        ]
                       }
                     ]
                   },
                   {
+                    "op": "const",
+                    "value": 0.5846779989992612
+                  }
+                ]
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
                     "op": "var",
-                    "value": 4
+                    "value": 1
+                  },
+                  {
+                    "op": "var",
+                    "value": 6
                   }
                 ]
               }
@@ -112,19 +130,19 @@
   },
   "scaling": {
     "a": [
-      185.37131374379882,
-      191.92205883877108,
-      180.2271350831047,
-      193.46647212801696
+      225.26392799753538,
+      232.23952050187634,
+      230.62500237119383,
+      223.73791683567728
     ],
     "b": [
-      9.300723330116991,
-      9.14523754395983,
-      12.285961601506603,
-      7.627903168073831
+      -7.836593881150483,
+      -7.91395408442855,
+      -11.28352422187396,
+      -6.714970950705004
     ],
-    "a0": 187.99474011683196,
-    "b0": 9.263705847174148
+    "a0": 228.27370461631497,
+    "b0": -7.937183879837119
   },
   "n_groups": 4,
   "spec": {
@@ -160,7 +178,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -180,8 +198,8 @@
   },
   "seed": 8,
   "info": {
-    "train_nmse": 0.22154370077232835,
-    "val_nmse": 0.2634508733015437,
+    "train_nmse": 0.20742265650550942,
+    "val_nmse": 0.2455684622174061,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -190,15 +208,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 74.19318050000584,
-    "n_fitness_evaluations": 31832,
-    "verify_prefilter_refuted": 4480,
-    "verify_bb_certified": 26845,
-    "verify_bb_refuted": 13,
-    "verify_bb_undecided": 495,
-    "verify_bb_boxes": 19256512,
-    "verify_bb_calls": 27353,
-    "verify_cx_added": 63
+    "train_time_s": 207.2556849999819,
+    "n_fitness_evaluations": 34775,
+    "verify_prefilter_refuted": 4348,
+    "verify_bb_certified": 29197,
+    "verify_bb_refuted": 25,
+    "verify_bb_undecided": 1206,
+    "verify_bb_boxes": 22231428,
+    "verify_bb_calls": 30428,
+    "verify_cx_added": 105
   },
-  "equation": "(cylinders - ((aq(engine_size, tt_AM) + engine_size) + (tt_AV + (((aq(-2.71184, engine_size) + (engine_size - tt_AV)) * -3.62092) + tt_AM))))"
+  "equation": "((tt_AM - -4.0679) * (aq((tt_AM - -6.89565), aq(engine_size, gears_missing)) + (aq(aq((cylinders - 2.5075), aq(engine_size, gears_f)), 0.584678) - aq(cylinders, tt_AV))))"
 }

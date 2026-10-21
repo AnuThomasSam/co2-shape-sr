@@ -1,0 +1,10 @@
+\begin{tabular}{lp{8cm}rrr}
+\toprule
+Method & Equation g(x) & Tree nodes & Val. RMSE & Test RMSE \\
+\midrule
+DCSR-F & $\operatorname{aq}{\left(1.8613,cylinders \right)} \operatorname{aq}{\left(engine_{size},tt_{AV} \right)} + \operatorname{aq}{\left(cylinders,4.0514 \right)}$ & 11 & 26.68 & 28.08 \\
+DCSR-S & $cylinders + 1.8203 \operatorname{aq}{\left(engine_{size} + 3.0612 \operatorname{aq}{\left(\operatorname{aq}{\left(engine_{size},tt_{AV} \right)},tt_{AV} \right)},cylinders \right)}$ & 15 & 26.70 & 27.98 \\
+DCSR-T & $engine_{size} + \operatorname{aq}{\left(\operatorname{aq}{\left(\operatorname{aq}{\left(cylinders + engine_{size} + 4.8868,\operatorname{aq}{\left(\operatorname{aq}{\left(-2.8898,engine_{size} \right)},engine_{size} \right)} \right)},\operatorname{aq}{\left(tt_{AM},engine_{size} \right)} \right)},tt_{AV} \right)}$ & 19 & 26.80 & 28.07 \\
+Standard GP & $\operatorname{aq}{\left(cylinders,tt_{AV} \right)} + \operatorname{aq}{\left(7.1085 engine_{size},cylinders \right)}$ & 9 & 26.72 & 28.04 \\
+\bottomrule
+\end{tabular}

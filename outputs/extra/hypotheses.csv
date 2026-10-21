@@ -1,0 +1,40 @@
+hypothesis,measure,value,threshold,verdict
+H1,"Spearman rho, technology score vs model year",-0.22389369277284635,> 0,not supported
+H1,"Kendall tau, method ranking P3 vs P1 (p = 0.061)",-0.5714285714285714,> 0,not supported
+H2a,"median A12, dcsr_t vs gp_standard, P2",0.4711111111111111,>= 0.64,not supported
+H2a,"median A12, dcsr_s vs gp_standard, P2",0.4577777777777778,>= 0.64,not supported
+H2a,"median A12, dcsr_f vs gp_standard, P2",0.5366666666666666,>= 0.64,not supported
+H2a,"median A12, dcsr_ia vs gp_standard, P2",0.4944444444444444,>= 0.64,not supported
+H2a,"median A12, dcsr_v vs gp_standard, P2",0.5188888888888888,>= 0.64,not supported
+H2b,"P4 RMSE increase, dcsr_t vs gp_standard",-0.0024095829070267527,< 0.05,supported
+H2b,"P4 RMSE increase, dcsr_s vs gp_standard",-0.0016923948864735472,< 0.05,supported
+H2b,"P4 RMSE increase, dcsr_f vs gp_standard",-0.0008046877067661162,< 0.05,supported
+H2b,"P4 RMSE increase, dcsr_ia vs gp_standard",0.0004058353762104172,< 0.05,supported
+H2b,"P4 RMSE increase, dcsr_dyn vs gp_standard",-0.0011861360402419807,< 0.05,supported
+H2b,"P4 RMSE increase, dcsr_v vs gp_standard",0.00013918992792416596,< 0.05,supported
+H3a,"max interval false rejection share (P1, P2)",0.2333333333333333,> 0,supported
+H3a,"max grid false acceptance share, sampling methods (NRCan and benchmark)",0.0380952380952381,> 0,supported
+H3a,IA-certified equations refuted by B&B (soundness check),0,= 0,supported
+H3b,"DCSR-V certified share, P1",1.0,= 1,supported
+H3b,"DCSR-V certified share, P2",1.0,= 1,supported
+H3b,"DCSR-V certified share, P3",1.0,= 1,supported
+H3b,"DCSR-V certified share, P4",1.0,= 1,supported
+H3b,"dcsr_s certified share, P2",0.9666666666666668,< 1,supported
+H3b,"dcsr_f certified share, P2",0.95,< 1,supported
+H3b,"dcsr_dyn certified share, P2",0.95,< 1,supported
+H3c,"DCSR-V RMSE relative to best other constrained variant, P1",0.001455328724270899,"<= 0.02 or A12 in (0.44, 0.56)",supported
+H3c,"A12 DCSR-V vs DCSR-IA, P1 (expected improvement)",0.5444444444444444,>= 0.56 (non-negligible),not supported
+H3c,"DCSR-V RMSE relative to best other constrained variant, P2",0.00636381689977128,"<= 0.02 or A12 in (0.44, 0.56)",supported
+H3c,"A12 DCSR-V vs DCSR-IA, P2 (expected improvement)",0.47,>= 0.56 (non-negligible),not supported
+H3d,"certified candidates per run, no bisection vs full, P1",-0.0034550515801539117,< 0,supported
+H3d,"B&B calls per run, no feedback vs full, P1",0.021747044206327892,> 0,supported
+H3d,"RMSE change, undecided infeasible vs default, P1",0.0025357858424526203,> 0,supported
+H3d,"certified candidates per run, no bisection vs full, P2",0.0009790164148419933,< 0,not supported
+H3d,"B&B calls per run, no feedback vs full, P2",0.04750447184714979,> 0,supported
+H3d,"RMSE change, undecided infeasible vs default, P2",0.0063465943837450745,> 0,supported
+H4,largest P2/P4 degradation ratio is an unconstrained tree ensemble,xgb (1.71),xgb,supported
+H4,"DCSR-V RMSE relative to best of monotone GAM and monotone XGBoost, P1",0.2343484520599266,<= 0.02 (competitive),not supported
+H4,"DCSR-V RMSE relative to best of monotone GAM and monotone XGBoost, P2",-0.13925134172938003,<= 0.02 (competitive),supported
+H4,median tree nodes of DCSR-V equations,21.0,< 30,supported
+H5,DCSR-V certified share minus best other constrained method,0.0,>= 0,supported
+H5,problems where DCSR-V median extrapolation NMSE <= DCSR-IA,4 of 7,majority,supported

@@ -6,10 +6,10 @@
   "seed": 0,
   "status": "ok",
   "fit_time_s": 0.8259080999996513,
-  "domain_violation_rate": 0.041666666666666664,
+  "domain_violation_rate": 0.0,
   "domain_min_slope": -2.0290326574468054e-06,
   "domain_mean_slope": 32.34220804880537,
-  "domain_share_zero_slope": 0.2916666666666667,
+  "domain_share_zero_slope": 0.3333333333333333,
   "uses_engine_size": 1,
   "domain_mean_slope_D": 32.342208048805375,
   "domain_mean_slope_E": 32.342208048805375,
@@ -17,5 +17,5 @@
   "domain_mean_slope_Z": 32.34220804880537,
   "n_parameters": 16,
   "equation": null,
-  "eval_hash": "ba65f502f091"
+  "eval_hash": "6c275a0eaa5e"
 }

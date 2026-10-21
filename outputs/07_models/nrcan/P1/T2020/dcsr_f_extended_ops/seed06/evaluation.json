@@ -35,5 +35,5 @@
   "equation_simplified": "-cylinders + gears_missing + (tt_AV - 2.2253)*(engine_size + tt_AM*(engine_size - 3.2566) + log(engine_size**2))",
   "n_nodes_simplified": 20,
   "n_ops_simplified": 10,
-  "eval_hash": "06e3b0e11e63"
+  "eval_hash": "7156eef589d8"
 }

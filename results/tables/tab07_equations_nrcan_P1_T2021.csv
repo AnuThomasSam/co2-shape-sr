@@ -1,0 +1,8 @@
+Method,Equation g(x),Tree nodes,Val. RMSE,Test RMSE
+Dynamic penalty,"$\operatorname{aq}{\left(cylinders + 1.6488 engine_{size} + \operatorname{aq}{\left(engine_{size} - tt_{AM},- 2 tt_{AM} + \operatorname{aq}{\left(engine_{size},tt_{AM} \right)} - 2.2134 \right)},tt_{AV} \right)}$",21,28.28,31.16
+DCSR-F,"$\operatorname{aq}{\left(cylinders + engine_{size} + \left(engine_{size} - 3.6203\right) \left(tt_{AM} - \operatorname{aq}{\left(-2.5235,engine_{size} \right)}\right) + 6.6424,tt_{AV} \right)}$",17,28.19,30.98
+DCSR-IA,"$- \operatorname{aq}{\left(cylinders,tt_{AV} \right)} + \operatorname{aq}{\left(2 cylinders + gears_{missing} + tt_{AM} + 1.4016,engine_{size} \right)}$",15,28.73,31.85
+DCSR-S,"$\operatorname{aq}{\left(cylinders + 2 engine_{size} + \operatorname{aq}{\left(3.2337,- engine_{size} + tt_{AM} + tt_{M} + 2.4477 \right)} + \operatorname{aq}{\left(engine_{size} - tt_{AM},gears_{f} - 3.055 \right)},tt_{AV} \right)}$",25,28.54,31.68
+DCSR-T,"$cylinders \left(- tt_{AV} + \operatorname{aq}{\left(-5.5364,engine_{size} \right)} + 2.4845\right) + tt_{AM} \left(engine_{size} - 3.6861\right)$",15,28.25,30.90
+DCSR-V,"$- cylinders + tt_{AV} - \operatorname{aq}{\left(engine_{size},1.5604 - tt_{AM} \right)} + \operatorname{aq}{\left(2 cylinders + 4 tt_{AM},\operatorname{aq}{\left(engine_{size},tt_{AV} \right)} \right)}$",25,28.18,31.01
+Standard GP,"$2 engine_{size} - 2 tt_{AM} - 2.8812 tt_{AV} + \operatorname{aq}{\left(cylinders + \operatorname{aq}{\left(-3.8336,engine_{size} \right)},engine_{size} \left(0.3252 tt_{AM} - 0.3411\right) \right)}$",25,28.09,30.81

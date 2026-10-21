@@ -20,24 +20,15 @@
     "op": "add",
     "children": [
       {
-        "op": "aq",
+        "op": "mul",
         "children": [
-          {
-            "op": "mul",
-            "children": [
-              {
-                "op": "const",
-                "value": 7.2452276163992355
-              },
-              {
-                "op": "var",
-                "value": 0
-              }
-            ]
-          },
           {
             "op": "var",
             "value": 1
+          },
+          {
+            "op": "const",
+            "value": 0.06519724292246183
           }
         ]
       },
@@ -45,12 +36,30 @@
         "op": "aq",
         "children": [
           {
-            "op": "var",
-            "value": 1
+            "op": "aq",
+            "children": [
+              {
+                "op": "var",
+                "value": 0
+              },
+              {
+                "op": "var",
+                "value": 6
+              }
+            ]
           },
           {
-            "op": "var",
-            "value": 6
+            "op": "add",
+            "children": [
+              {
+                "op": "var",
+                "value": 1
+              },
+              {
+                "op": "var",
+                "value": 1
+              }
+            ]
           }
         ]
       }
@@ -58,19 +67,19 @@
   },
   "scaling": {
     "a": [
-      22.382215641239583,
-      65.41876761694343,
-      -50.490816141712116,
-      30.117332183533023
+      15.951378152399911,
+      59.53493949042857,
+      -68.42235685761369,
+      22.007556475580515
     ],
     "b": [
-      24.39573384793987,
-      19.76931703506618,
-      32.26697183152358,
-      21.968494493958257
+      372.42746563095824,
+      303.50797590931853,
+      509.90998257201625,
+      338.7410368973663
     ],
-    "a0": 45.28392567276441,
-    "b0": 21.675839091126456
+    "a0": 38.818186293644004,
+    "b0": 332.47572709097517
   },
   "n_groups": 4,
   "spec": {
@@ -106,7 +115,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -126,8 +135,8 @@
   },
   "seed": 9,
   "info": {
-    "train_nmse": 0.22483705829990544,
-    "val_nmse": 0.23203511457254142,
+    "train_nmse": 0.22636832552381608,
+    "val_nmse": 0.231677764534539,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -136,15 +145,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 107.07021150000219,
-    "n_fitness_evaluations": 36786,
-    "verify_prefilter_refuted": 1317,
-    "verify_bb_certified": 33458,
-    "verify_bb_refuted": 14,
-    "verify_bb_undecided": 1998,
-    "verify_bb_boxes": 24119600,
-    "verify_bb_calls": 35470,
-    "verify_cx_added": 70
+    "train_time_s": 97.39390530000674,
+    "n_fitness_evaluations": 34489,
+    "verify_prefilter_refuted": 3575,
+    "verify_bb_certified": 28375,
+    "verify_bb_refuted": 22,
+    "verify_bb_undecided": 2518,
+    "verify_bb_boxes": 24859092,
+    "verify_bb_calls": 30915,
+    "verify_cx_added": 110
   },
-  "equation": "(aq((7.24523 * engine_size), cylinders) + aq(cylinders, tt_AV))"
+  "equation": "((cylinders * 0.0651972) + aq(aq(engine_size, tt_AV), (cylinders + cylinders)))"
 }

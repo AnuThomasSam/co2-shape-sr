@@ -4,7 +4,7 @@
   "block": "T2018",
   "method": "dcsr_v_budget_small",
   "seed": 0,
-  "run_hash": "48b4b9de7c2b0e1e",
+  "run_hash": "e39bf81f1670ed10",
   "spec": {
     "population_size": 500,
     "generations": 80,
@@ -38,7 +38,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -56,48 +56,48 @@
     "name": "dcsr_v_budget_small",
     "stochastic": true
   },
-  "started": "2026-10-03 01:58:00",
+  "started": "2026-10-21 23:02:35",
   "status": "ok",
-  "fit_time_s": 93.29494580000028,
-  "predict_time_s": 0.015426099998876452,
+  "fit_time_s": 67.21573660004651,
+  "predict_time_s": 0.016201599966734648,
   "n_fit": 2233,
   "n_val": 1058,
   "description": {
-    "equation": "(aq(cylinders, (tt_AV + 1.08229)) + (aq(engine_size, tt_AV) + aq(-5.79012, engine_size)))",
+    "equation": "aq(((cylinders + engine_size) + engine_size), tt_AV)",
     "scaling": {
       "X": {
-        "a": 169.422486077019,
-        "b": 17.123067566265586
+        "a": 105.70792531176795,
+        "b": 12.542074088306986
       },
       "Z": {
-        "a": 182.92976521739504,
-        "b": 14.064324428325397
+        "a": 135.13917323816207,
+        "b": 9.891313072549805
       },
       "D": {
-        "a": 154.04501482810127,
-        "b": 19.84071381417951
+        "a": 77.30555849601325,
+        "b": 15.021042195410894
       },
       "E": {
-        "a": 165.93027062235888,
-        "b": 14.921024292918256
+        "a": 119.5729629228189,
+        "b": 10.292122915004951
       }
     },
     "scaling_pooled": {
-      "a": 175.37677951308848,
-      "b": 15.27702074652059
+      "a": 121.61065807931314,
+      "b": 10.895576942381195
     },
-    "n_nodes": 13,
+    "n_nodes": 7,
     "depth": 4,
-    "n_constants": 2,
+    "n_constants": 0,
     "variables_used": [
       "cylinders",
       "engine_size",
       "tt_AV"
     ],
-    "n_parameters": 10,
+    "n_parameters": 8,
     "params": {
-      "train_nmse": 0.22577570575719078,
-      "val_nmse": 0.23637585083163853,
+      "train_nmse": 0.22976598062950546,
+      "val_nmse": 0.24422186865601658,
       "train_violation": 0.0,
       "feasible_on_constraint_set": true,
       "hof_size": 50,
@@ -106,15 +106,15 @@
       "final_verdict": "certified",
       "selected_by": "validation",
       "scaling_refit": true,
-      "train_time_s": 93.27945329999784,
-      "n_fitness_evaluations": 36590,
-      "verify_prefilter_refuted": 1407,
-      "verify_bb_certified": 34311,
-      "verify_bb_refuted": 18,
-      "verify_bb_undecided": 855,
-      "verify_bb_boxes": 23925120,
-      "verify_bb_calls": 35184,
-      "verify_cx_added": 88
+      "train_time_s": 67.20040230004815,
+      "n_fitness_evaluations": 33723,
+      "verify_prefilter_refuted": 680,
+      "verify_bb_certified": 32875,
+      "verify_bb_refuted": 8,
+      "verify_bb_undecided": 161,
+      "verify_bb_boxes": 22633136,
+      "verify_bb_calls": 33044,
+      "verify_cx_added": 36
     },
     "columns": [
       "engine_size",
@@ -127,5 +127,5 @@
       "tt_M"
     ]
   },
-  "finished": "2026-10-03 01:59:34"
+  "finished": "2026-10-21 23:03:43"
 }

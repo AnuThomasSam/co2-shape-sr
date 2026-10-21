@@ -17,5 +17,5 @@
   "domain_mean_slope_Z": 23.277562463066605,
   "n_parameters": 12,
   "equation": "146.3 + 23.28*engine_size + 8.615*cylinders + -1.926*gears_f + -20.47*gears_missing + -11.05*tt_AM + -0.6858*tt_AS + -35.24*tt_AV + -8.382*tt_M + 7.518*fuel_Z + 10.07*fuel_D + -11.64*fuel_E",
-  "eval_hash": "a9ae303e9a4e"
+  "eval_hash": "096280b9d609"
 }

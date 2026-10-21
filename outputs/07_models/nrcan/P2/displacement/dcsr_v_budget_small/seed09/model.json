@@ -31,41 +31,54 @@
               },
               {
                 "op": "const",
-                "value": 2.655872912421885
+                "value": 3.748923664743035
               }
             ]
+          },
+          {
+            "op": "add",
+            "children": [
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 2
+                  },
+                  {
+                    "op": "var",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "op": "var",
+                "value": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "sub",
+        "children": [
+          {
+            "op": "var",
+            "value": 1
           },
           {
             "op": "aq",
             "children": [
               {
-                "op": "add",
+                "op": "sub",
                 "children": [
                   {
-                    "op": "var",
-                    "value": 0
+                    "op": "const",
+                    "value": 7.201431264753264
                   },
                   {
-                    "op": "sub",
-                    "children": [
-                      {
-                        "op": "add",
-                        "children": [
-                          {
-                            "op": "const",
-                            "value": -2.802404768020175
-                          },
-                          {
-                            "op": "var",
-                            "value": 0
-                          }
-                        ]
-                      },
-                      {
-                        "op": "var",
-                        "value": 3
-                      }
-                    ]
+                    "op": "var",
+                    "value": 6
                   }
                 ]
               },
@@ -73,29 +86,16 @@
                 "op": "add",
                 "children": [
                   {
-                    "op": "const",
-                    "value": -3.302777437853967
+                    "op": "var",
+                    "value": 6
                   },
                   {
                     "op": "var",
-                    "value": 1
+                    "value": 0
                   }
                 ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "op": "add",
-        "children": [
-          {
-            "op": "var",
-            "value": 6
-          },
-          {
-            "op": "var",
-            "value": 1
           }
         ]
       }
@@ -103,19 +103,19 @@
   },
   "scaling": {
     "a": [
-      95.96904694553646,
-      114.82818486311893,
-      53.418604539478196,
-      92.05488264116303
+      156.06410977435957,
+      162.49352765480745,
+      158.16460570927788,
+      154.7124523908044
     ],
     "b": [
-      -23.62401009848438,
-      -21.056548955311225,
-      -30.54313392707195,
-      -22.181222905695563
+      -13.240991775812518,
+      -12.622668784827953,
+      -13.514685684227247,
+      -11.761448827847993
     ],
-    "a0": 104.42507300091236,
-    "b0": -22.34464464584425
+    "a0": 159.23988633160707,
+    "b0": -12.837573202292564
   },
   "n_groups": 4,
   "spec": {
@@ -151,7 +151,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -171,8 +171,8 @@
   },
   "seed": 9,
   "info": {
-    "train_nmse": 0.33060413952439444,
-    "val_nmse": 0.3310211098039097,
+    "train_nmse": 0.33066063717214395,
+    "val_nmse": 0.3342735511972135,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -181,15 +181,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 108.06455979999737,
-    "n_fitness_evaluations": 36011,
-    "verify_prefilter_refuted": 3002,
-    "verify_bb_certified": 30867,
-    "verify_bb_refuted": 16,
-    "verify_bb_undecided": 2127,
-    "verify_bb_boxes": 27992480,
-    "verify_bb_calls": 33010,
-    "verify_cx_added": 80
+    "train_time_s": 170.86472610000055,
+    "n_fitness_evaluations": 36469,
+    "verify_prefilter_refuted": 2813,
+    "verify_bb_certified": 32599,
+    "verify_bb_refuted": 39,
+    "verify_bb_undecided": 1019,
+    "verify_bb_boxes": 29243438,
+    "verify_bb_calls": 33657,
+    "verify_cx_added": 187
   },
-  "equation": "(((tt_AV * 2.65587) - aq((engine_size + ((-2.8024 + engine_size) - gears_missing)), (-3.30278 + cylinders))) - (tt_AV + cylinders))"
+  "equation": "(((tt_AV * 3.74892) - (aq(gears_f, cylinders) + engine_size)) - (cylinders - aq((7.20143 - tt_AV), (tt_AV + engine_size))))"
 }

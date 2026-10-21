@@ -32,8 +32,8 @@
   "feasible_on_constraint_set": 1,
   "n_fitness_evaluations": 34470,
   "final_verdict_in_search": "",
-  "equation_simplified": "4.5503*fuel_Z - (tt_AV - 5.6107)*(5.9809*engine_size - tt_M + 26.4434)",
-  "n_nodes_simplified": 17,
-  "n_ops_simplified": 7,
-  "eval_hash": "7b5b8e46701c"
+  "equation_simplified": "4.5503*fuel_Z + (tt_AV - 5.6107)*(tt_M - 4.647*(engine_size + 4.4213)*aq(5.0667, 3.8076))",
+  "n_nodes_simplified": 19,
+  "n_ops_simplified": 9,
+  "eval_hash": "04a79a220729"
 }

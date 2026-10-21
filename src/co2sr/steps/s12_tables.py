@@ -126,18 +126,28 @@ def run(cfg, log, **_):
         met = read_csv(sdir(cfg, "08") / "run_metrics.csv")
         gp = s[s["method"].isin(["gp_standard", "dcsr_t", "dcsr_s", "dcsr_f", "dcsr_ia", "dcsr_v", "dcsr_dyn"])]
         if "equation_simplified" in gp and len(gp):
-            val = met[met["set"] == "val"][["dataset", "protocol", "block", "method", "seed", "rmse"]]
-            gp = gp.merge(val, on=["dataset", "protocol", "block", "method", "seed"])
+            keys = ["dataset", "protocol", "block", "method", "seed"]
+            val = met[met["set"] == "val"][keys + ["rmse"]].rename(columns={"rmse": "val_rmse"})
+            tst = (met[~met["set"].isin(["val", "new_config"])].groupby(keys)["rmse"].mean()
+                   .rename("test_rmse").reset_index())
+            gp = gp.merge(val, on=keys).merge(tst, on=keys)
             for (ds, pr), g in gp.groupby(["dataset", "protocol"]):
-                block = sorted(g["block"].unique())[0]
-                rows = []
-                for m, gm in g[g["block"] == block].groupby("method"):
-                    best = gm.sort_values("rmse").iloc[0]
-                    rows.append({"Method": _esc(label(cfg, m)), "Equation g(x)": f"${_latex_eq(best['equation_simplified'])}$",
-                                 "Nodes": int(best["n_nodes_simplified"]), "Val. RMSE": f"{best['rmse']:.2f}"})
-                if rows:
-                    paths += to_latex(pd.DataFrame(rows), out / f"tab07_equations_{ds}_{pr}_{block}.tex",
-                                      align="lp{9cm}rr", raw_cols=("Method", "Equation g(x)", "Nodes", "Val. RMSE"))
+                for block in sorted(g["block"].unique()):
+                    rows = []
+                    for m, gm in g[g["block"] == block].groupby("method"):
+                        # representative run: the seed with the median validation RMSE. Choosing on
+                        # validation keeps test data out of the choice; the median avoids reporting
+                        # the luckiest seed.
+                        gm = gm.sort_values("val_rmse").reset_index(drop=True)
+                        rep = gm.iloc[(len(gm) - 1) // 2]
+                        rows.append({"Method": _esc(label(cfg, m)),
+                                     "Equation g(x)": f"${_latex_eq(rep['equation_simplified'])}$",
+                                     "Tree nodes": int(rep["n_nodes"]),
+                                     "Val. RMSE": f"{rep['val_rmse']:.2f}", "Test RMSE": f"{rep['test_rmse']:.2f}"})
+                    if rows:
+                        paths += to_latex(pd.DataFrame(rows), out / f"tab07_equations_{ds}_{pr}_{block}.tex",
+                                          align="lp{8cm}rrr",
+                                          raw_cols=("Method", "Equation g(x)", "Tree nodes", "Val. RMSE", "Test RMSE"))
     p = d9 / "interval_vs_branch_and_bound.csv"
     if p.exists():
         t = read_csv(p)

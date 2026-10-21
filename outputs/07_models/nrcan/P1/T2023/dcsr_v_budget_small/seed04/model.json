@@ -20,15 +20,15 @@
     "op": "sub",
     "children": [
       {
-        "op": "var",
-        "value": 3
-      },
-      {
-        "op": "aq",
+        "op": "sub",
         "children": [
           {
-            "op": "add",
+            "op": "sub",
             "children": [
+              {
+                "op": "var",
+                "value": 3
+              },
               {
                 "op": "aq",
                 "children": [
@@ -37,20 +37,74 @@
                     "value": 1
                   },
                   {
-                    "op": "const",
-                    "value": -1.1343005422628085
+                    "op": "var",
+                    "value": 6
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "aq",
+            "children": [
+              {
+                "op": "add",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 0
+                  },
+                  {
+                    "op": "add",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 0
+                      },
+                      {
+                        "op": "add",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 0
+                          },
+                          {
+                            "op": "add",
+                            "children": [
+                              {
+                                "op": "var",
+                                "value": 0
+                              },
+                              {
+                                "op": "const",
+                                "value": 3.0753995393652573
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
               {
                 "op": "var",
-                "value": 0
+                "value": 1
               }
             ]
+          }
+        ]
+      },
+      {
+        "op": "aq",
+        "children": [
+          {
+            "op": "var",
+            "value": 0
           },
           {
             "op": "var",
-            "value": 6
+            "value": 1
           }
         ]
       }
@@ -58,19 +112,19 @@
   },
   "scaling": {
     "a": [
-      118.79420166826478,
-      132.8003474074671,
-      138.32952686138972,
-      147.43001861793485
+      31.620146970702848,
+      45.75033849608096,
+      48.041695768790305,
+      68.80656844747355
     ],
     "b": [
-      -20.019199768265935,
-      -19.08616134983228,
-      -19.750736857379763,
-      -15.883527887660208
+      -25.325638561311685,
+      -24.502145779189824,
+      -25.20464427987286,
+      -21.12145601321919
     ],
-    "a0": 124.36088989418457,
-    "b0": -19.750736857379763
+    "a0": 36.106238490376285,
+    "b0": -25.20464427987286
   },
   "n_groups": 4,
   "spec": {
@@ -106,7 +160,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -126,8 +180,8 @@
   },
   "seed": 4,
   "info": {
-    "train_nmse": 0.23000681264895026,
-    "val_nmse": 0.25710289208157583,
+    "train_nmse": 0.2256607267136027,
+    "val_nmse": 0.25144174254721813,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -136,15 +190,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 98.55571000000054,
-    "n_fitness_evaluations": 34906,
-    "verify_prefilter_refuted": 2177,
-    "verify_bb_certified": 32521,
-    "verify_bb_refuted": 11,
-    "verify_bb_undecided": 198,
-    "verify_bb_boxes": 21209040,
-    "verify_bb_calls": 32730,
-    "verify_cx_added": 52
+    "train_time_s": 121.21913230000064,
+    "n_fitness_evaluations": 34995,
+    "verify_prefilter_refuted": 2800,
+    "verify_bb_certified": 32020,
+    "verify_bb_refuted": 12,
+    "verify_bb_undecided": 164,
+    "verify_bb_boxes": 21171820,
+    "verify_bb_calls": 32196,
+    "verify_cx_added": 56
   },
-  "equation": "(gears_missing - aq((aq(cylinders, -1.1343) + engine_size), tt_AV))"
+  "equation": "(((gears_missing - aq(cylinders, tt_AV)) - aq((engine_size + (engine_size + (engine_size + (engine_size + 3.0754)))), cylinders)) - aq(engine_size, cylinders))"
 }

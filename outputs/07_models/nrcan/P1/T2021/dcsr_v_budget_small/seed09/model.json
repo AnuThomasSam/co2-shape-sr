@@ -23,46 +23,37 @@
         "op": "aq",
         "children": [
           {
-            "op": "aq",
+            "op": "sub",
             "children": [
               {
-                "op": "add",
+                "op": "aq",
                 "children": [
                   {
                     "op": "sub",
                     "children": [
                       {
-                        "op": "var",
-                        "value": 1
+                        "op": "sub",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 1
+                          },
+                          {
+                            "op": "var",
+                            "value": 6
+                          }
+                        ]
                       },
                       {
                         "op": "aq",
                         "children": [
                           {
-                            "op": "mul",
-                            "children": [
-                              {
-                                "op": "const",
-                                "value": -3.696978029615297
-                              },
-                              {
-                                "op": "const",
-                                "value": -2.8984741387646
-                              }
-                            ]
+                            "op": "var",
+                            "value": 1
                           },
                           {
-                            "op": "aq",
-                            "children": [
-                              {
-                                "op": "var",
-                                "value": 0
-                              },
-                              {
-                                "op": "var",
-                                "value": 4
-                              }
-                            ]
+                            "op": "var",
+                            "value": 0
                           }
                         ]
                       }
@@ -70,43 +61,70 @@
                   },
                   {
                     "op": "var",
-                    "value": 0
+                    "value": 6
                   }
                 ]
               },
               {
-                "op": "const",
-                "value": -2.539393298091464
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 4
+                  },
+                  {
+                    "op": "sub",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 4
+                      },
+                      {
+                        "op": "var",
+                        "value": 0
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
           {
-            "op": "var",
-            "value": 6
+            "op": "const",
+            "value": 0.707625149609073
           }
         ]
       },
       {
-        "op": "var",
-        "value": 6
+        "op": "aq",
+        "children": [
+          {
+            "op": "var",
+            "value": 1
+          },
+          {
+            "op": "var",
+            "value": 0
+          }
+        ]
       }
     ]
   },
   "scaling": {
     "a": [
-      196.53685101959482,
-      206.93323477767083,
-      199.80595189752984,
-      203.10649115139864
+      211.13274608193274,
+      222.00229758739243,
+      215.86171914155506,
+      216.6554651222217
     ],
     "b": [
-      30.803440150313413,
-      29.033754745818992,
-      36.7810283841746,
-      24.753461587623008
+      29.91152020146813,
+      27.29007332257569,
+      40.83372054820271,
+      23.341260278389708
     ],
-    "a0": 200.75795407380582,
-    "b0": 30.08594792572548
+    "a0": 215.60478956716747,
+    "b0": 28.71149217792005
   },
   "n_groups": 4,
   "spec": {
@@ -142,7 +160,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -162,8 +180,8 @@
   },
   "seed": 9,
   "info": {
-    "train_nmse": 0.21997145813087954,
-    "val_nmse": 0.26799776707627027,
+    "train_nmse": 0.21734264698241612,
+    "val_nmse": 0.2607168405451855,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -172,15 +190,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 106.17778389999876,
-    "n_fitness_evaluations": 32362,
-    "verify_prefilter_refuted": 2049,
-    "verify_bb_certified": 29648,
-    "verify_bb_refuted": 12,
-    "verify_bb_undecided": 654,
-    "verify_bb_boxes": 21341056,
-    "verify_bb_calls": 30314,
-    "verify_cx_added": 59
+    "train_time_s": 179.3096804000088,
+    "n_fitness_evaluations": 33512,
+    "verify_prefilter_refuted": 2676,
+    "verify_bb_certified": 27919,
+    "verify_bb_refuted": 19,
+    "verify_bb_undecided": 2899,
+    "verify_bb_boxes": 23099104,
+    "verify_bb_calls": 30837,
+    "verify_cx_added": 93
   },
-  "equation": "(aq(aq(((cylinders - aq((-3.69698 * -2.89847), aq(engine_size, tt_AM))) + engine_size), -2.53939), tt_AV) - tt_AV)"
+  "equation": "(aq((aq(((cylinders - tt_AV) - aq(cylinders, engine_size)), tt_AV) - aq(tt_AM, (tt_AM - engine_size))), 0.707625) - aq(cylinders, engine_size))"
 }

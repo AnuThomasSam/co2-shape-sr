@@ -17,76 +17,67 @@
     "E"
   ],
   "tree": {
-    "op": "add",
+    "op": "sub",
     "children": [
       {
         "op": "aq",
         "children": [
           {
-            "op": "aq",
-            "children": [
-              {
-                "op": "sub",
-                "children": [
-                  {
-                    "op": "var",
-                    "value": 4
-                  },
-                  {
-                    "op": "var",
-                    "value": 0
-                  }
-                ]
-              },
-              {
-                "op": "mul",
-                "children": [
-                  {
-                    "op": "var",
-                    "value": 1
-                  },
-                  {
-                    "op": "const",
-                    "value": 0.21747686738799984
-                  }
-                ]
-              }
-            ]
+            "op": "const",
+            "value": 7.926162159444018
           },
           {
-            "op": "mul",
-            "children": [
-              {
-                "op": "var",
-                "value": 1
-              },
-              {
-                "op": "const",
-                "value": 0.2518981038195443
-              }
-            ]
+            "op": "var",
+            "value": 0
           }
         ]
       },
       {
-        "op": "sub",
+        "op": "aq",
         "children": [
           {
-            "op": "aq",
+            "op": "add",
             "children": [
               {
-                "op": "var",
-                "value": 1
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "add",
+                    "children": [
+                      {
+                        "op": "const",
+                        "value": 3.460978629865362
+                      },
+                      {
+                        "op": "var",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  {
+                    "op": "aq",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 4
+                      },
+                      {
+                        "op": "sub",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 0
+                          },
+                          {
+                            "op": "const",
+                            "value": 1.3758785567382121
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
-              {
-                "op": "var",
-                "value": 0
-              }
-            ]
-          },
-          {
-            "op": "aq",
-            "children": [
               {
                 "op": "aq",
                 "children": [
@@ -96,15 +87,15 @@
                   },
                   {
                     "op": "const",
-                    "value": 0.8747627717523812
+                    "value": -1.2203002968437038
                   }
                 ]
-              },
-              {
-                "op": "var",
-                "value": 6
               }
             ]
+          },
+          {
+            "op": "var",
+            "value": 6
           }
         ]
       }
@@ -112,19 +103,19 @@
   },
   "scaling": {
     "a": [
-      133.369142964954,
-      152.30973695935893,
-      93.28243218169658,
-      142.8103223696701
+      146.19860842414414,
+      159.6984308503212,
+      115.30134966301092,
+      153.80314863324196
     ],
     "b": [
-      -33.787439637528955,
-      -29.91597278959548,
-      -51.63878631125479,
-      -28.524686335729445
+      -14.537996977788795,
+      -13.379476010263744,
+      -21.558903296239816,
+      -12.270507788610479
     ],
-    "a0": 141.48458004924797,
-    "b0": -31.858562653500453
+    "a0": 151.6659188878424,
+    "b0": -13.980030427476253
   },
   "n_groups": 4,
   "spec": {
@@ -160,7 +151,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -180,8 +171,8 @@
   },
   "seed": 0,
   "info": {
-    "train_nmse": 0.21442693957229453,
-    "val_nmse": 0.2218598243013486,
+    "train_nmse": 0.21702155188888547,
+    "val_nmse": 0.22118337144315592,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -190,15 +181,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 189.81400750000103,
-    "n_fitness_evaluations": 36567,
-    "verify_prefilter_refuted": 4016,
-    "verify_bb_certified": 29947,
+    "train_time_s": 190.58187429996906,
+    "n_fitness_evaluations": 35367,
+    "verify_prefilter_refuted": 3313,
+    "verify_bb_certified": 29997,
     "verify_bb_refuted": 21,
-    "verify_bb_undecided": 2584,
-    "verify_bb_boxes": 23437440,
-    "verify_bb_calls": 32552,
-    "verify_cx_added": 101
+    "verify_bb_undecided": 2037,
+    "verify_bb_boxes": 25078178,
+    "verify_bb_calls": 32055,
+    "verify_cx_added": 99
   },
-  "equation": "(aq(aq((tt_AM - engine_size), (cylinders * 0.217477)), (cylinders * 0.251898)) + (aq(cylinders, engine_size) - aq(aq(cylinders, 0.874763), tt_AV)))"
+  "equation": "(aq(7.92616, engine_size) - aq((aq((3.46098 + engine_size), aq(tt_AM, (engine_size - 1.37588))) + aq(cylinders, -1.2203)), tt_AV))"
 }

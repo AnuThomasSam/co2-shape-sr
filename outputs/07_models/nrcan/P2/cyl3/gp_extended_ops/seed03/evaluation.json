@@ -33,7 +33,7 @@
   "n_fitness_evaluations": 34971,
   "final_verdict_in_search": "",
   "equation_simplified": "(-cylinders + gears_missing + 3.6199*tt_AV - 7.1054)*sqrt(log(engine_size))",
-  "n_nodes_simplified": 14,
+  "n_nodes_simplified": 13,
   "n_ops_simplified": 8,
-  "eval_hash": "7c1828a3dcfe"
+  "eval_hash": "a1aad24860a0"
 }

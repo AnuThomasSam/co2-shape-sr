@@ -32,8 +32,8 @@
   "feasible_on_constraint_set": 1,
   "n_fitness_evaluations": 34481,
   "final_verdict_in_search": "",
-  "equation_simplified": "(-2.1043*sqrt((tt_AM**2 + 10.4975)/(tt_AM**2 + 1))*sqrt((tt_AM**2 + 13.3502)/(tt_AM**2 + 1)) + sqrt(gears_missing**2 + 1)*sqrt(tt_AM**2 + 1)*(-1.5493*cylinders - 1.5493*engine_size + 5.8594))/(sqrt((engine_size**2 + 7.1796)/(engine_size**2 + 1))*sqrt((tt_AM**2 + 10.4975)/(tt_AM**2 + 1))*sqrt((tt_AM**2 + 13.3502)/(tt_AM**2 + 1))*sqrt(gears_missing**2 + 1)*sqrt(tt_AM**2 + 1)*sqrt(tt_AV**2 + 1))",
-  "n_nodes_simplified": 123,
-  "n_ops_simplified": 70,
-  "eval_hash": "224df72660d6"
+  "equation_simplified": "aq((aq(-1.9502, tt_AM)*aq(0.6964, gears_missing) + aq(aq(-cylinders - engine_size + 3.7819, aq(-3.5143, tt_AM)), aq(-3.0818, tt_AM)))*aq(1.5493, tt_AV), aq(2.4859, engine_size))",
+  "n_nodes_simplified": 29,
+  "n_ops_simplified": 14,
+  "eval_hash": "c05f5f130745"
 }

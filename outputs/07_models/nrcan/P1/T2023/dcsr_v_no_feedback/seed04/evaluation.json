@@ -40,7 +40,7 @@
   "verify_bb_calls": 35445,
   "verify_cx_added": 0,
   "equation_simplified": "(cylinders + 2*engine_size)*(gears_missing - 2.7099)*(tt_AV - 3.0251)",
-  "n_nodes_simplified": 12,
+  "n_nodes_simplified": 13,
   "n_ops_simplified": 6,
-  "eval_hash": "b6e6adcde727"
+  "eval_hash": "cdad0ef4f25c"
 }

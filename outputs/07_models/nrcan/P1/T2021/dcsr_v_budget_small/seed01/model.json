@@ -20,102 +20,75 @@
     "op": "aq",
     "children": [
       {
-        "op": "add",
+        "op": "sub",
         "children": [
           {
-            "op": "aq",
-            "children": [
-              {
-                "op": "add",
-                "children": [
-                  {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "add",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 1
-                          },
-                          {
-                            "op": "const",
-                            "value": -1.7656340050736195
-                          }
-                        ]
-                      },
-                      {
-                        "op": "const",
-                        "value": 2.427546824402478
-                      }
-                    ]
-                  },
-                  {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "sub",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 0
-                          },
-                          {
-                            "op": "var",
-                            "value": 4
-                          }
-                        ]
-                      },
-                      {
-                        "op": "var",
-                        "value": 1
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "op": "const",
-                "value": 1.2752722785423738
-              }
-            ]
+            "op": "var",
+            "value": 6
           },
           {
-            "op": "aq",
+            "op": "var",
+            "value": 0
+          }
+        ]
+      },
+      {
+        "op": "aq",
+        "children": [
+          {
+            "op": "add",
             "children": [
               {
                 "op": "var",
                 "value": 0
               },
               {
-                "op": "var",
-                "value": 1
+                "op": "mul",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 4
+                  },
+                  {
+                    "op": "add",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 5
+                      },
+                      {
+                        "op": "const",
+                        "value": -6.437697817411265
+                      }
+                    ]
+                  }
+                ]
               }
             ]
+          },
+          {
+            "op": "var",
+            "value": 1
           }
         ]
-      },
-      {
-        "op": "var",
-        "value": 6
       }
     ]
   },
   "scaling": {
     "a": [
-      86.18348775648684,
-      107.20730633413953,
-      40.40497143692244,
-      116.90254395239052
+      133.91702876694546,
+      149.55721598883713,
+      90.34480674822288,
+      158.86658717224938
     ],
     "b": [
-      94.53265083356344,
-      86.82228969749369,
-      130.99090420291097,
-      74.91037171678742
+      -43.49332392667039,
+      -40.69146597682872,
+      -68.7791823205902,
+      -33.45253122279443
     ],
-    "a0": 95.02204941260047,
-    "b0": 91.17872873641029
+    "a0": 140.39793106240015,
+    "b0": -42.35510975461284
   },
   "n_groups": 4,
   "spec": {
@@ -151,7 +124,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -171,8 +144,8 @@
   },
   "seed": 1,
   "info": {
-    "train_nmse": 0.21616010336075545,
-    "val_nmse": 0.2606192228984723,
+    "train_nmse": 0.21582695053453516,
+    "val_nmse": 0.2552546954105432,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -181,15 +154,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 108.77645000000484,
-    "n_fitness_evaluations": 32835,
-    "verify_prefilter_refuted": 947,
-    "verify_bb_certified": 31470,
-    "verify_bb_refuted": 12,
-    "verify_bb_undecided": 407,
-    "verify_bb_boxes": 22449856,
-    "verify_bb_calls": 31889,
-    "verify_cx_added": 59
+    "train_time_s": 213.5574811999686,
+    "n_fitness_evaluations": 34678,
+    "verify_prefilter_refuted": 3667,
+    "verify_bb_certified": 27014,
+    "verify_bb_refuted": 32,
+    "verify_bb_undecided": 3966,
+    "verify_bb_boxes": 26569142,
+    "verify_bb_calls": 31012,
+    "verify_cx_added": 146
   },
-  "equation": "aq((aq((aq((cylinders + -1.76563), 2.42755) + aq((engine_size - tt_AM), cylinders)), 1.27527) + aq(engine_size, cylinders)), tt_AV)"
+  "equation": "aq((tt_AV - engine_size), aq((engine_size + (tt_AM * (tt_AS + -6.4377))), cylinders))"
 }

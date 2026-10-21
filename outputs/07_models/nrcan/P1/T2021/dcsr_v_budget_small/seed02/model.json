@@ -21,35 +21,62 @@
     "children": [
       {
         "op": "var",
-        "value": 4
+        "value": 3
       },
       {
         "op": "add",
         "children": [
           {
             "op": "var",
-            "value": 0
+            "value": 1
           },
           {
             "op": "add",
             "children": [
               {
-                "op": "var",
-                "value": 0
-              },
-              {
                 "op": "aq",
                 "children": [
                   {
-                    "op": "var",
-                    "value": 1
+                    "op": "const",
+                    "value": -5.821425341116718
                   },
                   {
-                    "op": "mul",
+                    "op": "sub",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 4
+                      },
+                      {
+                        "op": "var",
+                        "value": 0
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "mul",
+                "children": [
+                  {
+                    "op": "sub",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 6
+                      },
+                      {
+                        "op": "var",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  {
+                    "op": "add",
                     "children": [
                       {
                         "op": "const",
-                        "value": 3.9906899409713685
+                        "value": -1.8836537860850548
                       },
                       {
                         "op": "var",
@@ -67,19 +94,19 @@
   },
   "scaling": {
     "a": [
-      118.92967138106457,
-      140.4236167823193,
-      96.42200512723798,
-      154.64486278849768
+      158.42689945305221,
+      172.46617700501685,
+      147.96601912175032,
+      177.84706103293883
     ],
     "b": [
-      -11.301824384050159,
-      -10.144294960281904,
-      -14.894250684356278,
-      -8.171526231197385
+      -9.968978379956006,
+      -9.234656266642004,
+      -13.00255971604088,
+      -7.6041680537866485
     ],
-    "a0": 128.58574405237434,
-    "b0": -10.740528581564398
+    "a0": 164.36274073259824,
+    "b0": -9.638679808984149
   },
   "n_groups": 4,
   "spec": {
@@ -115,7 +142,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -135,8 +162,8 @@
   },
   "seed": 2,
   "info": {
-    "train_nmse": 0.22772681482145285,
-    "val_nmse": 0.27198186975760497,
+    "train_nmse": 0.21835115691687762,
+    "val_nmse": 0.2609922515989024,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -145,15 +172,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 79.88645869999891,
-    "n_fitness_evaluations": 34340,
-    "verify_prefilter_refuted": 826,
-    "verify_bb_certified": 33122,
-    "verify_bb_refuted": 8,
-    "verify_bb_undecided": 385,
-    "verify_bb_boxes": 23594560,
-    "verify_bb_calls": 33515,
-    "verify_cx_added": 40
+    "train_time_s": 120.2394405999803,
+    "n_fitness_evaluations": 34479,
+    "verify_prefilter_refuted": 6605,
+    "verify_bb_certified": 26922,
+    "verify_bb_refuted": 13,
+    "verify_bb_undecided": 940,
+    "verify_bb_boxes": 20390500,
+    "verify_bb_calls": 27875,
+    "verify_cx_added": 65
   },
-  "equation": "(tt_AM - (engine_size + (engine_size + aq(cylinders, (3.99069 * tt_AV)))))"
+  "equation": "(gears_missing - (cylinders + (aq(-5.82143, (tt_AM - engine_size)) + ((tt_AV - engine_size) * (-1.88365 + tt_AV)))))"
 }

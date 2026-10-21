@@ -35,5 +35,5 @@
   "equation_simplified": "2*bg_pickup + 2.9668*bg_special + cylinders - gears_missing + 0.4089*tt_AS + (bg_van + 2.1344)*(engine_size - tt_AV)",
   "n_nodes_simplified": 23,
   "n_ops_simplified": 11,
-  "eval_hash": "6cb2d224a594"
+  "eval_hash": "3e91dea36b58"
 }

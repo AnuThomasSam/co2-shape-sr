@@ -32,8 +32,8 @@
   "feasible_on_constraint_set": 1,
   "n_fitness_evaluations": 34455,
   "final_verdict_in_search": "",
-  "equation_simplified": "-cylinders - engine_size/(sqrt(gears_missing**2 + 1)*(tt_AV**2 + 1)) + tt_AV - (engine_size - tt_AM)/(sqrt((cylinders - 3.4756)**2 + 1)*sqrt((cylinders*gears_missing - cylinders + tt_AM + tt_AS + tt_M + 4.2093)**2 + 1))",
-  "n_nodes_simplified": 55,
-  "n_ops_simplified": 29,
-  "eval_hash": "8e5656f1009f"
+  "equation_simplified": "-cylinders + tt_AV + aq(aq(-engine_size + tt_AM, cylinders*gears_missing - cylinders + tt_AM + tt_AS + tt_M + 4.2093), cylinders - 3.4756) - aq(aq(aq(engine_size, tt_AV), tt_AV), gears_missing)",
+  "n_nodes_simplified": 33,
+  "n_ops_simplified": 16,
+  "eval_hash": "05039e829adf"
 }

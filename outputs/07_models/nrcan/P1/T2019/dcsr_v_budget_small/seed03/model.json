@@ -17,36 +17,27 @@
     "E"
   ],
   "tree": {
-    "op": "add",
+    "op": "sub",
     "children": [
       {
         "op": "aq",
         "children": [
           {
-            "op": "add",
+            "op": "sub",
             "children": [
               {
                 "op": "var",
-                "value": 1
+                "value": 4
               },
               {
-                "op": "add",
-                "children": [
-                  {
-                    "op": "const",
-                    "value": 3.05456037014256
-                  },
-                  {
-                    "op": "var",
-                    "value": 0
-                  }
-                ]
+                "op": "const",
+                "value": -2.546378692956973
               }
             ]
           },
           {
             "op": "var",
-            "value": 6
+            "value": 0
           }
         ]
       },
@@ -57,27 +48,81 @@
             "op": "sub",
             "children": [
               {
-                "op": "var",
-                "value": 0
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 0
+                  },
+                  {
+                    "op": "sub",
+                    "children": [
+                      {
+                        "op": "const",
+                        "value": 4.46788749657104
+                      },
+                      {
+                        "op": "add",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 7
+                          },
+                          {
+                            "op": "var",
+                            "value": 2
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               {
-                "op": "const",
-                "value": 10.7456808206839
+                "op": "sub",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 6
+                  },
+                  {
+                    "op": "sub",
+                    "children": [
+                      {
+                        "op": "aq",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 0
+                          },
+                          {
+                            "op": "var",
+                            "value": 6
+                          }
+                        ]
+                      },
+                      {
+                        "op": "sub",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 6
+                          },
+                          {
+                            "op": "var",
+                            "value": 1
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
           {
-            "op": "aq",
-            "children": [
-              {
-                "op": "var",
-                "value": 0
-              },
-              {
-                "op": "var",
-                "value": 4
-              }
-            ]
+            "op": "const",
+            "value": 2.8112818617665383
           }
         ]
       }
@@ -85,19 +130,19 @@
   },
   "scaling": {
     "a": [
-      149.78018761146967,
-      163.91709259584954,
-      138.32649655265902,
-      157.3753192932827
+      169.83278150098897,
+      183.7712132860292,
+      151.8034505996523,
+      179.48285967866332
     ],
     "b": [
-      11.576925245963809,
-      10.254975876214543,
-      13.593032171869497,
-      9.59291090178637
+      -33.25399153752752,
+      -30.422950702231784,
+      -47.63243410644444,
+      -25.719265274293587
     ],
-    "a0": 155.76388296800482,
-    "b0": 10.85820974724641
+    "a0": 175.18753199479528,
+    "b0": -31.854713596563197
   },
   "n_groups": 4,
   "spec": {
@@ -133,7 +178,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -153,8 +198,8 @@
   },
   "seed": 3,
   "info": {
-    "train_nmse": 0.2210863171344993,
-    "val_nmse": 0.21328901105050058,
+    "train_nmse": 0.21624490916400302,
+    "val_nmse": 0.20893642374956725,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -163,15 +208,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 110.39358820000052,
-    "n_fitness_evaluations": 36207,
-    "verify_prefilter_refuted": 2893,
-    "verify_bb_certified": 30433,
-    "verify_bb_refuted": 20,
-    "verify_bb_undecided": 2862,
-    "verify_bb_boxes": 22920720,
-    "verify_bb_calls": 33315,
-    "verify_cx_added": 85
+    "train_time_s": 132.70566249999683,
+    "n_fitness_evaluations": 35776,
+    "verify_prefilter_refuted": 4508,
+    "verify_bb_certified": 29347,
+    "verify_bb_refuted": 22,
+    "verify_bb_undecided": 1900,
+    "verify_bb_boxes": 22668692,
+    "verify_bb_calls": 31269,
+    "verify_cx_added": 98
   },
-  "equation": "(aq((cylinders + (3.05456 + engine_size)), tt_AV) + aq((engine_size - 10.7457), aq(engine_size, tt_AM)))"
+  "equation": "(aq((tt_AM - -2.54638), engine_size) - aq((aq(engine_size, (4.46789 - (tt_M + gears_f))) - (tt_AV - (aq(engine_size, tt_AV) - (tt_AV - cylinders)))), 2.81128))"
 }

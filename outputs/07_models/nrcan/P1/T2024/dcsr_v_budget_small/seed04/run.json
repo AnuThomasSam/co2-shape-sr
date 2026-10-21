@@ -4,7 +4,7 @@
   "block": "T2024",
   "method": "dcsr_v_budget_small",
   "seed": 4,
-  "run_hash": "748fc0333a176b49",
+  "run_hash": "6c914b0530476d28",
   "spec": {
     "population_size": 500,
     "generations": 80,
@@ -38,7 +38,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -56,49 +56,50 @@
     "name": "dcsr_v_budget_small",
     "stochastic": true
   },
-  "started": "2026-10-04 00:01:43",
+  "started": "2026-10-21 23:38:18",
   "status": "ok",
-  "fit_time_s": 132.10623930000293,
-  "predict_time_s": 0.02544849998957943,
+  "fit_time_s": 144.64195180003298,
+  "predict_time_s": 0.015397200011648238,
   "n_fit": 1946,
   "n_val": 919,
   "description": {
-    "equation": "aq(((tt_AV + (gears_missing + -2.41772)) * ((gears_missing - aq(cylinders, tt_AV)) - engine_size)), aq(aq(4.01889, engine_size), engine_size))",
+    "equation": "aq((aq((aq(aq((engine_size + cylinders), tt_AV), (gears_missing * 2.35133)) - 3.8501), tt_AV) - 5.27841), (tt_AM - 1.05503))",
     "scaling": {
       "X": {
-        "a": 153.3319204660283,
-        "b": 5.509781680258917
+        "a": 266.76187305894746,
+        "b": 22.671196589425445
       },
       "Z": {
-        "a": 156.26824709609733,
-        "b": 5.653860340459619
+        "a": 271.0044143048517,
+        "b": 19.445195205582927
       },
       "D": {
-        "a": 161.00228486854098,
-        "b": 5.6388817887890355
+        "a": 276.97820987469504,
+        "b": 20.887991220911882
       },
       "E": {
-        "a": 154.05959192609495,
-        "b": 5.012808533007882
+        "a": 256.52406726277917,
+        "b": 20.045119431918813
       }
     },
     "scaling_pooled": {
-      "a": 154.03362620098147,
-      "b": 5.6388817887890355
+      "a": 267.68277086041223,
+      "b": 20.887991220911882
     },
     "n_nodes": 19,
-    "depth": 6,
-    "n_constants": 2,
+    "depth": 8,
+    "n_constants": 4,
     "variables_used": [
       "cylinders",
       "engine_size",
       "gears_missing",
+      "tt_AM",
       "tt_AV"
     ],
-    "n_parameters": 10,
+    "n_parameters": 12,
     "params": {
-      "train_nmse": 0.23086609943928685,
-      "val_nmse": 0.24779350161494337,
+      "train_nmse": 0.2183903753032739,
+      "val_nmse": 0.24971295112207223,
       "train_violation": 0.0,
       "feasible_on_constraint_set": true,
       "hof_size": 50,
@@ -107,15 +108,15 @@
       "final_verdict": "certified",
       "selected_by": "validation",
       "scaling_refit": true,
-      "train_time_s": 132.07879590000084,
-      "n_fitness_evaluations": 35106,
-      "verify_prefilter_refuted": 3990,
-      "verify_bb_certified": 28865,
-      "verify_bb_refuted": 16,
-      "verify_bb_undecided": 2236,
-      "verify_bb_boxes": 18670200,
-      "verify_bb_calls": 31117,
-      "verify_cx_added": 77
+      "train_time_s": 144.6250639000209,
+      "n_fitness_evaluations": 33971,
+      "verify_prefilter_refuted": 2647,
+      "verify_bb_certified": 30358,
+      "verify_bb_refuted": 12,
+      "verify_bb_undecided": 955,
+      "verify_bb_boxes": 20204574,
+      "verify_bb_calls": 31325,
+      "verify_cx_added": 57
     },
     "columns": [
       "engine_size",
@@ -128,5 +129,5 @@
       "tt_M"
     ]
   },
-  "finished": "2026-10-04 00:03:56"
+  "finished": "2026-10-21 23:40:42"
 }

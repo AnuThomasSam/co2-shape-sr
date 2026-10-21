@@ -9,7 +9,7 @@ import pandas as pd
 from scipy import stats as sps
 
 from ..io import read_csv, write_csv
-from ..stats import a12, a12_magnitude, friedman_nemenyi, holm, mann_whitney
+from ..stats import a12, a12_magnitude, compare, friedman_nemenyi, holm, mann_whitney
 from .common import sdir
 
 CODE_DEPS = ['co2sr.stats']
@@ -96,10 +96,11 @@ def run(cfg, log, **_):
             xb = g.loc[g["method"] == b, metric].dropna().to_numpy()
             if len(xa) == 0 or len(xb) == 0:
                 continue
-            A = a12(xa, xb)
+            A = a12(xa, xb)          # with n_b = 1 this is the share of a's seeds below b (ties 1/2)
+            pval, test_name = compare(xa, xb)
             rows.append({**dict(zip(UNIT, unit)), "method_a": a, "method_b": b, "n_a": len(xa), "n_b": len(xb),
                          "median_a": np.median(xa), "median_b": np.median(xb), "A12": A,
-                         "A12_magnitude": a12_magnitude(A), "p_value": mann_whitney(xa, xb)})
+                         "A12_magnitude": a12_magnitude(A), "test": test_name, "p_value": pval})
     pw = pd.DataFrame(rows)
     if len(pw):
         pw["p_holm"] = pw.groupby(["dataset", "protocol"], group_keys=False)["p_value"].apply(holm)

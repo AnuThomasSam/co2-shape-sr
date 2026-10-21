@@ -33,6 +33,30 @@ def mann_whitney(x, y) -> float:
     return float(stats.mannwhitneyu(x, y, alternative="two-sided").pvalue)
 
 
+def sign_test_vs_constant(x, c) -> float:
+    """Exact two-sided sign test of whether the seeds' errors x lie below or above a single value c
+    (a deterministic baseline). Ties are dropped. Mann-Whitney is not defined for a sample of one."""
+    x = np.asarray(x, float)
+    better, worse = int((x < c).sum()), int((x > c).sum())
+    if better + worse == 0:
+        return np.nan
+    return float(stats.binomtest(better, better + worse, 0.5).pvalue)
+
+
+def compare(xa, xb) -> tuple[float, str]:
+    """p-value and test name for errors of method a against method b within one block.
+    Both stochastic: Mann-Whitney U. One side deterministic (one value): sign test of the other
+    side's seeds against that value. Both deterministic: no test."""
+    xa, xb = np.asarray(xa, float), np.asarray(xb, float)
+    if len(xa) >= 2 and len(xb) >= 2:
+        return mann_whitney(xa, xb), "mann_whitney"
+    if len(xa) >= 2 and len(xb) == 1:
+        return sign_test_vs_constant(xa, xb[0]), "sign_test"
+    if len(xb) >= 2 and len(xa) == 1:
+        return sign_test_vs_constant(xb, xa[0]), "sign_test"
+    return np.nan, "none"
+
+
 def holm(pvalues: pd.Series) -> pd.Series:
     p = pvalues.to_numpy(float)
     out = np.full_like(p, np.nan)

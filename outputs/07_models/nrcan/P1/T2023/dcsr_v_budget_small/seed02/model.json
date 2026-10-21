@@ -17,7 +17,7 @@
     "E"
   ],
   "tree": {
-    "op": "add",
+    "op": "sub",
     "children": [
       {
         "op": "aq",
@@ -26,80 +26,8 @@
             "op": "aq",
             "children": [
               {
-                "op": "add",
-                "children": [
-                  {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "sub",
-                        "children": [
-                          {
-                            "op": "sub",
-                            "children": [
-                              {
-                                "op": "var",
-                                "value": 0
-                              },
-                              {
-                                "op": "var",
-                                "value": 3
-                              }
-                            ]
-                          },
-                          {
-                            "op": "var",
-                            "value": 4
-                          }
-                        ]
-                      },
-                      {
-                        "op": "aq",
-                        "children": [
-                          {
-                            "op": "sub",
-                            "children": [
-                              {
-                                "op": "var",
-                                "value": 1
-                              },
-                              {
-                                "op": "const",
-                                "value": 3.858874740218304
-                              }
-                            ]
-                          },
-                          {
-                            "op": "var",
-                            "value": 4
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "var",
-                        "value": 0
-                      },
-                      {
-                        "op": "add",
-                        "children": [
-                          {
-                            "op": "const",
-                            "value": -2.7779124172610006
-                          },
-                          {
-                            "op": "var",
-                            "value": 4
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
+                "op": "var",
+                "value": 1
               },
               {
                 "op": "var",
@@ -108,32 +36,68 @@
             ]
           },
           {
-            "op": "var",
-            "value": 6
+            "op": "aq",
+            "children": [
+              {
+                "op": "var",
+                "value": 4
+              },
+              {
+                "op": "var",
+                "value": 0
+              }
+            ]
           }
         ]
       },
       {
-        "op": "var",
-        "value": 1
+        "op": "aq",
+        "children": [
+          {
+            "op": "const",
+            "value": -4.928138061598978
+          },
+          {
+            "op": "sub",
+            "children": [
+              {
+                "op": "var",
+                "value": 1
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 0
+                  },
+                  {
+                    "op": "var",
+                    "value": 3
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   "scaling": {
     "a": [
-      41.32887852381245,
-      81.61407087440699,
-      74.59250956343575,
-      82.27490179915989
+      8.370383808422872,
+      49.92599053819907,
+      39.60646646055912,
+      57.46443200172425
     ],
     "b": [
-      26.084529453395866,
-      21.990378406614322,
-      23.912408687632276,
-      21.10453294597882
+      33.06261743832524,
+      28.490543916111907,
+      30.814207654017423,
+      26.55998965415394
     ],
-    "a0": 61.39135966872513,
-    "b0": 23.912408687632276
+    "a0": 27.92996245807373,
+    "b0": 30.814207654017423
   },
   "n_groups": 4,
   "spec": {
@@ -169,7 +133,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -189,8 +153,8 @@
   },
   "seed": 2,
   "info": {
-    "train_nmse": 0.21562228222053853,
-    "val_nmse": 0.24352202885588484,
+    "train_nmse": 0.22266568459894562,
+    "val_nmse": 0.2464611365968398,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -199,15 +163,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 105.81951830000617,
-    "n_fitness_evaluations": 31865,
-    "verify_prefilter_refuted": 1392,
-    "verify_bb_certified": 29328,
-    "verify_bb_refuted": 18,
-    "verify_bb_undecided": 1128,
-    "verify_bb_boxes": 19747152,
-    "verify_bb_calls": 30474,
-    "verify_cx_added": 84
+    "train_time_s": 159.50296670000535,
+    "n_fitness_evaluations": 35888,
+    "verify_prefilter_refuted": 5661,
+    "verify_bb_certified": 28986,
+    "verify_bb_refuted": 28,
+    "verify_bb_undecided": 1214,
+    "verify_bb_boxes": 21237048,
+    "verify_bb_calls": 30228,
+    "verify_cx_added": 139
   },
-  "equation": "(aq(aq((aq(((engine_size - gears_missing) - tt_AM), aq((cylinders - 3.85887), tt_AM)) + aq(engine_size, (-2.77791 + tt_AM))), tt_AV), tt_AV) + cylinders)"
+  "equation": "(aq(aq(cylinders, tt_AV), aq(tt_AM, engine_size)) - aq(-4.92814, (cylinders - aq(engine_size, gears_missing))))"
 }

@@ -1,7 +1,7 @@
 {
   "step": "11_figures",
-  "finished": "2026-10-04 15:17:29",
-  "config_hash": "d1c720e7e301",
+  "finished": "2026-10-22 00:23:12",
+  "config_hash": "bfed6f04b12e",
   "inputs": [
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\02_clean\\nrcan_clean.csv",
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\02_clean\\kaggle_clean.csv",
@@ -9,7 +9,7 @@
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\08_evaluation\\run_metrics.csv",
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\summary_by_block.csv"
   ],
-  "inputs_fingerprint": "6cee627787820e47",
+  "inputs_fingerprint": "1a31a8c61c50f40a",
   "outputs": [
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\results\\figures\\fig01_records_by_model_year_and_fuel_nrcan.png",
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\results\\figures\\fig01_records_by_model_year_and_fuel_nrcan.pdf",

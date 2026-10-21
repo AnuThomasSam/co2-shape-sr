@@ -6,7 +6,7 @@ import pandas as pd
 
 from ..io import read_csv, write_csv
 from ..plotting import apply_style, color, label, save
-from ..stats import a12, a12_magnitude, friedman_nemenyi, holm, mann_whitney
+from ..stats import a12, a12_magnitude, compare, friedman_nemenyi, holm, mann_whitney
 from .common import sdir
 from .s11_figures import _cd_plot
 from .s12_tables import to_latex

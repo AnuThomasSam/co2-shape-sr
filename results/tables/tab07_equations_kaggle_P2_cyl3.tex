@@ -1,10 +1,10 @@
-\begin{tabular}{lp{9cm}rr}
+\begin{tabular}{lp{8cm}rrr}
 \toprule
-Method & Equation g(x) & Nodes & Val. RMSE \\
+Method & Equation g(x) & Tree nodes & Val. RMSE & Test RMSE \\
 \midrule
-DCSR-F & $\frac{engine_{size} \left(tt_{AV} - 6.5295\right) + \sqrt{cylinders^{2} + 1} \left(- cylinders + tt_{AV} - 2.0792\right)}{\sqrt{cylinders^{2} + 1}}$ & 28 & 27.40 \\
-DCSR-S & $\frac{- 6.2112 engine_{size} + tt_{AM} \sqrt{tt_{AV}^{2} + 1}}{\sqrt{\frac{\left(2.3797 cylinders - 1.9865 engine_{size} \sqrt{gears_{f}^{2} + 1}\right)^{2} + \left(gears_{f}^{2} + 1\right) \left(\left(cylinders + 1.8621\right)^{2} + 1\right) \left(\left(tt_{AM} - tt_{AV}\right)^{2} + 1\right)}{\left(gears_{f}^{2} + 1\right) \left(\left(cylinders + 1.8621\right)^{2} + 1\right) \left(\left(tt_{AM} - tt_{AV}\right)^{2} + 1\right)}} \sqrt{tt_{AV}^{2} + 1}}$ & 90 & 27.23 \\
-DCSR-T & $\frac{engine_{size}}{\sqrt{\frac{\left(tt_{AM}^{2} + 1\right) \left(\left(cylinders + 2.0803\right)^{2} + 1\right) + \left(2 engine_{size} + tt_{AM} \sqrt{tt_{AM}^{2} + 1} + tt_{AM}\right)^{2}}{\left(tt_{AM}^{2} + 1\right) \left(\left(cylinders + 2.0803\right)^{2} + 1\right)}} \sqrt{tt_{AV}^{2} + 1}}$ & 58 & 27.47 \\
-Standard GP & $cylinders + \frac{engine_{size}}{\sqrt{\left(gears_{f} - 3.1402\right)^{2} + 1}} + \frac{engine_{size}}{\sqrt{\left(cylinders - 4.3626\right)^{2} + 1}} + \frac{engine_{size}}{\sqrt{11.8937 tt_{AV}^{2} + 1}} - \frac{tt_{AM}}{\sqrt{\left(cylinders - 4.3626\right)^{2} + 1}} - \frac{0.5254 tt_{M}}{\sqrt{tt_{AV}^{2} + 1}} + \frac{1.0973}{\sqrt{tt_{AV}^{2} + 1}}$ & 66 & 27.41 \\
+DCSR-F & $- 2 \operatorname{aq}{\left(cylinders,engine_{size} \right)} + \operatorname{aq}{\left(cylinders + engine_{size},tt_{AV} \right)}$ & 13 & 27.75 & 20.07 \\
+DCSR-S & $\operatorname{aq}{\left(4 engine_{size},cylinders \right)} + \operatorname{aq}{\left(cylinders + engine_{size},tt_{AV} \right)}$ & 15 & 27.88 & 18.85 \\
+DCSR-T & $- cylinders - 3.5294 engine_{size} + tt_{AM} + 3.5294 tt_{AV} + \operatorname{aq}{\left(engine_{size},tt_{AM} \right)}$ & 13 & 27.91 & 19.37 \\
+Standard GP & $cylinders - 2.2145 engine_{size} + 4.4289 gears_{missing} - 2.2145 \operatorname{aq}{\left(cylinders,tt_{AV} \right)} - 2.2145 \operatorname{aq}{\left(\left(- engine_{size} + tt_{AM}\right) \left(tt_{AV} - 2.3666\right),gears_{f} + tt_{AV} \right)}$ & 25 & 27.82 & 20.49 \\
 \bottomrule
 \end{tabular}

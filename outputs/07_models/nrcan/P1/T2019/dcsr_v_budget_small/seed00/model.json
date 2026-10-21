@@ -17,94 +17,85 @@
     "E"
   ],
   "tree": {
-    "op": "sub",
+    "op": "add",
     "children": [
       {
-        "op": "var",
-        "value": 6
-      },
-      {
-        "op": "sub",
+        "op": "mul",
         "children": [
           {
-            "op": "aq",
-            "children": [
-              {
-                "op": "const",
-                "value": -1.617139353353846
-              },
-              {
-                "op": "sub",
-                "children": [
-                  {
-                    "op": "var",
-                    "value": 0
-                  },
-                  {
-                    "op": "var",
-                    "value": 7
-                  }
-                ]
-              }
-            ]
+            "op": "const",
+            "value": -2.3194362955763137
           },
           {
             "op": "sub",
             "children": [
               {
-                "op": "sub",
+                "op": "aq",
                 "children": [
+                  {
+                    "op": "aq",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 0
+                      },
+                      {
+                        "op": "var",
+                        "value": 6
+                      }
+                    ]
+                  },
                   {
                     "op": "var",
                     "value": 6
+                  }
+                ]
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "add",
+                    "children": [
+                      {
+                        "op": "sub",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 3
+                          },
+                          {
+                            "op": "const",
+                            "value": -4.788269502131004
+                          }
+                        ]
+                      },
+                      {
+                        "op": "var",
+                        "value": 4
+                      }
+                    ]
                   },
                   {
                     "op": "var",
                     "value": 0
                   }
                 ]
-              },
-              {
-                "op": "add",
-                "children": [
-                  {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "const",
-                        "value": -2.372561119306748
-                      },
-                      {
-                        "op": "sub",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 0
-                          },
-                          {
-                            "op": "var",
-                            "value": 4
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "var",
-                        "value": 1
-                      },
-                      {
-                        "op": "const",
-                        "value": -1.8907449924155166
-                      }
-                    ]
-                  }
-                ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "op": "sub",
+        "children": [
+          {
+            "op": "var",
+            "value": 0
+          },
+          {
+            "op": "var",
+            "value": 1
           }
         ]
       }
@@ -112,19 +103,19 @@
   },
   "scaling": {
     "a": [
-      173.58701350348912,
-      184.28785686517352,
-      156.8912625327583,
-      176.0324841899535
+      191.70411052293053,
+      200.59896940607132,
+      186.2641025855559,
+      192.3583086589785
     ],
     "b": [
-      -18.61662241148448,
-      -16.729771820170193,
-      -24.620739950666707,
-      -15.585892890522047
+      -10.539770196395942,
+      -9.40769288734905,
+      -12.828110034119149,
+      -8.698901218319335
     ],
-    "a0": 177.65328795777583,
-    "b0": -17.61405922038266
+    "a0": 194.9072302946155,
+    "b0": -9.92200015422934
   },
   "n_groups": 4,
   "spec": {
@@ -160,7 +151,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -180,8 +171,8 @@
   },
   "seed": 0,
   "info": {
-    "train_nmse": 0.22153580699845393,
-    "val_nmse": 0.2139184942741443,
+    "train_nmse": 0.22077521706986913,
+    "val_nmse": 0.21244104163971278,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -190,15 +181,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 77.88724390000425,
-    "n_fitness_evaluations": 34915,
-    "verify_prefilter_refuted": 5653,
-    "verify_bb_certified": 25972,
-    "verify_bb_refuted": 15,
-    "verify_bb_undecided": 3276,
-    "verify_bb_boxes": 20132944,
-    "verify_bb_calls": 29263,
-    "verify_cx_added": 72
+    "train_time_s": 93.31611690000864,
+    "n_fitness_evaluations": 34185,
+    "verify_prefilter_refuted": 5689,
+    "verify_bb_certified": 27399,
+    "verify_bb_refuted": 20,
+    "verify_bb_undecided": 1078,
+    "verify_bb_boxes": 20763752,
+    "verify_bb_calls": 28497,
+    "verify_cx_added": 93
   },
-  "equation": "(tt_AV - (aq(-1.61714, (engine_size - tt_M)) - ((tt_AV - engine_size) - (aq(-2.37256, (engine_size - tt_AM)) + aq(cylinders, -1.89074)))))"
+  "equation": "((-2.31944 * (aq(aq(engine_size, tt_AV), tt_AV) - aq(((gears_missing - -4.78827) + tt_AM), engine_size))) + (engine_size - cylinders))"
 }

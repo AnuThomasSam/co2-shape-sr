@@ -1,0 +1,13 @@
+\begin{tabular}{lp{8cm}rrr}
+\toprule
+Method & Equation g(x) & Tree nodes & Val. RMSE & Test RMSE \\
+\midrule
+Dynamic penalty & $- cylinders - \operatorname{aq}{\left(- tt_{AM} + \operatorname{aq}{\left(gears_{f},cylinders \right)},engine_{size} \right)} - 7.2301 \operatorname{aq}{\left(\operatorname{aq}{\left(engine_{size},tt_{AV} \right)},cylinders \right)}$ & 17 & 31.74 & 30.69 \\
+DCSR-F & $- engine_{size} - \operatorname{aq}{\left(cylinders,tt_{AV} \right)} + \operatorname{aq}{\left(tt_{AM} + \operatorname{aq}{\left(- engine_{size} + gears_{missing},tt_{AV} \right)},4.3102 - cylinders \right)}$ & 17 & 31.76 & 30.89 \\
+DCSR-IA & $0.2091 cylinders + \operatorname{aq}{\left(\operatorname{aq}{\left(\operatorname{aq}{\left(engine_{size},tt_{AV} \right)},tt_{AV} \right)},cylinders - 0.7965 \right)}$ & 13 & 31.78 & 31.11 \\
+DCSR-S & $\left(- \operatorname{aq}{\left(-1.5875,engine_{size} \right)} - 2.2331\right) \operatorname{aq}{\left(3.6787,tt_{AV} \right)} + \operatorname{aq}{\left(- cylinders + gears_{missing},\operatorname{aq}{\left(-4.3386,engine_{size} \right)} \right)}$ & 17 & 31.67 & 31.23 \\
+DCSR-T & $- cylinders + 2 tt_{AV} + \operatorname{aq}{\left(cylinders,engine_{size} \right)} + \operatorname{aq}{\left(cylinders,engine_{size} + tt_{AV} \right)} + \operatorname{aq}{\left(tt_{AM},engine_{size} \right)}$ & 19 & 31.61 & 31.19 \\
+DCSR-V & $- cylinders + tt_{AV} - \operatorname{aq}{\left(5.4539 engine_{size},cylinders \right)} - \operatorname{aq}{\left(\operatorname{aq}{\left(4.1692,tt_{AM} \right)},cylinders \right)} - \operatorname{aq}{\left(\operatorname{aq}{\left(gears_{f},3.4419 \right)},cylinders \right)}$ & 21 & 31.66 & 31.02 \\
+Standard GP & $\left(tt_{AV} - 2.3255\right) \left(- cylinders - 2 engine_{size} + gears_{missing} - \operatorname{aq}{\left(-4.7498,\operatorname{aq}{\left(- engine_{size} + gears_{missing},engine_{size} - tt_{AM} + tt_{AS} - 2.757 \right)} \right)}\right)$ & 25 & 31.47 & 30.61 \\
+\bottomrule
+\end{tabular}

@@ -32,8 +32,8 @@
   "feasible_on_constraint_set": 1,
   "n_fitness_evaluations": 34021,
   "final_verdict_in_search": "",
-  "equation_simplified": "(bg_van*(engine_size - 1.578) + cylinders + engine_size + sqrt(tt_AV**2 + 1)*(bg_pickup + 2*bg_special - gears_missing))/sqrt(tt_AV**2 + 1)",
-  "n_nodes_simplified": 32,
-  "n_ops_simplified": 18,
-  "eval_hash": "481e79ec5557"
+  "equation_simplified": "bg_pickup + 2*bg_special - gears_missing + aq(bg_van*(engine_size - 1.578) + cylinders + engine_size, tt_AV)",
+  "n_nodes_simplified": 19,
+  "n_ops_simplified": 9,
+  "eval_hash": "b437b9b89f21"
 }

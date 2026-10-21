@@ -33,7 +33,7 @@
   "n_fitness_evaluations": 34321,
   "final_verdict_in_search": "",
   "equation_simplified": "33.808*engine_size + gears_f - 33.808*tt_AV + 142.7998",
-  "n_nodes_simplified": 9,
+  "n_nodes_simplified": 11,
   "n_ops_simplified": 5,
-  "eval_hash": "8d2051167456"
+  "eval_hash": "0fa456a14e85"
 }

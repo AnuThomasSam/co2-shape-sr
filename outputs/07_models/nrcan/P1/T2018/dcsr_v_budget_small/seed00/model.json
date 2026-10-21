@@ -17,78 +17,51 @@
     "E"
   ],
   "tree": {
-    "op": "add",
+    "op": "aq",
     "children": [
       {
-        "op": "aq",
+        "op": "add",
         "children": [
-          {
-            "op": "var",
-            "value": 1
-          },
           {
             "op": "add",
             "children": [
               {
                 "op": "var",
-                "value": 6
+                "value": 1
               },
-              {
-                "op": "const",
-                "value": 1.0822851315824706
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "op": "add",
-        "children": [
-          {
-            "op": "aq",
-            "children": [
               {
                 "op": "var",
                 "value": 0
-              },
-              {
-                "op": "var",
-                "value": 6
               }
             ]
           },
           {
-            "op": "aq",
-            "children": [
-              {
-                "op": "const",
-                "value": -5.790121189634105
-              },
-              {
-                "op": "var",
-                "value": 0
-              }
-            ]
+            "op": "var",
+            "value": 0
           }
         ]
+      },
+      {
+        "op": "var",
+        "value": 6
       }
     ]
   },
   "scaling": {
     "a": [
-      169.422486077019,
-      182.92976521739504,
-      154.04501482810127,
-      165.93027062235888
+      105.70792531176795,
+      135.13917323816207,
+      77.30555849601325,
+      119.5729629228189
     ],
     "b": [
-      17.123067566265586,
-      14.064324428325397,
-      19.84071381417951,
-      14.921024292918256
+      12.542074088306986,
+      9.891313072549805,
+      15.021042195410894,
+      10.292122915004951
     ],
-    "a0": 175.37677951308848,
-    "b0": 15.27702074652059
+    "a0": 121.61065807931314,
+    "b0": 10.895576942381195
   },
   "n_groups": 4,
   "spec": {
@@ -124,7 +97,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -144,8 +117,8 @@
   },
   "seed": 0,
   "info": {
-    "train_nmse": 0.22577570575719078,
-    "val_nmse": 0.23637585083163853,
+    "train_nmse": 0.22976598062950546,
+    "val_nmse": 0.24422186865601658,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -154,15 +127,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 93.27945329999784,
-    "n_fitness_evaluations": 36590,
-    "verify_prefilter_refuted": 1407,
-    "verify_bb_certified": 34311,
-    "verify_bb_refuted": 18,
-    "verify_bb_undecided": 855,
-    "verify_bb_boxes": 23925120,
-    "verify_bb_calls": 35184,
-    "verify_cx_added": 88
+    "train_time_s": 67.20040230004815,
+    "n_fitness_evaluations": 33723,
+    "verify_prefilter_refuted": 680,
+    "verify_bb_certified": 32875,
+    "verify_bb_refuted": 8,
+    "verify_bb_undecided": 161,
+    "verify_bb_boxes": 22633136,
+    "verify_bb_calls": 33044,
+    "verify_cx_added": 36
   },
-  "equation": "(aq(cylinders, (tt_AV + 1.08229)) + (aq(engine_size, tt_AV) + aq(-5.79012, engine_size)))"
+  "equation": "aq(((cylinders + engine_size) + engine_size), tt_AV)"
 }

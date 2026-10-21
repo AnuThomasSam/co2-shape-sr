@@ -1,0 +1,13 @@
+\begin{tabular}{lp{8cm}rrr}
+\toprule
+Method & Equation g(x) & Tree nodes & Val. RMSE & Test RMSE \\
+\midrule
+Dynamic penalty & $- 0.4972 cylinders - \operatorname{aq}{\left(- engine_{size} \left(tt_{AV} - 1\right),\operatorname{aq}{\left(gears_{f},tt_{AM} + 5.849 \right)} \right)} + \operatorname{aq}{\left(tt_{AM} + 7.0981,engine_{size} \right)}$ & 21 & 26.73 & 29.16 \\
+DCSR-F & $cylinders + engine_{size} - tt_{AV} + \operatorname{aq}{\left(engine_{size},tt_{AV} \right)} + \operatorname{aq}{\left(\operatorname{aq}{\left(engine_{size} - tt_{AM} + \operatorname{aq}{\left(engine_{size} - tt_{AM},- gears_{f} - tt_{AV} - tt_{M} + 4.9526 \right)},tt_{AV} \right)},engine_{size} - 2.1627 \right)}$ & 31 & 26.76 & 29.25 \\
+DCSR-IA & $\operatorname{aq}{\left(- \operatorname{aq}{\left(- 5.3761 engine_{size},cylinders \right)} + \operatorname{aq}{\left(cylinders + \operatorname{aq}{\left(1.5252,engine_{size} \right)},\operatorname{aq}{\left(2.0928,engine_{size} - tt_{AM} \right)} \right)},tt_{AV} \right)}$ & 19 & 26.79 & 29.02 \\
+DCSR-S & $engine_{size} - tt_{AV} + \operatorname{aq}{\left(\operatorname{aq}{\left(cylinders,tt_{AV} \right)} - 6.796,tt_{AM} - 1.3438 \right)} + \operatorname{aq}{\left(\operatorname{aq}{\left(-5.7394,engine_{size} \right)},engine_{size} \right)}$ & 21 & 26.62 & 28.61 \\
+DCSR-T & $engine_{size} + \operatorname{aq}{\left(cylinders + engine_{size},tt_{AV} \right)} + \operatorname{aq}{\left(\operatorname{aq}{\left(3.2473,- engine_{size} + 2 tt_{AM} + 2.5732 \right)},tt_{AV} \right)}$ & 19 & 26.75 & 28.97 \\
+DCSR-V & $\operatorname{aq}{\left(-6.731,engine_{size} - tt_{AM} \right)} + \operatorname{aq}{\left(-3.5788,engine_{size} \right)} + \operatorname{aq}{\left(engine_{size},tt_{AV} \right)} + \operatorname{aq}{\left(engine_{size},gears_{f} - 4.9151 \right)} + \operatorname{aq}{\left(\operatorname{aq}{\left(cylinders - tt_{M},tt_{AV} \right)},tt_{AV} \right)}$ & 27 & 26.66 & 29.05 \\
+Standard GP & $\left(- cylinders - 2 engine_{size} - 4.5285\right) \operatorname{aq}{\left(\operatorname{aq}{\left(engine_{size},engine_{size} \right)},tt_{AV} \right)} + \operatorname{aq}{\left(cylinders,- cylinders + 3.3588 engine_{size} \left(gears_{missing} + tt_{AM} + tt_{M}\right) + engine_{size} - 3.0021 \right)}$ & 31 & 26.60 & 28.66 \\
+\bottomrule
+\end{tabular}

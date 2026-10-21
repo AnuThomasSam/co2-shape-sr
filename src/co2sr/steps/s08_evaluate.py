@@ -20,7 +20,11 @@ from ..metrics import accuracy, simplify_gp, slope_summary
 from ..models import load_model
 from .common import block_frames, load_clean, load_domain, load_splits, sdir
 
-CODE_DEPS = ['co2sr.metrics']
+# Step 08 loads every model and runs the interval and branch-and-bound checks, so its hash must
+# cover those modules too (it covered only metrics.py before).
+CODE_DEPS = ['co2sr.metrics', 'co2sr.models.base', 'co2sr.models.gp_model', 'co2sr.models.linear',
+             'co2sr.models.gam', 'co2sr.models.xgb', 'co2sr.gp.tree', 'co2sr.gp.primitives',
+             'co2sr.gp.scaling', 'co2sr.gp.constraints', 'co2sr.gp.verify', 'co2sr.features']
 NAME = "08_evaluation"
 INCREMENTAL = True
 KEYS = ["dataset", "protocol", "block", "method", "seed"]
@@ -55,9 +59,13 @@ def _reference_curves(full: pd.DataFrame, dcfg: dict, points: int) -> pd.DataFra
 
 def evaluate_run(cfg, rd: Path, run: dict, cache: dict) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
     ev = cfg["evaluation"]
-    tol = ev["slope_tol"]
     ds, p, b = run["dataset"], run["protocol"], run["block"]
     model = load_model(rd)
+    # Exact derivatives (GP, OLS, log-linear) use slope_tol. Finite differences of a fitted model
+    # (GAM, XGBoost, PySR) carry round-off of order eps * |y| / h, and a monotone spline with a flat
+    # segment gives slopes of -1e-8 to -2e-6 g/km per litre that are not violations. They use
+    # slope_tol_fd, a tolerance that is still negligible on the scale of the effect (about 20 g/km per litre).
+    tol = ev["slope_tol"] if getattr(model, "deterministic_slope", False) else ev.get("slope_tol_fd", ev["slope_tol"])
     pred = read_csv(rd / "predictions.csv")
     base = {k: run[k] for k in KEYS}
     rows = []

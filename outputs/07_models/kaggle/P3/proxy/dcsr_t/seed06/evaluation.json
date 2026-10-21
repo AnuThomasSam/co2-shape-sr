@@ -34,5 +34,5 @@
   "equation_simplified": "cylinders*(engine_size - tt_AM) - 2.8602*engine_size + gears_f - 1.8602*tt_AS + (tt_AV - 1.6679)*(cylinders*engine_size + engine_size - gears_f)",
   "n_nodes_simplified": 27,
   "n_ops_simplified": 13,
-  "eval_hash": "59b580ac7784"
+  "eval_hash": "2166d19494fc"
 }

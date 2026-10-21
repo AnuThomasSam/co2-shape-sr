@@ -263,20 +263,20 @@ def fig_domain_validity(cfg, out, plt):
 def fig_rmse_vs_complexity(cfg, out, plt):
     summ = read_csv(sdir(cfg, "08") / "run_summary.csv")
     met = read_csv(sdir(cfg, "08") / "run_metrics.csv")
-    if "n_nodes_simplified" not in summ:
+    if "n_nodes" not in summ:
         return []
     keys = ["dataset", "protocol", "block", "method", "seed"]
     m = met[~met["set"].isin(["val", "new_config"])].groupby(keys)["rmse"].mean().reset_index()
     d = summ.merge(m, on=keys)
-    d = d[d["method"].isin(["gp_standard", "dcsr_t", "dcsr_s", "dcsr_f", "dcsr_ia"])]
+    d = d[d["method"].isin(["gp_standard", "dcsr_t", "dcsr_s", "dcsr_f", "dcsr_ia", "dcsr_v", "dcsr_dyn"])]
     paths = []
     for (ds, pr), g in d.groupby(["dataset", "protocol"]):
         fig, ax = plt.subplots(figsize=(5.2, 3.6))
         for meth in _methods_in_order(cfg, set(g["method"])):
             s = g[g["method"] == meth]
-            ax.scatter(s["n_nodes_simplified"], s["rmse"], s=14, alpha=0.6, color=color(cfg, meth),
+            ax.scatter(s["n_nodes"], s["rmse"], s=14, alpha=0.6, color=color(cfg, meth),
                        marker=DCSR_MARKERS.get(meth, "o"), label=label(cfg, meth), edgecolors="none")
-        ax.set_xlabel("Nodes in simplified equation")
+        ax.set_xlabel("Tree nodes of the final equation")
         ax.set_ylabel("Test RMSE (g/km), mean over test sets")
         ax.legend(frameon=False)
         paths += save(fig, out, f"fig09_test_rmse_vs_equation_size_{ds}_{pr}", cfg)

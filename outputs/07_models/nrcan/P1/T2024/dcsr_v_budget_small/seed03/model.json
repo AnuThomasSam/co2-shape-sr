@@ -20,102 +20,30 @@
     "op": "aq",
     "children": [
       {
-        "op": "aq",
+        "op": "sub",
         "children": [
           {
             "op": "add",
             "children": [
               {
-                "op": "add",
+                "op": "aq",
                 "children": [
                   {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "add",
-                        "children": [
-                          {
-                            "op": "const",
-                            "value": -1.6278336915724756
-                          },
-                          {
-                            "op": "var",
-                            "value": 1
-                          }
-                        ]
-                      },
-                      {
-                        "op": "sub",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 2
-                          },
-                          {
-                            "op": "var",
-                            "value": 4
-                          }
-                        ]
-                      }
-                    ]
+                    "op": "var",
+                    "value": 2
                   },
                   {
-                    "op": "add",
-                    "children": [
-                      {
-                        "op": "var",
-                        "value": 1
-                      },
-                      {
-                        "op": "var",
-                        "value": 0
-                      }
-                    ]
+                    "op": "var",
+                    "value": 1
                   }
                 ]
               },
               {
-                "op": "aq",
+                "op": "add",
                 "children": [
                   {
-                    "op": "mul",
-                    "children": [
-                      {
-                        "op": "aq",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 2
-                          },
-                          {
-                            "op": "var",
-                            "value": 1
-                          }
-                        ]
-                      },
-                      {
-                        "op": "mul",
-                        "children": [
-                          {
-                            "op": "aq",
-                            "children": [
-                              {
-                                "op": "var",
-                                "value": 2
-                              },
-                              {
-                                "op": "var",
-                                "value": 1
-                              }
-                            ]
-                          },
-                          {
-                            "op": "var",
-                            "value": 0
-                          }
-                        ]
-                      }
-                    ]
+                    "op": "var",
+                    "value": 0
                   },
                   {
                     "op": "var",
@@ -126,8 +54,8 @@
             ]
           },
           {
-            "op": "var",
-            "value": 3
+            "op": "const",
+            "value": 2.0078517622459313
           }
         ]
       },
@@ -139,19 +67,19 @@
   },
   "scaling": {
     "a": [
-      87.90161949246647,
-      96.53519902271984,
-      101.34023257550984,
-      90.65500809098828
+      112.1663396494139,
+      123.44579344674517,
+      125.93549530252974,
+      123.68076877160127
     ],
     "b": [
-      16.28130330317244,
-      16.06246099542394,
-      16.334036247985686,
-      15.051720539743604
+      17.81184716799189,
+      17.184380989504255,
+      17.616116339120794,
+      15.348265335121921
     ],
-    "a0": 90.62631584009816,
-    "b0": 16.334036247985686
+    "a0": 116.68244518626068,
+    "b0": 17.616116339120794
   },
   "n_groups": 4,
   "spec": {
@@ -187,7 +115,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -207,8 +135,8 @@
   },
   "seed": 3,
   "info": {
-    "train_nmse": 0.226724380041096,
-    "val_nmse": 0.2409859124139872,
+    "train_nmse": 0.23236025913105135,
+    "val_nmse": 0.24814173996787459,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -217,15 +145,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 131.69268290000036,
-    "n_fitness_evaluations": 33939,
-    "verify_prefilter_refuted": 2835,
-    "verify_bb_certified": 30426,
-    "verify_bb_refuted": 12,
-    "verify_bb_undecided": 667,
-    "verify_bb_boxes": 18663000,
-    "verify_bb_calls": 31105,
-    "verify_cx_added": 60
+    "train_time_s": 121.2817314999993,
+    "n_fitness_evaluations": 34958,
+    "verify_prefilter_refuted": 1600,
+    "verify_bb_certified": 33218,
+    "verify_bb_refuted": 10,
+    "verify_bb_undecided": 131,
+    "verify_bb_boxes": 20187796,
+    "verify_bb_calls": 33359,
+    "verify_cx_added": 49
   },
-  "equation": "aq(aq(((aq((-1.62783 + cylinders), (gears_f - tt_AM)) + (cylinders + engine_size)) + aq((aq(gears_f, cylinders) * (aq(gears_f, cylinders) * engine_size)), cylinders)), gears_missing), tt_AV)"
+  "equation": "aq(((aq(gears_f, cylinders) + (engine_size + cylinders)) - 2.00785), tt_AV)"
 }

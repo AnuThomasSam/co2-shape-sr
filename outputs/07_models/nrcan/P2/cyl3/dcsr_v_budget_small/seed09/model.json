@@ -20,96 +20,60 @@
     "op": "aq",
     "children": [
       {
-        "op": "sub",
+        "op": "add",
         "children": [
           {
-            "op": "add",
+            "op": "aq",
             "children": [
+              {
+                "op": "const",
+                "value": -4.6333971385345825
+              },
               {
                 "op": "var",
                 "value": 0
-              },
-              {
-                "op": "sub",
-                "children": [
-                  {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "sub",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 1
-                          },
-                          {
-                            "op": "var",
-                            "value": 3
-                          }
-                        ]
-                      },
-                      {
-                        "op": "aq",
-                        "children": [
-                          {
-                            "op": "aq",
-                            "children": [
-                              {
-                                "op": "const",
-                                "value": 3.0906265248504936
-                              },
-                              {
-                                "op": "var",
-                                "value": 0
-                              }
-                            ]
-                          },
-                          {
-                            "op": "var",
-                            "value": 0
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "add",
-                        "children": [
-                          {
-                            "op": "add",
-                            "children": [
-                              {
-                                "op": "var",
-                                "value": 3
-                              },
-                              {
-                                "op": "var",
-                                "value": 4
-                              }
-                            ]
-                          },
-                          {
-                            "op": "var",
-                            "value": 1
-                          }
-                        ]
-                      },
-                      {
-                        "op": "var",
-                        "value": 0
-                      }
-                    ]
-                  }
-                ]
               }
             ]
           },
           {
-            "op": "var",
-            "value": 6
+            "op": "sub",
+            "children": [
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "add",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 0
+                      },
+                      {
+                        "op": "var",
+                        "value": 1
+                      }
+                    ]
+                  },
+                  {
+                    "op": "sub",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 6
+                      },
+                      {
+                        "op": "const",
+                        "value": -1.6764198853719745
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "op": "var",
+                "value": 3
+              }
+            ]
           }
         ]
       },
@@ -121,19 +85,19 @@
   },
   "scaling": {
     "a": [
-      156.9097779021509,
-      170.98310168931505,
-      143.59947538325127,
-      156.98994922234095
+      184.96156299061823,
+      194.08938585001903,
+      184.4058654607373,
+      181.1348846206505
     ],
     "b": [
-      14.828106885954007,
-      13.494300886828318,
-      18.561819334071032,
-      13.00069254594493
+      24.389569778073568,
+      22.539497914447306,
+      27.26499091408481,
+      21.526387847925935
     ],
-    "a0": 162.6266017468724,
-    "b0": 14.18923214011516
+    "a0": 188.49295247649295,
+    "b0": 23.4565274263096
   },
   "n_groups": 4,
   "spec": {
@@ -169,7 +133,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -189,8 +153,8 @@
   },
   "seed": 9,
   "info": {
-    "train_nmse": 0.24641545082875485,
-    "val_nmse": 0.21032873939210606,
+    "train_nmse": 0.24866310429364352,
+    "val_nmse": 0.21441572475974185,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -199,15 +163,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 118.71612719999393,
-    "n_fitness_evaluations": 33212,
-    "verify_prefilter_refuted": 2231,
-    "verify_bb_certified": 28420,
-    "verify_bb_refuted": 18,
-    "verify_bb_undecided": 2544,
-    "verify_bb_boxes": 28007728,
-    "verify_bb_calls": 30982,
-    "verify_cx_added": 87
+    "train_time_s": 171.1543488999596,
+    "n_fitness_evaluations": 35073,
+    "verify_prefilter_refuted": 1481,
+    "verify_bb_certified": 32334,
+    "verify_bb_refuted": 11,
+    "verify_bb_undecided": 1248,
+    "verify_bb_boxes": 30450458,
+    "verify_bb_calls": 33593,
+    "verify_cx_added": 54
   },
-  "equation": "aq(((engine_size + (aq((cylinders - gears_missing), aq(aq(3.09063, engine_size), engine_size)) - aq(((gears_missing + tt_AM) + cylinders), engine_size))) - tt_AV), tt_AV)"
+  "equation": "aq((aq(-4.6334, engine_size) + (aq((engine_size + cylinders), (tt_AV - -1.67642)) - gears_missing)), tt_AV)"
 }

@@ -23,54 +23,72 @@
         "op": "add",
         "children": [
           {
-            "op": "mul",
+            "op": "add",
             "children": [
               {
-                "op": "var",
-                "value": 0
-              },
-              {
-                "op": "sub",
+                "op": "aq",
                 "children": [
                   {
-                    "op": "const",
-                    "value": 1.3980770086678957
+                    "op": "var",
+                    "value": 1
                   },
                   {
                     "op": "var",
-                    "value": 6
+                    "value": 3
+                  }
+                ]
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 0
+                  },
+                  {
+                    "op": "var",
+                    "value": 1
                   }
                 ]
               }
             ]
           },
           {
-            "op": "var",
-            "value": 1
+            "op": "aq",
+            "children": [
+              {
+                "op": "var",
+                "value": 0
+              },
+              {
+                "op": "var",
+                "value": 3
+              }
+            ]
           }
         ]
       },
       {
         "op": "var",
-        "value": 3
+        "value": 6
       }
     ]
   },
   "scaling": {
     "a": [
-      117.75261093288513,
-      132.31413498716574,
-      137.4887996839182,
-      146.6875764493131
+      110.35625546352716,
+      123.92002966125301,
+      128.94079802669566,
+      138.83652703576573
     ],
     "b": [
-      13.8383855611955,
-      13.117893836172602,
-      13.600006974066314,
-      10.959163340339071
+      15.742093151637873,
+      15.011883751402431,
+      15.509568945994198,
+      12.650725489787739
     ],
-    "a0": 123.67577735693712,
-    "b0": 13.600006974066314
+    "a0": 115.79129438627726,
+    "b0": 15.509568945994198
   },
   "n_groups": 4,
   "spec": {
@@ -106,7 +124,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -126,8 +144,8 @@
   },
   "seed": 0,
   "info": {
-    "train_nmse": 0.2300337286013472,
-    "val_nmse": 0.25562038890437766,
+    "train_nmse": 0.22931189547754915,
+    "val_nmse": 0.25479561229710807,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -136,15 +154,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 81.8968950999988,
-    "n_fitness_evaluations": 34614,
-    "verify_prefilter_refuted": 2159,
-    "verify_bb_certified": 32207,
-    "verify_bb_refuted": 11,
-    "verify_bb_undecided": 238,
-    "verify_bb_boxes": 21031488,
-    "verify_bb_calls": 32456,
-    "verify_cx_added": 53
+    "train_time_s": 108.12247790000401,
+    "n_fitness_evaluations": 34385,
+    "verify_prefilter_refuted": 1074,
+    "verify_bb_certified": 33147,
+    "verify_bb_refuted": 9,
+    "verify_bb_undecided": 156,
+    "verify_bb_boxes": 21823126,
+    "verify_bb_calls": 33312,
+    "verify_cx_added": 43
   },
-  "equation": "aq(((engine_size * (1.39808 - tt_AV)) + cylinders), gears_missing)"
+  "equation": "aq(((aq(cylinders, gears_missing) + aq(engine_size, cylinders)) + aq(engine_size, gears_missing)), tt_AV)"
 }

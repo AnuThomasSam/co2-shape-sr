@@ -17,28 +17,11 @@
     "E"
   ],
   "tree": {
-    "op": "add",
+    "op": "sub",
     "children": [
-      {
-        "op": "var",
-        "value": 4
-      },
       {
         "op": "sub",
         "children": [
-          {
-            "op": "aq",
-            "children": [
-              {
-                "op": "var",
-                "value": 7
-              },
-              {
-                "op": "var",
-                "value": 1
-              }
-            ]
-          },
           {
             "op": "add",
             "children": [
@@ -46,26 +29,8 @@
                 "op": "aq",
                 "children": [
                   {
-                    "op": "add",
-                    "children": [
-                      {
-                        "op": "var",
-                        "value": 1
-                      },
-                      {
-                        "op": "aq",
-                        "children": [
-                          {
-                            "op": "const",
-                            "value": -4.56814792849559
-                          },
-                          {
-                            "op": "var",
-                            "value": 0
-                          }
-                        ]
-                      }
-                    ]
+                    "op": "var",
+                    "value": 1
                   },
                   {
                     "op": "var",
@@ -74,14 +39,23 @@
                 ]
               },
               {
-                "op": "mul",
+                "op": "aq",
                 "children": [
                   {
-                    "op": "sub",
+                    "op": "aq",
                     "children": [
                       {
-                        "op": "var",
-                        "value": 6
+                        "op": "mul",
+                        "children": [
+                          {
+                            "op": "const",
+                            "value": -3.1518816046302778
+                          },
+                          {
+                            "op": "var",
+                            "value": 1
+                          }
+                        ]
                       },
                       {
                         "op": "var",
@@ -90,19 +64,63 @@
                     ]
                   },
                   {
-                    "op": "aq",
-                    "children": [
-                      {
-                        "op": "const",
-                        "value": -5.947172984770822
-                      },
-                      {
-                        "op": "var",
-                        "value": 1
-                      }
-                    ]
+                    "op": "var",
+                    "value": 0
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "op": "aq",
+            "children": [
+              {
+                "op": "sub",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 6
+                  },
+                  {
+                    "op": "var",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "op": "var",
+                "value": 6
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "mul",
+        "children": [
+          {
+            "op": "var",
+            "value": 4
+          },
+          {
+            "op": "sub",
+            "children": [
+              {
+                "op": "sub",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 6
+                  },
+                  {
+                    "op": "var",
+                    "value": 0
+                  }
+                ]
+              },
+              {
+                "op": "const",
+                "value": -3.5682646677894065
               }
             ]
           }
@@ -112,19 +130,19 @@
   },
   "scaling": {
     "a": [
-      125.11907944330234,
-      140.48740785899986,
-      81.94614639428741,
-      128.73850048451848
+      167.5737268353864,
+      180.53921101804167,
+      147.29788409028603,
+      171.82435974427455
     ],
     "b": [
-      -17.96303690927148,
-      -16.647794383263896,
-      -26.594113497101876,
-      -15.960874587824945
+      12.7485798296385,
+      11.33111487396175,
+      18.92222519479918,
+      10.763329159406375
     ],
-    "a0": 131.04751224725464,
-    "b0": -17.389916132716557
+    "a0": 173.0110854100378,
+    "b0": 12.005860585231362
   },
   "n_groups": 4,
   "spec": {
@@ -160,7 +178,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -180,8 +198,8 @@
   },
   "seed": 2,
   "info": {
-    "train_nmse": 0.21866657743906576,
-    "val_nmse": 0.22567098646323833,
+    "train_nmse": 0.2105196972028978,
+    "val_nmse": 0.2141378202647616,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -190,15 +208,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 156.40803530000267,
-    "n_fitness_evaluations": 34737,
-    "verify_prefilter_refuted": 4699,
-    "verify_bb_certified": 28351,
-    "verify_bb_refuted": 17,
-    "verify_bb_undecided": 1671,
-    "verify_bb_boxes": 21628080,
-    "verify_bb_calls": 30039,
-    "verify_cx_added": 78
+    "train_time_s": 173.15678080002544,
+    "n_fitness_evaluations": 35591,
+    "verify_prefilter_refuted": 4884,
+    "verify_bb_certified": 29336,
+    "verify_bb_refuted": 28,
+    "verify_bb_undecided": 1344,
+    "verify_bb_boxes": 23152702,
+    "verify_bb_calls": 30708,
+    "verify_cx_added": 139
   },
-  "equation": "(tt_AM + (aq(tt_M, cylinders) - (aq((cylinders + aq(-4.56815, engine_size)), tt_AV) + ((tt_AV - engine_size) * aq(-5.94717, cylinders)))))"
+  "equation": "(((aq(cylinders, tt_AV) + aq(aq((-3.15188 * cylinders), engine_size), engine_size)) - aq((tt_AV - engine_size), tt_AV)) - (tt_AM * ((tt_AV - engine_size) - -3.56826)))"
 }

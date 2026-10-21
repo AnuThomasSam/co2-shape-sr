@@ -1,13 +1,13 @@
 {
   "step": "09_statistics",
-  "finished": "2026-10-04 15:16:35",
-  "config_hash": "05a7f5b37d4b",
+  "finished": "2026-10-22 00:22:06",
+  "config_hash": "f57fb723e3de",
   "inputs": [
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\08_evaluation\\run_metrics.csv",
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\08_evaluation\\run_summary.csv",
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\05_splits\\information_ceiling.csv"
   ],
-  "inputs_fingerprint": "d6580d2f917c837d",
+  "inputs_fingerprint": "c66c482e6317afad",
   "outputs": [
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\summary_by_block.csv",
     "C:\\College\\3rd Semester\\...Final-Project_Assignment2\\Revised_Project_Plan\\co2-shape-sr\\co2-shape-sr\\outputs\\09_statistics\\summary_by_protocol.csv",

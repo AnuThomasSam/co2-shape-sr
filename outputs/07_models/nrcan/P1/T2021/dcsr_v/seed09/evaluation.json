@@ -42,5 +42,5 @@
   "equation_simplified": "-cylinders - 2.5565*engine_size + tt_AM + 3.9404*tt_AV",
   "n_nodes_simplified": 11,
   "n_ops_simplified": 5,
-  "eval_hash": "16f7954fc42d"
+  "eval_hash": "0e93df5b3340"
 }

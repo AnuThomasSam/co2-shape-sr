@@ -182,7 +182,9 @@ methods:
   dcsr_v_no_feedback:   {type: gp, feature_set: F2, constraint: verified, counterexample_feedback: false}
   dcsr_v_undecided_infeasible: {type: gp, feature_set: F2, constraint: verified, undecided_policy: infeasible}
   dcsr_v_undecided_feasible:   {type: gp, feature_set: F2, constraint: verified, undecided_policy: feasible}
-  dcsr_v_budget_small:  {type: gp, feature_set: F2, constraint: verified, verify_max_boxes: 500}
+  # A13: the budget must exceed the number of root boxes (600-888 per NRCan block), otherwise the
+  # first interval pass uses it up and the run is identical to A10. Step 07 now refuses such a budget.
+  dcsr_v_budget_small:  {type: gp, feature_set: F2, constraint: verified, verify_max_boxes: 2000}
 
 stochastic_types: [gp, pysr]
 
@@ -248,7 +250,8 @@ benchmark:
 # Evaluation, statistics and reporting
 # ---------------------------------------------------------------------------
 evaluation:
-  slope_tol: 1.0e-6              # slope below -tol counts as a violation
+  slope_tol: 1.0e-6              # slope below -tol counts as a violation (exact derivatives)
+  slope_tol_fd: 1.0e-3           # same, for finite-difference slopes (GAM, XGBoost, PySR)
   finite_difference_h: 0.05      # litres, for models without exact derivatives
   simplify_equations: true
   response_curve_points: 40
@@ -332,4 +335,4 @@ plotting:
     dcsr_v_no_feedback: DCSR-V (no feedback)
     dcsr_v_undecided_infeasible: DCSR-V (undecided infeasible)
     dcsr_v_undecided_feasible: DCSR-V (undecided feasible)
-    dcsr_v_budget_small: DCSR-V (500 boxes)
+    dcsr_v_budget_small: DCSR-V (2,000 boxes)

@@ -23,64 +23,42 @@
         "op": "aq",
         "children": [
           {
-            "op": "var",
-            "value": 2
-          },
-          {
-            "op": "var",
-            "value": 1
-          }
-        ]
-      },
-      {
-        "op": "aq",
-        "children": [
-          {
-            "op": "sub",
+            "op": "aq",
             "children": [
               {
-                "op": "sub",
+                "op": "aq",
                 "children": [
-                  {
-                    "op": "var",
-                    "value": 0
-                  },
                   {
                     "op": "sub",
                     "children": [
                       {
-                        "op": "aq",
+                        "op": "sub",
                         "children": [
                           {
-                            "op": "aq",
-                            "children": [
-                              {
-                                "op": "const",
-                                "value": 10.845296970954724
-                              },
-                              {
-                                "op": "var",
-                                "value": 0
-                              }
-                            ]
+                            "op": "const",
+                            "value": -3.297721555958949
                           },
                           {
                             "op": "var",
-                            "value": 0
+                            "value": 2
                           }
                         ]
                       },
                       {
                         "op": "var",
-                        "value": 1
+                        "value": 2
                       }
                     ]
+                  },
+                  {
+                    "op": "var",
+                    "value": 1
                   }
                 ]
               },
               {
                 "op": "var",
-                "value": 6
+                "value": 4
               }
             ]
           },
@@ -89,24 +67,73 @@
             "value": 6
           }
         ]
+      },
+      {
+        "op": "mul",
+        "children": [
+          {
+            "op": "add",
+            "children": [
+              {
+                "op": "var",
+                "value": 0
+              },
+              {
+                "op": "add",
+                "children": [
+                  {
+                    "op": "aq",
+                    "children": [
+                      {
+                        "op": "const",
+                        "value": -7.842093050409345
+                      },
+                      {
+                        "op": "var",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  {
+                    "op": "var",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "op": "add",
+            "children": [
+              {
+                "op": "var",
+                "value": 6
+              },
+              {
+                "op": "const",
+                "value": -2.0323454188527674
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   "scaling": {
     "a": [
-      135.89386829486676,
-      142.46469479873429,
-      133.96626497123657,
-      132.34735857552255
+      146.69932199398175,
+      159.4241714647644,
+      144.21178727933324,
+      147.99899819731291
     ],
     "b": [
-      13.816518622744534,
-      13.310146834584204,
-      14.436263848379829,
-      12.793191694664628
+      -6.98282438254663,
+      -6.42295113863157,
+      -7.492104463227312,
+      -6.149779894648746
     ],
-    "a0": 138.5470260777809,
-    "b0": 13.548027149078285
+    "a0": 151.90911498834473,
+    "b0": -6.705228356164459
   },
   "n_groups": 4,
   "spec": {
@@ -142,7 +169,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -162,8 +189,8 @@
   },
   "seed": 6,
   "info": {
-    "train_nmse": 0.24422329141257865,
-    "val_nmse": 0.21451314811077457,
+    "train_nmse": 0.24371191690007823,
+    "val_nmse": 0.2142226161050895,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -172,15 +199,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 106.71493850000843,
-    "n_fitness_evaluations": 32673,
-    "verify_prefilter_refuted": 2143,
-    "verify_bb_certified": 29672,
-    "verify_bb_refuted": 9,
-    "verify_bb_undecided": 850,
-    "verify_bb_boxes": 27600024,
-    "verify_bb_calls": 30531,
-    "verify_cx_added": 45
+    "train_time_s": 196.8250524000032,
+    "n_fitness_evaluations": 35797,
+    "verify_prefilter_refuted": 3222,
+    "verify_bb_certified": 31397,
+    "verify_bb_refuted": 18,
+    "verify_bb_undecided": 1161,
+    "verify_bb_boxes": 30619548,
+    "verify_bb_calls": 32576,
+    "verify_cx_added": 80
   },
-  "equation": "(aq(gears_f, cylinders) + aq(((engine_size - (aq(aq(10.8453, engine_size), engine_size) - cylinders)) - tt_AV), tt_AV))"
+  "equation": "(aq(aq(aq(((-3.29772 - gears_f) - gears_f), cylinders), tt_AM), tt_AV) + ((engine_size + (aq(-7.84209, engine_size) + cylinders)) * (tt_AV + -2.03235)))"
 }

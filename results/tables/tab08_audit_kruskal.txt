@@ -1,1 +1,149 @@
 Kruskal-Wallis H = 1337.600, p = 1.08e-257, groups = 37, N = 6726
+
+
+(.venv) PS C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr> python -m pytest -q
+............................                                                                                                                            [100%]
+28 passed in 56.31s
+(.venv) PS C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr> python pipeline.py run 07 --methods dcsr_v_budget_small
+23:02:32 INFO    step07: started
+23:02:32 INFO    step07: 90 run(s) planned, n_jobs=4
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  10 tasks      | elapsed:  4.8min
+[Parallel(n_jobs=4)]: Done  64 tasks      | elapsed: 37.4min
+[Parallel(n_jobs=4)]: Done  90 out of  90 | elapsed: 54.4min finished
+23:56:55 INFO    step07: run outcomes: {'ok': 90}
+23:56:55 INFO    step07: finished in 3262.5 s
+(.venv) PS C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr> python pipeline.py run 08 09 10 11 12 13 14
+00:00:38 INFO    step08: started
+00:21:46 INFO    step08: 5566 run(s) evaluated, 5566 newly
+00:22:01 INFO    step08: finished in 1283.4 s
+00:22:01 INFO    step09: started
+00:22:06 INFO    step09: statistics written to C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr\outputs\09_statistics
+00:22:06 INFO    step09: finished in 4.5 s
+00:22:06 INFO    step10: started
+00:22:07 INFO    step10: Kruskal-Wallis H=1337.60 p=1.08e-257 over 37 makes
+00:22:07 INFO    step10: finished in 1.0 s
+00:22:12 INFO    step11: started
+00:23:12 INFO    step11: 134 figure file(s) written to C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr\results\figures
+00:23:12 INFO    step11: finished in 60.3 s
+00:23:12 INFO    step12: started
+00:23:14 INFO    step12: 82 table file(s) written to C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr\results\tables
+00:23:14 INFO    step12: finished in 1.9 s
+00:23:14 INFO    step13: started
+00:23:14 INFO    step13: 1680 benchmark run(s), n_jobs=4
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  34 tasks      | elapsed:    5.0s
+[Parallel(n_jobs=4)]: Done 1680 out of 1680 | elapsed:   15.6s finished
+00:23:31 INFO    step13: finished in 16.5 s
+00:23:31 INFO    step14: started
+00:23:36 INFO    step14: 17 benchmark report file(s) written to C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr\results\benchmark
+00:23:36 INFO    step14: finished in 5.2 s
+(.venv) PS C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr> 
+(.venv) PS C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr> python tools/thesis_tables.py
+LaTeX export skipped for checkpoint_P4.tex: `Import Jinja2` failed. DataFrame.style requires jinja2. Use pip or conda to install the Jinja2 package.
+
+== checkpoint_P4
+block  gam_mono  gp_standard    ols    xgb  xgb_mono  gp_runs_beating_ols
+fold1    30.019       29.929 29.826 23.906    25.330                0.433
+fold2    29.129       28.990 29.835 26.012    25.413                1.000
+fold3    30.898       30.930 31.447 27.379    25.471                0.933
+fold4    28.892       28.727 29.439 24.731    25.071                1.000
+fold5    29.770       30.179 30.790 25.393    25.643                1.000
+ mean    29.742       29.751 30.267 25.484    25.386                0.873
+LaTeX export skipped for new_config_P1.tex: `Import Jinja2` failed. DataFrame.style requires jinja2. Use pip or conda to install the Jinja2 package.
+
+== new_config_P1
+     method  rmse_all_rows  rmse_new_configurations  ratio_new_to_all
+   dcsr_dyn         30.182                   33.023             1.094
+     dcsr_f         30.206                   33.017             1.093
+    dcsr_ia         30.367                   33.180             1.093
+     dcsr_s         30.268                   33.103             1.094
+     dcsr_t         30.175                   32.947             1.092
+     dcsr_v         30.226                   33.011             1.092
+   gam_mono         30.035                   32.737             1.090
+gp_standard         30.103                   32.857             1.091
+  loglinear         30.594                   33.178             1.084
+        ols         30.806                   33.488             1.087
+        xgb         23.278                   28.561             1.227
+   xgb_mono         24.487                   29.078             1.187
+LaTeX export skipped for hypotheses.tex: `Import Jinja2` failed. DataFrame.style requires jinja2. Use pip or conda to install the Jinja2 package.
+
+== hypotheses
+hypothesis                                                                 measure      value                      threshold       verdict
+        H1                            Spearman rho, technology score vs model year  -0.223894                            > 0 not supported
+        H1                        Kendall tau, method ranking P3 vs P1 (p = 0.061)  -0.571429                            > 0 not supported
+       H2a                                   median A12, dcsr_t vs gp_standard, P2   0.471111                        >= 0.64 not supported
+       H2a                                   median A12, dcsr_s vs gp_standard, P2   0.457778                        >= 0.64 not supported
+       H2a                                   median A12, dcsr_f vs gp_standard, P2   0.536667                        >= 0.64 not supported
+       H2a                                  median A12, dcsr_ia vs gp_standard, P2   0.494444                        >= 0.64 not supported
+       H2a                                   median A12, dcsr_v vs gp_standard, P2   0.518889                        >= 0.64 not supported
+       H2b                                 P4 RMSE increase, dcsr_t vs gp_standard   -0.00241                         < 0.05     supported
+       H2b                                 P4 RMSE increase, dcsr_s vs gp_standard  -0.001692                         < 0.05     supported
+       H2b                                 P4 RMSE increase, dcsr_f vs gp_standard  -0.000805                         < 0.05     supported
+       H2b                                P4 RMSE increase, dcsr_ia vs gp_standard   0.000406                         < 0.05     supported
+       H2b                               P4 RMSE increase, dcsr_dyn vs gp_standard  -0.001186                         < 0.05     supported
+       H2b                                 P4 RMSE increase, dcsr_v vs gp_standard   0.000139                         < 0.05     supported
+       H3a                             max interval false rejection share (P1, P2)   0.233333                            > 0     supported
+       H3a max grid false acceptance share, sampling methods (NRCan and benchmark)   0.038095                            > 0     supported
+       H3a                 IA-certified equations refuted by B&B (soundness check)          0                            = 0     supported
+       H3b                                              DCSR-V certified share, P1        1.0                            = 1     supported
+       H3b                                              DCSR-V certified share, P2        1.0                            = 1     supported
+       H3b                                              DCSR-V certified share, P3        1.0                            = 1     supported
+       H3b                                              DCSR-V certified share, P4        1.0                            = 1     supported
+       H3b                                              dcsr_s certified share, P2   0.966667                            < 1     supported
+       H3b                                              dcsr_f certified share, P2       0.95                            < 1     supported
+       H3b                                            dcsr_dyn certified share, P2       0.95                            < 1     supported
+       H3c              DCSR-V RMSE relative to best other constrained variant, P1   0.001455 <= 0.02 or A12 in (0.44, 0.56)     supported
+       H3c                        A12 DCSR-V vs DCSR-IA, P1 (expected improvement)   0.544444       >= 0.56 (non-negligible) not supported
+       H3c              DCSR-V RMSE relative to best other constrained variant, P2   0.006364 <= 0.02 or A12 in (0.44, 0.56)     supported
+       H3c                        A12 DCSR-V vs DCSR-IA, P2 (expected improvement)       0.47       >= 0.56 (non-negligible) not supported
+       H3d                  certified candidates per run, no bisection vs full, P1  -0.003455                            < 0     supported
+       H3d                              B&B calls per run, no feedback vs full, P1   0.021747                            > 0     supported
+       H3d                        RMSE change, undecided infeasible vs default, P1   0.002536                            > 0     supported
+       H3d                  certified candidates per run, no bisection vs full, P2   0.000979                            < 0 not supported
+       H3d                              B&B calls per run, no feedback vs full, P2   0.047504                            > 0     supported
+       H3d                        RMSE change, undecided infeasible vs default, P2   0.006347                            > 0     supported
+        H4       largest P2/P4 degradation ratio is an unconstrained tree ensemble xgb (1.71)                            xgb     supported
+        H4   DCSR-V RMSE relative to best of monotone GAM and monotone XGBoost, P1   0.234348          <= 0.02 (competitive) not supported
+        H4   DCSR-V RMSE relative to best of monotone GAM and monotone XGBoost, P2  -0.139251          <= 0.02 (competitive)     supported
+        H4                                   median tree nodes of DCSR-V equations       21.0                           < 30     supported
+        H5              DCSR-V certified share minus best other constrained method        0.0                           >= 0     supported
+        H5              problems where DCSR-V median extrapolation NMSE <= DCSR-IA     4 of 7                       majority     supported
+LaTeX export skipped for interaction_ols.tex: `Import Jinja2` failed. DataFrame.style requires jinja2. Use pip or conda to install the Jinja2 package.
+
+== interaction_ols
+protocol        block        set    ols  ols_interactions  n_parameters
+      P1        T2018        all 27.293            25.916            21
+      P1        T2018 new_config 27.411            26.799            21
+      P1        T2019        all 27.768            26.165            21
+      P1        T2019 new_config 28.974            27.896            21
+      P1        T2020        all 29.486            27.698            21
+      P1        T2020 new_config 32.691            30.637            21
+      P1        T2021        all 32.367            30.401            21
+      P1        T2021 new_config 34.912            33.691            21
+      P1        T2022        all 32.274            30.737            21
+      P1        T2022 new_config 35.518            34.134            21
+      P1        T2023        all 32.612            31.443            21
+      P1        T2023 new_config 38.770            38.553            21
+      P1        T2024        all 33.843            31.973            21
+      P1        T2024 new_config 36.139            32.738            21
+      P2 displacement   low_tail 31.331            23.631            21
+      P2 displacement  high_tail 44.168            49.442            21
+      P2         cyl3       cyl3 21.692            18.368            21
+      P4        fold1        all 29.826            29.364            21
+      P4        fold2        all 29.835            28.601            21
+      P4        fold3        all 31.447            30.193            21
+      P4        fold4        all 29.439            27.579            21
+      P4        fold5        all 30.790            29.279            21
+(.venv) PS C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr> python tools/proxy_sensitivity.py
+ K  silhouette  spearman_rho_score_year  p_value  auc_newer_label_late_year  rows_newer
+ 2       0.481                    0.028    0.004                      0.484        7847
+ 4       0.454                   -0.185    0.000                      0.551        6496
+ 6       0.528                   -0.213    0.000                      0.551        6496
+ 8       0.565                   -0.193    0.000                      0.533        6988
+10       0.589                   -0.182    0.000                      0.533        6988
+15       0.611                   -0.224    0.000                      0.551        6496
+20       0.655                   -0.250    0.000                      0.571        6439
+25       0.688                   -0.253    0.000                      0.565        6706
+30       0.731                   -0.257    0.000                      0.580        6917
+(.venv) PS C:\College\3rd Semester\...Final-Project_Assignment2\Revised_Project_Plan\co2-shape-sr\co2-shape-sr> 

@@ -125,6 +125,13 @@ def train_one(cfg, task, force=False):
             domain = load_domain(cfg, ds, p, bid, which=("sample", "boxes_train"))
         elif spec["type"] == "gp" and spec["constraint"] == "verified":
             domain = load_domain(cfg, ds, p, bid, which=("boxes_verify",))
+            n_root = len(domain["boxes_verify_lo"])
+            budget = int(spec.get("verify_max_boxes", 4000))
+            if budget <= n_root:
+                # With a budget at or below the number of root boxes, the first interval pass uses it
+                # up and no box is ever bisected: the run silently becomes the no-bisection ablation.
+                raise ValueError(f"verify_max_boxes = {budget} is not larger than the {n_root} root boxes "
+                                 f"of {ds}/{p}/{bid}; no bisection would be possible")
         model = build_model(spec, cfg, seed)
         t0 = time.perf_counter()
         model.fit(fr["fit"], fr["val"], fr["full"], domain)

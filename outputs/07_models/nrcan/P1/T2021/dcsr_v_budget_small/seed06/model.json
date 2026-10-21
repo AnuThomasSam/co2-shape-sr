@@ -17,47 +17,128 @@
     "E"
   ],
   "tree": {
-    "op": "add",
+    "op": "sub",
     "children": [
       {
-        "op": "var",
-        "value": 3
-      },
-      {
-        "op": "add",
+        "op": "sub",
         "children": [
-          {
-            "op": "var",
-            "value": 4
-          },
           {
             "op": "aq",
             "children": [
               {
-                "op": "sub",
+                "op": "aq",
                 "children": [
                   {
-                    "op": "mul",
+                    "op": "sub",
                     "children": [
                       {
-                        "op": "var",
-                        "value": 0
+                        "op": "mul",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 0
+                          },
+                          {
+                            "op": "const",
+                            "value": -1.6295479716645058
+                          }
+                        ]
                       },
                       {
-                        "op": "const",
-                        "value": -2.4419729147706355
+                        "op": "var",
+                        "value": 1
                       }
                     ]
                   },
                   {
                     "op": "var",
-                    "value": 1
+                    "value": 6
                   }
                 ]
               },
               {
                 "op": "var",
                 "value": 6
+              }
+            ]
+          },
+          {
+            "op": "aq",
+            "children": [
+              {
+                "op": "mul",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 0
+                  },
+                  {
+                    "op": "const",
+                    "value": -1.8716629704874113
+                  }
+                ]
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "var",
+                    "value": 0
+                  },
+                  {
+                    "op": "aq",
+                    "children": [
+                      {
+                        "op": "const",
+                        "value": 3.3234579325791844
+                      },
+                      {
+                        "op": "var",
+                        "value": 4
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "op": "aq",
+        "children": [
+          {
+            "op": "mul",
+            "children": [
+              {
+                "op": "const",
+                "value": -4.579412734451786
+              },
+              {
+                "op": "const",
+                "value": 5.0380453394064215
+              }
+            ]
+          },
+          {
+            "op": "mul",
+            "children": [
+              {
+                "op": "var",
+                "value": 0
+              },
+              {
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "const",
+                    "value": 1.9999861266655827
+                  },
+                  {
+                    "op": "var",
+                    "value": 4
+                  }
+                ]
               }
             ]
           }
@@ -67,19 +148,19 @@
   },
   "scaling": {
     "a": [
-      119.31991969652131,
-      140.81508700415344,
-      93.29578066216982,
-      155.90176227591968
+      229.30095443634625,
+      236.83683068173346,
+      237.6236994040806,
+      229.29536190504135
     ],
     "b": [
-      -10.046656300356638,
-      -9.040059275168222,
-      -13.66876995474839,
-      -7.203955175768814
+      -10.475480453910789,
+      -9.911963281500066,
+      -13.26063329029694,
+      -8.508439421609957
     ],
-    "a0": 128.9560940359827,
-    "b0": -9.56282226399796
+    "a0": 232.31507959897988,
+    "b0": -10.24439681141263
   },
   "n_groups": 4,
   "spec": {
@@ -115,7 +196,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -135,8 +216,8 @@
   },
   "seed": 6,
   "info": {
-    "train_nmse": 0.22698916355213983,
-    "val_nmse": 0.270227083865762,
+    "train_nmse": 0.2163451106887669,
+    "val_nmse": 0.2599986659015276,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -145,15 +226,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 89.45460079999611,
-    "n_fitness_evaluations": 34240,
-    "verify_prefilter_refuted": 1325,
-    "verify_bb_certified": 32744,
-    "verify_bb_refuted": 6,
-    "verify_bb_undecided": 166,
-    "verify_bb_boxes": 23172864,
-    "verify_bb_calls": 32916,
-    "verify_cx_added": 29
+    "train_time_s": 193.2314805999631,
+    "n_fitness_evaluations": 36916,
+    "verify_prefilter_refuted": 3904,
+    "verify_bb_certified": 31323,
+    "verify_bb_refuted": 15,
+    "verify_bb_undecided": 1675,
+    "verify_bb_boxes": 24082912,
+    "verify_bb_calls": 33013,
+    "verify_cx_added": 70
   },
-  "equation": "(gears_missing + (tt_AM + aq(((engine_size * -2.44197) - cylinders), tt_AV)))"
+  "equation": "((aq(aq(((engine_size * -1.62955) - cylinders), tt_AV), tt_AV) - aq((engine_size * -1.87166), aq(engine_size, aq(3.32346, tt_AM)))) - aq((-4.57941 * 5.03805), (engine_size * aq(1.99999, tt_AM))))"
 }

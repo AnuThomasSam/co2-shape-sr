@@ -23,46 +23,6 @@
         "op": "sub",
         "children": [
           {
-            "op": "sub",
-            "children": [
-              {
-                "op": "var",
-                "value": 6
-              },
-              {
-                "op": "aq",
-                "children": [
-                  {
-                    "op": "var",
-                    "value": 2
-                  },
-                  {
-                    "op": "var",
-                    "value": 1
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "op": "aq",
-            "children": [
-              {
-                "op": "var",
-                "value": 1
-              },
-              {
-                "op": "var",
-                "value": 6
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "op": "add",
-        "children": [
-          {
             "op": "mul",
             "children": [
               {
@@ -70,20 +30,11 @@
                 "value": 4
               },
               {
-                "op": "add",
+                "op": "sub",
                 "children": [
                   {
-                    "op": "mul",
-                    "children": [
-                      {
-                        "op": "const",
-                        "value": -3.2657865471554897
-                      },
-                      {
-                        "op": "var",
-                        "value": 4
-                      }
-                    ]
+                    "op": "const",
+                    "value": 3.160879551744834
                   },
                   {
                     "op": "var",
@@ -97,58 +48,40 @@
             "op": "aq",
             "children": [
               {
-                "op": "add",
+                "op": "sub",
                 "children": [
                   {
-                    "op": "mul",
+                    "op": "add",
                     "children": [
                       {
-                        "op": "const",
-                        "value": -3.919606182176734
+                        "op": "var",
+                        "value": 0
                       },
+                      {
+                        "op": "const",
+                        "value": 5.825273662662344
+                      }
+                    ]
+                  },
+                  {
+                    "op": "aq",
+                    "children": [
                       {
                         "op": "aq",
                         "children": [
                           {
                             "op": "const",
-                            "value": 2.707052082822425
+                            "value": 6.5412334271337835
                           },
                           {
                             "op": "var",
                             "value": 0
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "op": "sub",
-                    "children": [
-                      {
-                        "op": "aq",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 0
-                          },
-                          {
-                            "op": "aq",
-                            "children": [
-                              {
-                                "op": "var",
-                                "value": 2
-                              },
-                              {
-                                "op": "const",
-                                "value": 3.0256199728490865
-                              }
-                            ]
                           }
                         ]
                       },
                       {
                         "op": "var",
-                        "value": 6
+                        "value": 0
                       }
                     ]
                   }
@@ -161,24 +94,46 @@
             ]
           }
         ]
+      },
+      {
+        "op": "aq",
+        "children": [
+          {
+            "op": "var",
+            "value": 1
+          },
+          {
+            "op": "add",
+            "children": [
+              {
+                "op": "const",
+                "value": 1.5655487064994076
+              },
+              {
+                "op": "var",
+                "value": 3
+              }
+            ]
+          }
+        ]
       }
     ]
   },
   "scaling": {
     "a": [
-      183.1807018867497,
-      194.86674537415968,
-      183.69536802364036,
-      176.4599925180499
+      60.89347929195935,
+      84.70678981579906,
+      26.230738069291306,
+      60.6750149917238
     ],
     "b": [
-      -15.931750356079027,
-      -14.024474136203544,
-      -16.816879458536143,
-      -14.462296401991406
+      -17.565323301070958,
+      -15.764799753449548,
+      -21.422420287300213,
+      -16.371820356278604
     ],
-    "a0": 187.8938882236786,
-    "b0": -14.90212095319085
+    "a0": 71.61107281845824,
+    "b0": -16.658047618907812
   },
   "n_groups": 4,
   "spec": {
@@ -214,7 +169,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -234,8 +189,8 @@
   },
   "seed": 4,
   "info": {
-    "train_nmse": 0.23151910075216087,
-    "val_nmse": 0.2106803698002102,
+    "train_nmse": 0.2351910823878394,
+    "val_nmse": 0.20834805709086993,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -244,15 +199,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 185.40389659999346,
-    "n_fitness_evaluations": 34666,
-    "verify_prefilter_refuted": 3327,
-    "verify_bb_certified": 29714,
-    "verify_bb_refuted": 17,
-    "verify_bb_undecided": 1609,
-    "verify_bb_boxes": 28331360,
-    "verify_bb_calls": 31340,
-    "verify_cx_added": 81
+    "train_time_s": 187.21390390000306,
+    "n_fitness_evaluations": 35873,
+    "verify_prefilter_refuted": 4270,
+    "verify_bb_certified": 30310,
+    "verify_bb_refuted": 19,
+    "verify_bb_undecided": 1275,
+    "verify_bb_boxes": 28884174,
+    "verify_bb_calls": 31604,
+    "verify_cx_added": 91
   },
-  "equation": "(((tt_AV - aq(gears_f, cylinders)) - aq(cylinders, tt_AV)) - ((tt_AM * ((-3.26579 * tt_AM) + engine_size)) + aq(((-3.91961 * aq(2.70705, engine_size)) + (aq(engine_size, aq(gears_f, 3.02562)) - tt_AV)), tt_AV)))"
+  "equation": "(((tt_AM * (3.16088 - engine_size)) - aq(((engine_size + 5.82527) - aq(aq(6.54123, engine_size), engine_size)), tt_AV)) - aq(cylinders, (1.56555 + gears_missing)))"
 }

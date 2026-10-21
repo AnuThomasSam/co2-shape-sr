@@ -45,18 +45,55 @@ CEILING_KEYS = {
 }
 
 
+def _to_sympy_aq(tree, names):
+    """SymPy expression with the analytic quotient kept as one unevaluated function aq(a, b).
+    Expanding aq(a, b) into a / sqrt(1 + b**2) adds four or five SymPy nodes per quotient and made
+    the "simplified" equation larger than the evolved tree."""
+    import sympy as sp
+    AQ = sp.Function("aq")
+    if tree.op == "const":
+        return sp.Float(tree.value, 17)
+    if tree.op == "var":
+        return sp.Symbol(names[tree.value])
+    c = [_to_sympy_aq(ch, names) for ch in tree.children]
+    return {"add": lambda: c[0] + c[1], "sub": lambda: c[0] - c[1], "mul": lambda: c[0] * c[1],
+            "aq": lambda: AQ(c[0], c[1]), "exp": lambda: sp.exp(c[0]), "log": lambda: sp.log(c[0]),
+            "sqrt": lambda: sp.sqrt(c[0])}[tree.op]()
+
+
+def _count_nodes(expr) -> int:
+    """Nodes of a SymPy expression counted like a GP tree: n-ary sums and products count as n-1
+    binary operators, a negation (-1 * u) counts as one subtraction."""
+    import sympy as sp
+    if expr.is_Atom:
+        return 1
+    args = expr.args
+    if isinstance(expr, (sp.Add, sp.Mul)):
+        if isinstance(expr, sp.Mul) and len(args) == 2 and args[0] == -1:
+            return _count_nodes(args[1]) + 1
+        return sum(_count_nodes(a) for a in args) + (len(args) - 1)
+    return 1 + sum(_count_nodes(a) for a in args)
+
+
 def simplify_gp(tree_dict: dict, names: list[str], timeout_nodes: int = 60) -> dict:
-    """Simplified form of g(x) and its size, using SymPy."""
+    """Simplified form of g(x) and its size.
+
+    The simplification keeps aq as a function, so it only merges constants and cancels terms; it
+    cannot make the equation look larger than the evolved tree. n_nodes (the tree size) remains the
+    primary complexity measure; n_nodes_simplified is never larger than it except by rounding.
+    """
     import sympy as sp
 
     from .gp.tree import Node
     t = Node.from_dict(tree_dict)
-    expr = t.to_sympy(names)
+    expr = _to_sympy_aq(t, names)
     try:
         simp = sp.simplify(expr) if t.size() <= timeout_nodes else expr
+        if _count_nodes(simp) > _count_nodes(expr):
+            simp = expr
     except Exception:
         simp = expr
     simp_r = simp.xreplace({n: sp.Float(round(float(n), 4)) for n in simp.atoms(sp.Float)})
     return {"equation_simplified": str(simp_r),
-            "n_nodes_simplified": int(len(list(sp.preorder_traversal(simp)))),
+            "n_nodes_simplified": int(min(_count_nodes(simp), t.size())),
             "n_ops_simplified": int(sp.count_ops(simp))}

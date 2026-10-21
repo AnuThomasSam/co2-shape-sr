@@ -32,8 +32,8 @@
   "feasible_on_constraint_set": 1,
   "n_fitness_evaluations": 35413,
   "final_verdict_in_search": "",
-  "equation_simplified": "-engine_size + tt_AV - 1.0966/sqrt((-engine_size + tt_AM + 4.2284)**2 + 1)",
-  "n_nodes_simplified": 19,
-  "n_ops_simplified": 9,
-  "eval_hash": "0773c419949f"
+  "equation_simplified": "-engine_size + tt_AV + aq(-1.0966, -engine_size + tt_AM + 4.2284)",
+  "n_nodes_simplified": 11,
+  "n_ops_simplified": 5,
+  "eval_hash": "1112c56ac4ce"
 }

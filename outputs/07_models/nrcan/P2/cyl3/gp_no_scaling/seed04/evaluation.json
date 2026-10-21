@@ -33,7 +33,7 @@
   "n_fitness_evaluations": 34616,
   "final_verdict_in_search": "",
   "equation_simplified": "-2.6851*cylinders*(fuel_E - 4.4973) + 2*gears_f - 3.4969*(engine_size + 6.0792)*(tt_AV - 5.666) - 8.2384",
-  "n_nodes_simplified": 19,
+  "n_nodes_simplified": 23,
   "n_ops_simplified": 11,
-  "eval_hash": "561a4c38e8bd"
+  "eval_hash": "c4eb200185ee"
 }

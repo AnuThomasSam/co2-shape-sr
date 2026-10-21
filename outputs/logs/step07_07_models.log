@@ -12,3 +12,7 @@
 2026-10-04 22:17:27,690 INFO    step07: 140 run(s) planned, n_jobs=8
 2026-10-04 22:17:31,608 INFO    step07: run outcomes: {'cached': 140}
 2026-10-04 22:17:31,608 INFO    step07: finished in 3.9 s
+2026-10-21 23:02:32,611 INFO    step07: started
+2026-10-21 23:02:32,736 INFO    step07: 90 run(s) planned, n_jobs=4
+2026-10-21 23:56:55,111 INFO    step07: run outcomes: {'ok': 90}
+2026-10-21 23:56:55,114 INFO    step07: finished in 3262.5 s

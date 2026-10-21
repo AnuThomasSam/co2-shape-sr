@@ -39,8 +39,8 @@
   "verify_bb_boxes": 32492532,
   "verify_bb_calls": 33694,
   "verify_cx_added": 107,
-  "equation_simplified": "-cylinders/sqrt(tt_AV**2 + 1) - engine_size + gears_missing - 8.793/sqrt(tt_AV**2 + 1) + 12.6555/sqrt(engine_size**2 + 1)",
-  "n_nodes_simplified": 33,
-  "n_ops_simplified": 19,
-  "eval_hash": "b39f5bdb60fb"
+  "equation_simplified": "-engine_size + gears_missing + aq(-8.793, tt_AV) + aq(12.6555, engine_size) - aq(cylinders, tt_AV)",
+  "n_nodes_simplified": 15,
+  "n_ops_simplified": 7,
+  "eval_hash": "465fca218020"
 }

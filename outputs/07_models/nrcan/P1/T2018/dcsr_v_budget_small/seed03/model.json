@@ -17,105 +17,87 @@
     "E"
   ],
   "tree": {
-    "op": "sub",
+    "op": "aq",
     "children": [
       {
-        "op": "aq",
+        "op": "sub",
         "children": [
           {
             "op": "var",
-            "value": 0
+            "value": 3
           },
           {
             "op": "add",
             "children": [
               {
-                "op": "var",
-                "value": 2
+                "op": "aq",
+                "children": [
+                  {
+                    "op": "mul",
+                    "children": [
+                      {
+                        "op": "var",
+                        "value": 0
+                      },
+                      {
+                        "op": "const",
+                        "value": 2.9295274044481996
+                      }
+                    ]
+                  },
+                  {
+                    "op": "aq",
+                    "children": [
+                      {
+                        "op": "mul",
+                        "children": [
+                          {
+                            "op": "var",
+                            "value": 2
+                          },
+                          {
+                            "op": "const",
+                            "value": -0.493441604007649
+                          }
+                        ]
+                      },
+                      {
+                        "op": "const",
+                        "value": -4.164746636637168
+                      }
+                    ]
+                  }
+                ]
               },
               {
-                "op": "const",
-                "value": -3.722830590492078
+                "op": "var",
+                "value": 1
               }
             ]
           }
         ]
       },
       {
-        "op": "add",
-        "children": [
-          {
-            "op": "aq",
-            "children": [
-              {
-                "op": "sub",
-                "children": [
-                  {
-                    "op": "sub",
-                    "children": [
-                      {
-                        "op": "aq",
-                        "children": [
-                          {
-                            "op": "var",
-                            "value": 7
-                          },
-                          {
-                            "op": "var",
-                            "value": 0
-                          }
-                        ]
-                      },
-                      {
-                        "op": "var",
-                        "value": 0
-                      }
-                    ]
-                  },
-                  {
-                    "op": "var",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "op": "var",
-                "value": 6
-              }
-            ]
-          },
-          {
-            "op": "aq",
-            "children": [
-              {
-                "op": "var",
-                "value": 1
-              },
-              {
-                "op": "var",
-                "value": 0
-              }
-            ]
-          }
-        ]
+        "op": "var",
+        "value": 6
       }
     ]
   },
   "scaling": {
     "a": [
-      133.44812493770434,
-      156.18870278626105,
-      91.98958662844868,
-      141.75040230427697
+      105.80094925217318,
+      134.58290748632135,
+      53.01610232084957,
+      124.77762222565755
     ],
     "b": [
-      14.841289715745573,
-      12.288914462131292,
-      21.35833403463328,
-      12.234790501716208
+      -11.401686787141369,
+      -9.307086516358384,
+      -16.46156233411707,
+      -9.04268556453209
     ],
-    "a0": 143.87633444433632,
-    "b0": 13.396204840069304
+    "a0": 120.02616242403249,
+    "b0": -10.185128193665411
   },
   "n_groups": 4,
   "spec": {
@@ -151,7 +133,7 @@
     ],
     "lam_schedule": "constant",
     "lam_start": 0.001,
-    "verify_max_boxes": 500,
+    "verify_max_boxes": 2000,
     "verify_max_depth": 10,
     "verify_probe": true,
     "undecided_policy": "between",
@@ -171,8 +153,8 @@
   },
   "seed": 3,
   "info": {
-    "train_nmse": 0.22061484541019513,
-    "val_nmse": 0.23427570360968814,
+    "train_nmse": 0.22411205935187933,
+    "val_nmse": 0.24176229579487915,
     "train_violation": 0.0,
     "feasible_on_constraint_set": true,
     "hof_size": 50,
@@ -181,15 +163,15 @@
     "final_verdict": "certified",
     "selected_by": "validation",
     "scaling_refit": true,
-    "train_time_s": 108.2149186999959,
-    "n_fitness_evaluations": 35551,
-    "verify_prefilter_refuted": 3997,
-    "verify_bb_certified": 28358,
-    "verify_bb_refuted": 33,
-    "verify_bb_undecided": 3164,
-    "verify_bb_boxes": 21457400,
-    "verify_bb_calls": 31555,
-    "verify_cx_added": 149
+    "train_time_s": 93.30004010000266,
+    "n_fitness_evaluations": 33579,
+    "verify_prefilter_refuted": 876,
+    "verify_bb_certified": 31183,
+    "verify_bb_refuted": 12,
+    "verify_bb_undecided": 1509,
+    "verify_bb_boxes": 22591156,
+    "verify_bb_calls": 32704,
+    "verify_cx_added": 56
   },
-  "equation": "(aq(engine_size, (gears_f + -3.72283)) - (aq(((aq(tt_M, engine_size) - engine_size) - cylinders), tt_AV) + aq(cylinders, engine_size)))"
+  "equation": "aq((gears_missing - (aq((engine_size * 2.92953), aq((gears_f * -0.493442), -4.16475)) + cylinders)), tt_AV)"
 }
