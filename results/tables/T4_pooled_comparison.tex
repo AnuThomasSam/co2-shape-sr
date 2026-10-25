@@ -1,0 +1,17 @@
+% T4. DCSR-V against other methods over all NRCan test sets (negative difference: DCSR-V lower)
+\begin{tabular}{rrrrr}
+\hline
+Compared with & Test sets & DCSR-V lower & Mean relative difference (\%) & Wilcoxon p \\
+\hline
+OLS & 16 & 14 & -0.742 & 0.013 \\
+Log-linear OLS & 16 & 11 & 1.150 & 0.348 \\
+Monotone GAM & 16 & 11 & -2.133 & 0.433 \\
+XGBoost & 16 & 4 & 11.993 & 0.252 \\
+Monotone XGBoost & 16 & 3 & 12.939 & 0.065 \\
+Standard GP & 16 & 5 & 0.440 & 0.144 \\
+DCSR-S & 16 & 5 & 0.349 & 0.274 \\
+DCSR-F & 16 & 7 & 0.438 & 0.298 \\
+Dynamic penalty & 16 & 6 & 0.267 & 0.298 \\
+DCSR-IA & 16 & 10 & -0.042 & 0.323 \\
+\hline
+\end{tabular}

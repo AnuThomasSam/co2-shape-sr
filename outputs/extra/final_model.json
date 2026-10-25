@@ -1,0 +1,61 @@
+{
+  "method": "dcsr_v",
+  "block": "T2024",
+  "seed": 11,
+  "validation_rmse": 31.916903979683468,
+  "test_rmse": 33.38251740477429,
+  "n_nodes": 33,
+  "equation": "(((gears_missing + tt_AV) - (aq(aq(((-1.0643 - tt_AM) * 5.52761), engine_size), (engine_size - tt_AM)) - (aq(aq(engine_size, tt_AM), tt_AM) - (cylinders + aq(engine_size, tt_AV))))) - aq(engine_size, (gears_missing + tt_AV)))",
+  "scaling": {
+    "X": {
+      "a": 151.93954900381,
+      "b": -13.557182190492787
+    },
+    "Z": {
+      "a": 164.1503913486021,
+      "b": -12.623803976238122
+    },
+    "D": {
+      "a": 164.4669850013718,
+      "b": -13.129568841122518
+    },
+    "E": {
+      "a": 151.34093072059733,
+      "b": -12.403054740287
+    }
+  },
+  "bb_verdict": "certified",
+  "domain_min_slope": 2.344849697344833,
+  "by_transmission_type": [
+    {
+      "type": "A",
+      "rows": 2467,
+      "g": "(-(cylinders + engine_size)*(engine_size**2 + 1) + 5.883035323)/(engine_size**2 + 1)",
+      "prediction_regular": "13.56*cylinders + 13.56*engine_size + 151.94 - 79.76/(engine_size**2 + 1.0)"
+    },
+    {
+      "type": "AS",
+      "rows": 4255,
+      "g": "(-(cylinders + engine_size)*(engine_size**2 + 1) + 5.883035323)/(engine_size**2 + 1)",
+      "prediction_regular": "13.56*cylinders + 13.56*engine_size + 151.94 - 79.76/(engine_size**2 + 1.0)"
+    },
+    {
+      "type": "M",
+      "rows": 1332,
+      "g": "(-(cylinders + engine_size)*(engine_size**2 + 1) + 5.883035323)/(engine_size**2 + 1)",
+      "prediction_regular": "13.56*cylinders + 13.56*engine_size + 151.94 - 79.76/(engine_size**2 + 1.0)"
+    },
+    {
+      "type": "AM",
+      "rows": 1128,
+      "g": "-cylinders - 3*engine_size/2 + 11.410645323/(sqrt(engine_size**2 + 1)*sqrt((engine_size - 1)**2 + 1))",
+      "prediction_regular": "13.56*cylinders + 20.34*engine_size - 154.7/((engine_size**2 + 1.0)**0.5*((engine_size - 1.0)**2 + 1.0)**0.5) + 151.94"
+    },
+    {
+      "type": "AV",
+      "rows": 877,
+      "g": "((engine_size**2 + 1)*(-10*cylinders - 5*sqrt(2)*engine_size - 2*sqrt(5)*engine_size + 10*engine_size + 20) + 58.83035323)/(10*(engine_size**2 + 1))",
+      "prediction_regular": "13.56*cylinders + 2.09*engine_size + 124.83 - 79.76/(engine_size**2 + 1.0)"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+% T6. Final model: dcsr_v, P1 block T2024, seed 11
+\begin{tabular}{llr}
+\hline
+Transmission type & Prediction for regular petrol (g/km) & Rows in data \\
+\hline
+automatic (A) & $13.56 c + 13.56 d + 151.94 - \frac{79.76}{d^{2} + 1}$ & 2467 \\
+automatic with select shift (AS) & $13.56 c + 13.56 d + 151.94 - \frac{79.76}{d^{2} + 1}$ & 4255 \\
+manual (M) & $13.56 c + 13.56 d + 151.94 - \frac{79.76}{d^{2} + 1}$ & 1332 \\
+automated manual (AM) & $13.56 c + 20.34 d - \frac{154.7}{\left(d^{2} + 1\right)^{0.5} \left(\left(d - 1\right)^{2} + 1\right)^{0.5}} + 151.94$ & 1128 \\
+continuously variable (AV) & $13.56 c + 2.09 d + 124.83 - \frac{79.76}{d^{2} + 1}$ & 877 \\
+\hline
+\end{tabular}
+% d = engine size (litres), c = number of cylinders
